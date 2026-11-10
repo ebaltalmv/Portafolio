@@ -1,0 +1,326 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BentoEntryCard from '../components/bento/BentoEntryCard.astro';
+import { getProfile, getAllEntries, formatBytes } from '../server/db';
+import { getViewerContext } from '../server/auth';
+import { SECTION_KEYS, SECTION_META } from '../server/schemas';
+
+const profile = await getProfile();
+const viewer = getViewerContext(Astro.cookies, Astro.url);
+const allEntries = await getAllEntries(viewer.isEditorView);
+const featuredEntries = allEntries.filter((e) => e.featured).slice(0, 6);
+
+const sectionCards = SECTION_KEYS.map((key) => {
+  const entries = allEntries.filter((e) => e.section === key);
+  const evidencesCount = entries.reduce((sum, item) => sum + item.evidences.length, 0);
+  const slotsCount = entries.reduce((sum, item) => sum + item.evidenceSlots.length, 0);
+  return {
+    meta: SECTION_META[key],
+    count: entries.length,
+    evidencesCount,
+    slotsCount,
+  };
+});
+---
+
+<BaseLayout title="Visión General — Portafolio de Ingeniería de Software">
+  <div class="space-y-14">
+    {/* =====================================================================
+        1. HERO PROFESIONAL & ACCESOS DIRECTOS
+       ===================================================================== */}
+    <section class="relative overflow-hidden rounded-3xl border border-slate-800/90 bg-gradient-to-br from-surface-900 via-surface-900/95 to-slate-950 p-6 sm:p-10">
+      <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl"></div>
+
+      <div class="relative grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
+        <div class="space-y-5 lg:col-span-8">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-1 font-mono text-xs font-semibold text-emerald-300">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              {profile.honorAward} · Promedio {profile.gpa}
+            </span>
+            <span class="rounded-full border border-slate-700/80 bg-slate-900/90 px-3 py-1 font-mono text-xs text-slate-300">
+              {profile.currentSemester} · Matrícula {profile.studentId}
+            </span>
+          </div>
+
+          <div>
+            <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+              {profile.fullName}
+            </h1>
+            <p class="mt-2 font-mono text-sm font-medium text-cyan-300 sm:text-base">
+              {profile.headline}
+            </p>
+          </div>
+
+          <p class="max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            {profile.bio}
+          </p>
+
+          {/* Botones Profesionales & CV */}
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <a
+              href={profile.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 font-mono text-xs font-semibold text-white transition hover:border-cyan-400 hover:text-cyan-300"
+            >
+              <span>GitHub (@ebaltalmv)</span>
+              <span>↗</span>
+            </a>
+
+            <a
+              href={profile.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 font-mono text-xs font-semibold text-white transition hover:border-cyan-400 hover:text-cyan-300"
+            >
+              <span>LinkedIn Profesional</span>
+              <span>↗</span>
+            </a>
+
+            {profile.cvDocument ? (
+              <a
+                href={profile.cvDocument.url}
+                target="_blank"
+                class="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-4 py-2.5 font-mono text-xs font-bold text-slate-950 transition hover:bg-cyan-400"
+              >
+                <span>↓ Descargar / Ver CV ({formatBytes(profile.cvDocument.fileSize)})</span>
+              </a>
+            ) : viewer.isEditorView ? (
+              <a
+                href="/admin#cv-manager"
+                class="inline-flex items-center gap-2 rounded-xl border border-dashed border-amber-400/60 bg-amber-500/15 px-4 py-2.5 font-mono text-xs font-semibold text-amber-300 transition hover:bg-amber-500/25"
+              >
+                <span>↑ Subir mi CV en PDF (Modo Admin)</span>
+              </a>
+            ) : (
+              <a
+                href={`mailto:${profile.email}?subject=Solicitud%20de%20CV%20-%20Emmanuel%20Baltazar`}
+                class="inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-2.5 font-mono text-xs font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+              >
+                <span>✉ Contacto Directo ({profile.email})</span>
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Panel Resumen de Ingeniería */}
+        <div class="grid grid-cols-2 gap-3 lg:col-span-4">
+          <div class="rounded-2xl border border-slate-800 bg-surface-950/85 p-4">
+            <span class="font-mono text-[10px] uppercase text-slate-400">Universidad</span>
+            <p class="mt-1 font-mono text-lg font-bold text-white">UMAD</p>
+            <p class="mt-0.5 text-xs text-slate-400">Ing. de Software · Puebla</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-surface-950/85 p-4">
+            <span class="font-mono text-[10px] uppercase text-slate-400">Excelencia</span>
+            <p class="mt-1 font-mono text-lg font-bold text-emerald-400">{profile.gpa}</p>
+            <p class="mt-0.5 text-xs text-slate-400">Distinción John Wesley</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-surface-950/85 p-4">
+            <span class="font-mono text-[10px] uppercase text-slate-400">Industria</span>
+            <p class="mt-1 font-mono text-lg font-bold text-cyan-300">FastBank</p>
+            <p class="mt-0.5 text-xs text-slate-400">Backend & Azure DevOps</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-surface-950/85 p-4">
+            <span class="font-mono text-[10px] uppercase text-slate-400">Ecosistema</span>
+            <p class="mt-1 font-mono text-lg font-bold text-amber-300">SAP & AWS</p>
+            <p class="mt-0.5 text-xs text-slate-400">ERP · Cloud · IoT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* =====================================================================
+        2. ÁREAS DE DOMINIO TÉCNICO
+       ===================================================================== */}
+    <section class="space-y-4">
+      <div class="flex items-end justify-between">
+        <div>
+          <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">
+            PERFIL DE INGENIERÍA // COMPETENCIAS NUCLEARES
+          </span>
+          <h2 class="mt-1 text-2xl font-bold text-white">Áreas de Dominio Técnico</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {profile.domainAreas.map((area) => (
+          <div class="flex flex-col justify-between rounded-2xl border border-slate-800/90 bg-surface-900/75 p-5 transition hover:border-cyan-500/35">
+            <div>
+              <span class="font-mono text-[11px] text-cyan-400">{area.code}</span>
+              <h3 class="mt-1.5 text-base font-bold text-white">{area.title}</h3>
+              <p class="mt-2 text-xs leading-relaxed text-slate-400">{area.description}</p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5 border-t border-slate-800/80 pt-3">
+              {area.highlights.map((item) => (
+                <span class="rounded border border-slate-800 bg-slate-950 px-2 py-0.5 font-mono text-[10px] text-slate-300">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* =====================================================================
+        3. MAPA ARQUITECTÓNICO DE SECCIONES (BENTO NAVIGATION)
+       ===================================================================== */}
+    <section class="space-y-4">
+      <div class="flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <span class="font-mono text-[11px] uppercase tracking-widest text-emerald-400">
+            ARQUITECTURA MULTI-PÁGINA // 8 COLECCIONES ESPECIALIZADAS
+          </span>
+          <h2 class="mt-1 text-2xl font-bold text-white">Explorador de Evidencias por Categoría</h2>
+        </div>
+        {viewer.isEditorView && (
+          <a
+            href="/admin"
+            class="font-mono text-xs text-amber-300 hover:underline"
+          >
+            Gestionar todas las secciones en /admin →
+          </a>
+        )}
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {sectionCards.map(({ meta, count, evidencesCount, slotsCount }, idx) => (
+          <a
+            href={meta.route}
+            class:list={[
+              'group flex flex-col justify-between rounded-2xl border border-slate-800/90 bg-surface-900/80 p-5 transition hover:border-cyan-500/45 hover:bg-surface-850',
+              idx === 0 || idx === 5 ? 'sm:col-span-2 lg:col-span-2' : '',
+            ]}
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-[11px] text-cyan-400">{meta.code}</span>
+                <span
+                  class:list={[
+                    'rounded-full border px-2.5 py-0.5 font-mono text-[10px] font-semibold',
+                    count > 0
+                      ? 'border-emerald-500/35 bg-emerald-500/10 text-emerald-300'
+                      : 'border-slate-700 bg-slate-900 text-slate-400',
+                  ]}
+                >
+                  {count} {count === 1 ? 'registro' : 'registros'}
+                </span>
+              </div>
+              <h3 class="mt-2.5 text-lg font-bold text-white transition group-hover:text-cyan-300">
+                {meta.title}
+              </h3>
+              <p class="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-400">
+                {meta.subtitle}
+              </p>
+            </div>
+
+            <div class="mt-5 flex items-center justify-between border-t border-slate-800/80 pt-3 font-mono text-[11px]">
+              <span class="text-slate-300 group-hover:text-cyan-300">Explorar sección →</span>
+              {viewer.isEditorView ? (
+                <span class="text-amber-300">
+                  Archivos: {evidencesCount}/{slotsCount || evidencesCount}
+                </span>
+              ) : (
+                evidencesCount > 0 && (
+                  <span class="text-emerald-400">{evidencesCount} evidencias</span>
+                )
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {/* =====================================================================
+        4. PROYECTOS Y CREDENCIALES DESTACADOS (BENTO GRID)
+       ===================================================================== */}
+    {featuredEntries.length > 0 && (
+      <section class="space-y-5">
+        <div class="flex flex-wrap items-end justify-between gap-2">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-amber-400">
+              SELECCIÓN PRINCIPAL // RIGOR TÉCNICO Y RESULTADOS
+            </span>
+            <h2 class="mt-1 text-2xl font-bold text-white">Evidencias Destacadas</h2>
+          </div>
+          <a href="/academic-projects" class="font-mono text-xs text-cyan-300 hover:underline">
+            Ver catálogo académico completo →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredEntries.map((entry) => (
+            <BentoEntryCard entry={entry} isEditorView={viewer.isEditorView} />
+          ))}
+        </div>
+      </section>
+    )}
+
+    {/* =====================================================================
+        5. EXPERIENCIA PROFESIONAL & FORMACIÓN ACADÉMICA
+       ===================================================================== */}
+    <section class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <div class="space-y-4 rounded-3xl border border-slate-800 bg-surface-900/75 p-6 sm:p-8 lg:col-span-7">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">
+          EXPERIENCIA EN LA INDUSTRIA
+        </span>
+        <h2 class="text-xl font-bold text-white">Trayectoria Profesional</h2>
+
+        <div class="space-y-5 pt-2">
+          {profile.experience.map((exp) => (
+            <div class="rounded-2xl border border-slate-800 bg-surface-950/80 p-5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h3 class="text-base font-bold text-white">{exp.role}</h3>
+                  <p class="font-mono text-xs text-cyan-300">{exp.company} · {exp.modality}</p>
+                </div>
+                <span class="rounded-md border border-slate-700 bg-slate-900 px-2.5 py-1 font-mono text-xs text-slate-300">
+                  {exp.period}
+                </span>
+              </div>
+
+              <ul class="mt-3 space-y-2 text-xs leading-relaxed text-slate-300">
+                {exp.highlights.map((h) => (
+                  <li class="flex items-start gap-2">
+                    <span class="font-mono text-emerald-400">▸</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                {exp.stack.map((s) => (
+                  <span class="rounded border border-cyan-500/25 bg-cyan-500/10 px-2 py-0.5 font-mono text-[10px] text-cyan-300">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="space-y-4 rounded-3xl border border-slate-800 bg-surface-900/75 p-6 sm:p-8 lg:col-span-5">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-emerald-400">
+          FORMACIÓN ACADÉMICA
+        </span>
+        <h2 class="text-xl font-bold text-white">Educación y Distinciones</h2>
+
+        <div class="space-y-4 pt-2">
+          {profile.education.map((edu) => (
+            <div class="rounded-2xl border border-slate-800 bg-surface-950/80 p-5">
+              <span class="font-mono text-[11px] text-slate-400">{edu.period}</span>
+              <h3 class="mt-1 text-base font-bold text-white">{edu.program}</h3>
+              <p class="font-mono text-xs text-cyan-300">{edu.institution}</p>
+              <p class="mt-2.5 rounded-lg border border-emerald-500/25 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-200">
+                {edu.achievement}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

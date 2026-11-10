@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntryEditorForm from '../../components/admin/EntryEditorForm.astro';
+import { requireAdminAuth } from '../../server/auth';
+import { SECTION_KEYS, type SectionKey } from '../../server/schemas';
+
+if (!requireAdminAuth(Astro.cookies)) {
+  return Astro.redirect('/admin/login');
+}
+
+const secParam = Astro.url.searchParams.get('section') || 'academic-projects';
+const initialSection: SectionKey = SECTION_KEYS.includes(secParam as SectionKey)
+  ? (secParam as SectionKey)
+  : 'academic-projects';
+---
+
+<BaseLayout title="Nueva Entrada — Studio Administrador">
+  <EntryEditorForm mode="create" initialSection={initialSection} />
+</BaseLayout>

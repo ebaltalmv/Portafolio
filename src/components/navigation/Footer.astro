@@ -1,0 +1,72 @@
+---
+import type { ProfileData } from '../../server/schemas';
+import type { ViewerContext } from '../../server/auth';
+
+interface Props {
+  profile: ProfileData;
+  viewer: ViewerContext;
+}
+
+const { profile, viewer } = Astro.props;
+---
+
+<footer class="mt-20 border-t border-slate-800/80 bg-surface-950/90">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="font-mono text-xs font-semibold text-cyan-400">{profile.shortCode}</span>
+          <span class="text-slate-600">·</span>
+          <span class="text-sm font-semibold text-slate-200">{profile.fullName}</span>
+        </div>
+        <p class="mt-1 text-xs text-slate-400">
+          {profile.degree} — {profile.university} · Matrícula <span class="font-mono text-slate-300">{profile.studentId}</span>
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 text-xs">
+        <a
+          href={profile.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-slate-400 transition hover:text-cyan-300"
+        >
+          GitHub ↗
+        </a>
+        <a
+          href={profile.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-slate-400 transition hover:text-cyan-300"
+        >
+          LinkedIn ↗
+        </a>
+        <a
+          href={`mailto:${profile.email}`}
+          class="font-mono text-slate-400 transition hover:text-cyan-300"
+        >
+          {profile.email}
+        </a>
+        {!viewer.isAuthenticated ? (
+          <a href="/admin/login" class="font-mono text-slate-500 transition hover:text-amber-300">
+            Acceso Administrador
+          </a>
+        ) : (
+          <a href="/admin" class="font-mono text-amber-400 transition hover:text-amber-300">
+            Panel Editor (/admin)
+          </a>
+        )}
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-col justify-between gap-2 border-t border-slate-900 pt-6 font-mono text-[11px] text-slate-500 sm:flex-row">
+      <span>Arquitectura Web: Astro SSR · TypeScript · Tailwind CSS · Zod Validation</span>
+      <span>
+        Vista actual:{' '}
+        <strong class={viewer.isEditorView ? 'text-amber-400' : 'text-emerald-400'}>
+          {viewer.isEditorView ? 'ADMINISTRADOR / EDITOR' : 'SOLO VISUALIZACIÓN (VISITANTE)'}
+        </strong>
+      </span>
+    </div>
+  </div>
+</footer>

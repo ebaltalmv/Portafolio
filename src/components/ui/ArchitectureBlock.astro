@@ -1,0 +1,64 @@
+---
+interface Views4Plus1 {
+  logical?: string;
+  process?: string;
+  development?: string;
+  physical?: string;
+  scenarios?: string;
+}
+
+interface Props {
+  pattern?: string;
+  summary?: string;
+  views4Plus1?: Views4Plus1;
+}
+
+const { pattern, summary, views4Plus1 } = Astro.props;
+
+const viewItems = [
+  { key: 'logical', code: '01 · VISTA LÓGICA', title: 'Modelo Estructural y Dominio', text: views4Plus1?.logical },
+  { key: 'process', code: '02 · VISTA DE PROCESOS', title: 'Concurrencia, Flujo y Latencia', text: views4Plus1?.process },
+  { key: 'development', code: '03 · VISTA DE DESARROLLO', title: 'Módulos, Capas y SCM', text: views4Plus1?.development },
+  { key: 'physical', code: '04 · VISTA FÍSICA', title: 'Despliegue, Red e Infraestructura', text: views4Plus1?.physical },
+  { key: 'scenarios', code: '+1 · ESCENARIOS', title: 'Casos de Uso y Validación Funcional', text: views4Plus1?.scenarios },
+].filter((v) => v.text && v.text.trim().length > 0);
+---
+
+{(pattern || summary || viewItems.length > 0) && (
+  <section class="rounded-2xl border border-slate-800 bg-surface-900/75 p-6">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/90 pb-4">
+      <div>
+        <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">
+          ARQUITECTURA DE SOFTWARE // MODELO 4+1 KRUCHTEN
+        </span>
+        <h2 class="mt-1 text-xl font-bold text-white">Diseño Arquitectónico del Sistema</h2>
+      </div>
+      {pattern && (
+        <span class="rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 font-mono text-xs text-cyan-300">
+          {pattern}
+        </span>
+      )}
+    </div>
+
+    {summary && <p class="mt-4 text-sm leading-relaxed text-slate-300">{summary}</p>}
+
+    {viewItems.length > 0 && (
+      <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {viewItems.map((view, idx) => (
+          <div
+            class:list={[
+              'rounded-xl border border-slate-800/90 bg-surface-950/70 p-4',
+              idx === viewItems.length - 1 && viewItems.length % 2 === 1 ? 'md:col-span-2' : '',
+            ]}
+          >
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-[11px] font-semibold text-emerald-400">{view.code}</span>
+              <span class="text-xs font-medium text-slate-400">{view.title}</span>
+            </div>
+            <p class="mt-2 text-xs leading-relaxed text-slate-300">{view.text}</p>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+)}

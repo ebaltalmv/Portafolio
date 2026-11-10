@@ -1,0 +1,743 @@
+---
+import {
+  SECTION_KEYS,
+  SECTION_META,
+  type PortfolioEntry,
+  type SectionKey,
+} from '../../server/schemas';
+import EvidenceManager from '../evidence/EvidenceManager.astro';
+
+interface Props {
+  mode: 'create' | 'edit';
+  initialSection?: SectionKey;
+  entry?: PortfolioEntry;
+}
+
+const { mode, initialSection = 'academic-projects', entry } = Astro.props;
+
+const activeSection: SectionKey = entry?.section || initialSection;
+const d = entry?.details || ({} as PortfolioEntry['details']);
+
+const metricsLines = (entry?.metrics || [])
+  .map((m) => `${m.label} | ${m.value} | ${m.description || ''}`)
+  .join('\n');
+
+const techLines = (entry?.techStack || [])
+  .map((t) => `${t.name} | ${t.category} | ${t.version || ''}`)
+  .join('\n');
+
+const deliverablesLines = (entry?.deliverables || [])
+  .map((del) => `${del.title} | ${del.type} | ${del.description || ''} | ${del.url || ''}`)
+  .join('\n');
+
+const sapModulesLines = (d.modulesLearned || [])
+  .map((m) => `${m.code || ''} | ${m.name} | ${m.description}`)
+  .join('\n');
+
+const partnerEntitiesLines = (d.partnerEntities || [])
+  .map((p) => `${p.name} | ${p.country} | ${p.entityType}`)
+  .join('\n');
+---
+
+<div class="space-y-10">
+  <form
+    id="ebl-entry-editor-form"
+    data-mode={mode}
+    data-original-section={entry?.section || ''}
+    data-original-slug={entry?.slug || ''}
+    class="space-y-8 rounded-3xl border border-slate-800 bg-surface-900/85 p-6 sm:p-8"
+  >
+    {/* Cabecera del Editor */}
+    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-5">
+      <div>
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-amber-400">
+          {mode === 'create' ? 'STUDIO // NUEVA ENTRADA DEL PORTAFOLIO' : `STUDIO // EDITANDO: ${entry?.slug}`}
+        </span>
+        <h1 class="mt-1 text-2xl font-extrabold text-white">
+          {mode === 'create' ? 'Crear Registro Técnico y Espacios de Evidencia' : entry?.title}
+        </h1>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        {mode === 'edit' && entry && (
+          <a
+            href={`/${entry.section}/${entry.slug}`}
+            class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 font-mono text-xs text-slate-200 hover:border-cyan-400"
+          >
+            👁 Ver Página de Detalle
+          </a>
+        )}
+        <button
+          type="submit"
+          class="rounded-xl bg-cyan-500 px-5 py-2.5 font-mono text-xs font-bold text-slate-950 transition hover:bg-cyan-400"
+        >
+          {mode === 'create' ? '✓ Guardar y Abrir Espacios de Archivos' : '✓ Guardar Cambios'}
+        </button>
+      </div>
+    </div>
+
+    {/* 1. Metadatos Generales y Bento Grid */}
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div>
+        <label class="block font-mono text-xs text-slate-300">Sección del Portafolio *</label>
+        <select
+          id="field-section"
+          name="section"
+          disabled={mode === 'edit'}
+          class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2.5 font-mono text-xs text-white disabled:opacity-60"
+        >
+          {SECTION_KEYS.map((sec) => (
+            <option value={sec} selected={sec === activeSection}>
+              {SECTION_META[sec].title}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-mono text-xs text-slate-300">Slug URL (identificador único) *</label>
+        <input
+          type="text"
+          name="slug"
+          required
+          value={entry?.slug || ''}
+          placeholder="ej. hackaton-puebla-2026"
+          class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2.5 font-mono text-xs text-cyan-300"
+        />
+      </div>
+
+      <div>
+        <label class="block font-mono text-xs text-slate-300">Fecha de Publicación *</label>
+        <input
+          type="date"
+          name="publishDate"
+          required
+          value={entry?.publishDate || new Date().toISOString().slice(0, 10)}
+          class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2.5 font-mono text-xs text-white"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <div>
+        <label class="block font-mono text-xs text-slate-300">Título Principal *</label>
+        <input
+          type="text"
+          name="title"
+          required
+          value={entry?.title || ''}
+          placeholder="Nombre técnico claro del proyecto, evento o credencial"
+          class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2.5 text-sm text-white"
+        />
+      </div>
+      <div>
+        <label class="block font-mono text-xs text-slate-300">Subtítulo Técnico</label>
+        <input
+          type="text"
+          name="subtitle"
+          value={entry?.subtitle || ''}
+          placeholder="Asignatura / Entidad · Patrón o enfoque clave"
+          class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2.5 text-sm text-white"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label class="block font-mono text-xs text-slate-300">Resumen Ejecutivo para Tarjeta Bento *</label>
+      <textarea
+        name="summary"
+        rows="2"
+        required
+        placeholder="Síntesis concisa del problema resuelto, tecnologías y valor entregado..."
+        class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2.5 text-sm text-white"
+      >{entry?.summary || ''}</textarea>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-4">
+      <div>
+        <label class="block font-mono text-xs text-slate-300">Tamaño en Bento Grid</label>
+        <select
+          name="bentoSpan"
+          class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-white"
+        >
+          <option value="col-span-1" selected={entry?.bentoSpan === 'col-span-1'}>1 Columna (Estándar)</option>
+          <option value="col-span-2" selected={entry?.bentoSpan === 'col-span-2'}>2 Columnas (Destacado)</option>
+          <option value="col-span-3" selected={entry?.bentoSpan === 'col-span-3'}>3 Columnas (Ancho Completo)</option>
+        </select>
+      </div>
+
+      <div class="md:col-span-1 flex items-end gap-4 pb-2">
+        <label class="inline-flex items-center gap-2 font-mono text-xs text-emerald-300">
+          <input type="checkbox" name="featured" checked={entry?.featured} class="rounded border-slate-700 bg-slate-950" />
+          <span>Destacar en Home</span>
+        </label>
+        <label class="inline-flex items-center gap-2 font-mono text-xs text-amber-300">
+          <input type="checkbox" name="draft" checked={entry?.draft} class="rounded border-slate-700 bg-slate-950" />
+          <span>Borrador Oculto</span>
+        </label>
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block font-mono text-xs text-slate-300">Etiquetas (separadas por coma)</label>
+        <input
+          type="text"
+          name="tags"
+          value={(entry?.tags || []).join(', ')}
+          placeholder="Arquitectura, Backend, C#, SAP, Cloud..."
+          class="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2 font-mono text-xs text-white"
+        />
+      </div>
+    </div>
+
+    {/* 2. Enlaces Externos */}
+    <div class="rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+      <h2 class="font-mono text-xs font-bold uppercase text-cyan-400">Enlaces de Verificación (Opcionales)</h2>
+      <div class="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Repositorio GitHub URL</label>
+          <input
+            type="url"
+            name="repositoryUrl"
+            value={entry?.links?.repositoryUrl || ''}
+            placeholder="https://github.com/..."
+            class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white"
+          />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Demo en Vivo URL</label>
+          <input
+            type="url"
+            name="liveDemoUrl"
+            value={entry?.links?.liveDemoUrl || ''}
+            placeholder="https://..."
+            class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white"
+          />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Documentación Externa URL</label>
+          <input
+            type="url"
+            name="documentationUrl"
+            value={entry?.links?.documentationUrl || ''}
+            placeholder="https://..."
+            class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white"
+          />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Video Externo URL</label>
+          <input
+            type="url"
+            name="videoUrl"
+            value={entry?.links?.videoUrl || ''}
+            placeholder="https://..."
+            class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white"
+          />
+        </div>
+      </div>
+    </div>
+
+    {/* =====================================================================
+        3. CAMPOS ESPECÍFICOS DINÁMICOS POR SECCIÓN
+       ===================================================================== */}
+
+    {/* ACADÉMICOS & PROYECTOS PERSONALES (ARQUITECTURA) */}
+    <div data-sec-group="academic-projects,personal-projects" class="space-y-5 rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+      <h2 class="font-mono text-xs font-bold uppercase text-emerald-400">
+        Ingeniería, Planteamiento del Problema y Arquitectura 4+1
+      </h2>
+
+      <div data-sec-only="academic-projects" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Asignatura UMAD</label>
+          <input type="text" name="course" value={d.course || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Semestre</label>
+          <input type="text" name="semester" value={d.semester || ''} placeholder="Ej. 7mo Semestre" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Periodo Académico</label>
+          <input type="text" name="academicPeriod" value={d.academicPeriod || ''} placeholder="Ej. Otoño 2026" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Docente / Asesor</label>
+          <input type="text" name="professor" value={d.professor || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+      </div>
+
+      <div data-sec-only="personal-projects" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Tipo de Proyecto Personal</label>
+          <input type="text" name="projectType" value={d.projectType || 'Web-Application'} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Estado Actual</label>
+          <input type="text" name="status" value={d.status || 'MVP Funcional'} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Tu Rol Técnico</label>
+          <input type="text" name="role" value={d.role || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Integrantes (separados por coma)</label>
+          <input type="text" name="teamMembers" value={(d.teamMembers || []).join(', ')} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Metodologías (separadas por coma)</label>
+          <input type="text" name="methodology" value={(d.methodology || []).join(', ')} placeholder="Scrum, RAD, PSP/TSP, UML..." class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">Planteamiento del Problema</label>
+        <textarea name="problemStatement" rows="3" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white">{d.problemStatement || ''}</textarea>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Patrón Arquitectónico</label>
+          <input type="text" name="architecturePattern" value={d.architecturePattern || ''} placeholder="Ej. Cliente-Servidor REST / MVVM / Microservicios" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Resumen de Arquitectura</label>
+          <input type="text" name="architectureSummary" value={d.architectureSummary || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div>
+          <label class="block font-mono text-[10px] text-cyan-400">Vista Lógica (4+1)</label>
+          <textarea name="viewLogical" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-2.5 py-1.5 text-xs text-white">{d.views4Plus1?.logical || ''}</textarea>
+        </div>
+        <div>
+          <label class="block font-mono text-[10px] text-cyan-400">Vista de Procesos (4+1)</label>
+          <textarea name="viewProcess" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-2.5 py-1.5 text-xs text-white">{d.views4Plus1?.process || ''}</textarea>
+        </div>
+        <div>
+          <label class="block font-mono text-[10px] text-cyan-400">Vista de Desarrollo (4+1)</label>
+          <textarea name="viewDevelopment" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-2.5 py-1.5 text-xs text-white">{d.views4Plus1?.development || ''}</textarea>
+        </div>
+        <div>
+          <label class="block font-mono text-[10px] text-cyan-400">Vista Física / Despliegue (4+1)</label>
+          <textarea name="viewPhysical" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-2.5 py-1.5 text-xs text-white">{d.views4Plus1?.physical || ''}</textarea>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block font-mono text-[10px] text-emerald-400">Escenarios / Casos de Uso (+1)</label>
+          <textarea name="viewScenarios" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-2.5 py-1.5 text-xs text-white">{d.views4Plus1?.scenarios || ''}</textarea>
+        </div>
+      </div>
+    </div>
+
+    {/* HACKATONES */}
+    <div data-sec-group="hackathons" class="space-y-4 rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+      <h2 class="font-mono text-xs font-bold uppercase text-amber-400">Datos del Hackatón</h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Nombre Oficial del Evento</label>
+          <input type="text" name="eventName" value={d.eventName || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Organizador</label>
+          <input type="text" name="organizer" value={d.organizer || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Sede / Ciudad</label>
+          <input type="text" name="location" value={d.location || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Modalidad</label>
+          <input type="text" name="modality" value={d.modality || 'Presencial'} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Duración (Horas)</label>
+          <input type="number" name="durationHours" value={d.durationHours || 48} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Logro / Reconocimiento</label>
+          <input type="text" name="achievement" value={d.achievement || ''} placeholder="Ej. Finalista / 1er Lugar" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+      </div>
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">Track / Reto Abordado</label>
+        <input type="text" name="challengeTrack" value={d.challengeTrack || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+      </div>
+    </div>
+
+    {/* COLABORACIONES NACIONALES E INTERNACIONALES */}
+    <div data-sec-group="collaborations" class="space-y-4 rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+      <h2 class="font-mono text-xs font-bold uppercase text-indigo-400">Colaboración Nacional / Internacional</h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Alcance (Nacional, Internacional, COIL...)</label>
+          <input type="text" name="scope" value={d.scope || 'Nacional'} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Impacto Generado</label>
+          <input type="text" name="impactGenerated" value={d.impactGenerated || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+      </div>
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">
+          Entidades Aliadas (1 por línea: Nombre | País | Tipo)
+        </label>
+        <textarea name="partnerEntitiesLines" rows="3" placeholder="Universidad Aliada | Colombia | Universidad" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 font-mono text-xs text-white">{partnerEntitiesLines}</textarea>
+      </div>
+    </div>
+
+    {/* EXPO-INGENIERÍAS */}
+    <div data-sec-group="expos" class="space-y-4 rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+      <h2 class="font-mono text-xs font-bold uppercase text-emerald-400">Datos de Expo-Ingenierías</h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Edición del Evento</label>
+          <input type="text" name="edition" value={d.edition || ''} placeholder="Expo-Ingenierías UMAD" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Nombre del Prototipo</label>
+          <input type="text" name="prototypeName" value={d.prototypeName || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Categoría / Stand</label>
+          <input type="text" name="category" value={d.category || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Acreditación / Reconocimiento</label>
+          <input type="text" name="accreditationOrAward" value={d.accreditationOrAward || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+      </div>
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">Resumen de Deliberación y Feedback del Jurado</label>
+        <textarea name="juryFeedbackSummary" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white">{d.juryFeedbackSummary || ''}</textarea>
+      </div>
+    </div>
+
+    {/* CERTIFICACIONES SAP & CREDENCIALES */}
+    <div data-sec-group="certifications" class="space-y-4 rounded-2xl border border-amber-500/30 bg-surface-950/70 p-5">
+      <h2 class="font-mono text-xs font-bold uppercase text-amber-400">Credencial Oficial / Certificación SAP</h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Título Oficial de Credencial</label>
+          <input type="text" name="credentialTitle" value={d.credentialTitle || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Entidad Emisora (SAP, AWS, Cisco...)</label>
+          <input type="text" name="issuer" value={d.issuer || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">ID / Folio de Credencial</label>
+          <input type="text" name="credentialId" value={d.credentialId || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Fecha de Emisión</label>
+          <input type="text" name="issueDate" value={d.issueDate || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Vigencia / Expiración</label>
+          <input type="text" name="expirationDate" value={d.expirationDate || 'Vigente'} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">URL Oficial de Verificación</label>
+          <input type="url" name="verificationUrl" value={d.verificationUrl || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">
+          Módulos Aprendidos (1 por línea: Código | Nombre | Descripción)
+        </label>
+        <textarea name="sapModulesLines" rows="4" placeholder="SAP MM | Materials Management | Ciclo Procure-to-Pay..." class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 font-mono text-xs text-white">{sapModulesLines}</textarea>
+      </div>
+
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">
+          Aplicación en Procesos Empresariales (1 punto por línea)
+        </label>
+        <textarea name="businessAppsLines" rows="3" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white">{(d.businessProcessApplications || []).join('\n')}</textarea>
+      </div>
+    </div>
+
+    {/* SERVICIO SOCIAL */}
+    <div data-sec-group="community-service" class="space-y-4 rounded-2xl border border-emerald-500/30 bg-surface-950/70 p-5">
+      <h2 class="font-mono text-xs font-bold uppercase text-emerald-400">Datos Oficiales de Servicio Social</h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="lg:col-span-2">
+          <label class="block font-mono text-[11px] text-slate-400">Institución Receptora</label>
+          <input type="text" name="receivingInstitution" value={d.receivingInstitution || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Área o Departamento</label>
+          <input type="text" name="departmentOrArea" value={d.departmentOrArea || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs text-white" />
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Total de Horas</label>
+          <input type="number" name="totalHours" value={d.totalHours || 480} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+        </div>
+      </div>
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">Periodo Oficial</label>
+        <input type="text" name="period" value={d.period || ''} class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-mono text-xs text-white" />
+      </div>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Impacto Social</label>
+          <textarea name="socialImpact" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white">{d.socialImpact || ''}</textarea>
+        </div>
+        <div>
+          <label class="block font-mono text-[11px] text-slate-400">Impacto Técnico / Administrativo</label>
+          <textarea name="technicalImpact" rows="2" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white">{d.technicalImpact || ''}</textarea>
+        </div>
+      </div>
+      <div>
+        <label class="block font-mono text-[11px] text-slate-400">Actividades Clave (1 actividad por línea)</label>
+        <textarea name="keyActivitiesLines" rows="4" class="mt-1 w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white">{(d.keyActivities || []).join('\n')}</textarea>
+      </div>
+    </div>
+
+    {/* 4. Stack Tecnológico, Métricas y Entregables */}
+    <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+      <div class="rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+        <label class="block font-mono text-xs font-bold uppercase text-cyan-400">
+          Stack Tecnológico (1 por línea: Nombre | Categoría | Versión)
+        </label>
+        <p class="mt-1 font-mono text-[10px] text-slate-400">
+          Categorías: language, framework, database, cloud-devops, architecture, methodology, erp-enterprise, testing-qa, tool
+        </p>
+        <textarea
+          name="techLines"
+          rows="5"
+          placeholder="Node.js | framework | 22&#10;SQLite3 | database"
+          class="mt-2 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 font-mono text-xs text-white"
+        >{techLines}</textarea>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+        <label class="block font-mono text-xs font-bold uppercase text-emerald-400">
+          Métricas Cuantificables (1 por línea: Etiqueta | Valor | Descripción)
+        </label>
+        <p class="mt-1 font-mono text-[10px] text-slate-400">
+          Ejemplo: Latencia Promedio | 85 ms | Consultas sobre historial local
+        </p>
+        <textarea
+          name="metricsLines"
+          rows="5"
+          placeholder="Cumplimiento RF | 100% | 12/12 requerimientos validados"
+          class="mt-2 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 font-mono text-xs text-white"
+        >{metricsLines}</textarea>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-slate-800 bg-surface-950/70 p-5">
+      <label class="block font-mono text-xs font-bold uppercase text-indigo-400">
+        Entregables de Ingeniería (1 por línea: Título | Tipo | Descripción | URL opcional)
+      </label>
+      <textarea
+        name="deliverablesLines"
+        rows="3"
+        placeholder="Repositorio Oficial | Source-Code | Código fuente completo | https://github.com/..."
+        class="mt-2 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 font-mono text-xs text-white"
+      >{deliverablesLines}</textarea>
+    </div>
+
+    {/* 5. Cuerpo de Documentación en Markdown */}
+    <div>
+      <label class="block font-mono text-xs font-bold uppercase text-slate-200">
+        Documentación Técnica Extendida (Markdown soportado)
+      </label>
+      <textarea
+        name="markdownBody"
+        rows="8"
+        placeholder="### Decisiones Arquitectónicas&#10;- Describe a profundidad la implementación, retos superados y validaciones..."
+        class="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 font-mono text-xs leading-relaxed text-slate-100"
+      >{entry?.markdownBody || ''}</textarea>
+    </div>
+
+    <div class="flex items-center justify-end gap-3 border-t border-slate-800 pt-5">
+      <a href="/admin" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 font-mono text-xs text-slate-300">
+        Cancelar
+      </a>
+      <button
+        type="submit"
+        class="rounded-xl bg-emerald-500 px-6 py-2.5 font-mono text-xs font-bold text-slate-950 transition hover:bg-emerald-400"
+      >
+        {mode === 'create' ? '✓ Crear Entrada y Habilitar Carga de Archivos' : '✓ Guardar Cambios'}
+      </button>
+    </div>
+  </form>
+
+  {/* Si estamos editando, mostramos el gestor de carga de archivos aquí mismo */}
+  {mode === 'edit' && entry && <EvidenceManager entry={entry} isEditorView={true} />}
+</div>
+
+<script>
+  const sectionSelect = document.getElementById('field-section') as HTMLSelectElement | null;
+
+  function syncSectionVisibility() {
+    const sec = sectionSelect?.value || 'academic-projects';
+    document.querySelectorAll('[data-sec-group]').forEach((el) => {
+      const allowed = (el.getAttribute('data-sec-group') || '').split(',');
+      (el as HTMLElement).style.display = allowed.includes(sec) ? '' : 'none';
+    });
+    document.querySelectorAll('[data-sec-only]').forEach((el) => {
+      const only = el.getAttribute('data-sec-only');
+      (el as HTMLElement).style.display = only === sec ? '' : 'none';
+    });
+  }
+
+  sectionSelect?.addEventListener('change', syncSectionVisibility);
+  syncSectionVisibility();
+
+  function splitCsv(raw: string): string[] {
+    return raw
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+
+  function splitLines(raw: string): string[] {
+    return raw
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+
+  const editorForm = document.getElementById('ebl-entry-editor-form') as HTMLFormElement | null;
+  editorForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const mode = editorForm.getAttribute('data-mode');
+    const origSec = editorForm.getAttribute('data-original-section') || '';
+    const origSlug = editorForm.getAttribute('data-original-slug') || '';
+
+    const fd = new FormData(editorForm);
+    const section = origSec || String(fd.get('section') || 'academic-projects');
+
+    const techStack = splitLines(String(fd.get('techLines') || '')).map((line) => {
+      const [name, category, version] = line.split('|').map((x) => x.trim());
+      return { name: name || 'Tool', category: category || 'tool', version: version || '' };
+    });
+
+    const metrics = splitLines(String(fd.get('metricsLines') || '')).map((line) => {
+      const [label, value, description] = line.split('|').map((x) => x.trim());
+      return { label: label || 'Métrica', value: value || '-', description: description || '' };
+    });
+
+    const deliverables = splitLines(String(fd.get('deliverablesLines') || '')).map((line) => {
+      const [title, type, description, url] = line.split('|').map((x) => x.trim());
+      return {
+        title: title || 'Entregable',
+        type: type || 'Technical-Report',
+        description: description || '',
+        url: url || '',
+      };
+    });
+
+    const modulesLearned = splitLines(String(fd.get('sapModulesLines') || '')).map((line) => {
+      const [code, name, description] = line.split('|').map((x) => x.trim());
+      return { code: code || '', name: name || code || 'Módulo', description: description || '' };
+    });
+
+    const partnerEntities = splitLines(String(fd.get('partnerEntitiesLines') || '')).map((line) => {
+      const [name, country, entityType] = line.split('|').map((x) => x.trim());
+      return { name: name || 'Entidad', country: country || 'México', entityType: entityType || 'Institución' };
+    });
+
+    const teamMembers = splitCsv(String(fd.get('teamMembers') || ''));
+
+    const payload = {
+      slug: String(fd.get('slug') || ''),
+      section,
+      title: String(fd.get('title') || ''),
+      subtitle: String(fd.get('subtitle') || ''),
+      summary: String(fd.get('summary') || ''),
+      publishDate: String(fd.get('publishDate') || ''),
+      featured: fd.get('featured') === 'on',
+      draft: fd.get('draft') === 'on',
+      bentoSpan: String(fd.get('bentoSpan') || 'col-span-1'),
+      tags: splitCsv(String(fd.get('tags') || '')),
+      techStack,
+      metrics,
+      deliverables,
+      links: {
+        repositoryUrl: String(fd.get('repositoryUrl') || ''),
+        liveDemoUrl: String(fd.get('liveDemoUrl') || ''),
+        documentationUrl: String(fd.get('documentationUrl') || ''),
+        videoUrl: String(fd.get('videoUrl') || ''),
+      },
+      details: {
+        course: String(fd.get('course') || ''),
+        semester: String(fd.get('semester') || ''),
+        academicPeriod: String(fd.get('academicPeriod') || ''),
+        professor: String(fd.get('professor') || ''),
+        problemStatement: String(fd.get('problemStatement') || ''),
+        architecturePattern: String(fd.get('architecturePattern') || ''),
+        architectureSummary: String(fd.get('architectureSummary') || ''),
+        views4Plus1: {
+          logical: String(fd.get('viewLogical') || ''),
+          process: String(fd.get('viewProcess') || ''),
+          development: String(fd.get('viewDevelopment') || ''),
+          physical: String(fd.get('viewPhysical') || ''),
+          scenarios: String(fd.get('viewScenarios') || ''),
+        },
+        role: String(fd.get('role') || ''),
+        teamSize: Math.max(1, teamMembers.length || 1),
+        teamMembers,
+        methodology: splitCsv(String(fd.get('methodology') || '')),
+        eventName: String(fd.get('eventName') || ''),
+        organizer: String(fd.get('organizer') || ''),
+        location: String(fd.get('location') || ''),
+        modality: String(fd.get('modality') || 'Presencial'),
+        durationHours: Number(fd.get('durationHours') || 0) || undefined,
+        challengeTrack: String(fd.get('challengeTrack') || ''),
+        achievement: String(fd.get('achievement') || ''),
+        scope: String(fd.get('scope') || 'Nacional'),
+        impactGenerated: String(fd.get('impactGenerated') || ''),
+        partnerEntities,
+        edition: String(fd.get('edition') || ''),
+        prototypeName: String(fd.get('prototypeName') || ''),
+        category: String(fd.get('category') || ''),
+        accreditationOrAward: String(fd.get('accreditationOrAward') || ''),
+        juryFeedbackSummary: String(fd.get('juryFeedbackSummary') || ''),
+        projectType: String(fd.get('projectType') || 'Web-Application'),
+        status: String(fd.get('status') || 'MVP Funcional'),
+        credentialTitle: String(fd.get('credentialTitle') || ''),
+        issuer: String(fd.get('issuer') || ''),
+        credentialId: String(fd.get('credentialId') || ''),
+        issueDate: String(fd.get('issueDate') || ''),
+        expirationDate: String(fd.get('expirationDate') || ''),
+        verificationUrl: String(fd.get('verificationUrl') || ''),
+        modulesLearned,
+        businessProcessApplications: splitLines(String(fd.get('businessAppsLines') || '')),
+        receivingInstitution: String(fd.get('receivingInstitution') || ''),
+        departmentOrArea: String(fd.get('departmentOrArea') || ''),
+        period: String(fd.get('period') || ''),
+        totalHours: Number(fd.get('totalHours') || 480) || 480,
+        socialImpact: String(fd.get('socialImpact') || ''),
+        technicalImpact: String(fd.get('technicalImpact') || ''),
+        keyActivities: splitLines(String(fd.get('keyActivitiesLines') || '')),
+      },
+      markdownBody: String(fd.get('markdownBody') || ''),
+    };
+
+    const endpoint =
+      mode === 'edit' ? `/api/entries/${origSec}/${origSlug}` : '/api/entries';
+    const method = mode === 'edit' ? 'PUT' : 'POST';
+
+    const res = await fetch(endpoint, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      (window as any).showEblToast?.('Entrada guardada correctamente.');
+      setTimeout(() => {
+        window.location.href = `/${data.entry.section}/${data.entry.slug}`;
+      }, 400);
+    } else {
+      (window as any).showEblToast?.(data.error || 'Error al guardar entrada', 'error');
+    }
+  });
+</script>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 — Ruta no encontrada">
+  <div class="mx-auto max-w-lg py-20 text-center">
+    <span class="rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 font-mono text-xs text-cyan-300">
+      HTTP 404 // NOT FOUND
+    </span>
+    <h1 class="mt-4 text-3xl font-extrabold text-white">Ruta no encontrada en el portafolio</h1>
+    <p class="mt-2 text-sm text-slate-400">
+      La sección o documento solicitado no existe o se encuentra en estado de borrador privado.
+    </p>
+    <a
+      href="/"
+      class="mt-6 inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-5 py-2.5 font-mono text-xs font-bold text-slate-950 transition hover:bg-cyan-400"
+    >
+      ← Volver a Visión General
+    </a>
+  </div>
+</BaseLayout>

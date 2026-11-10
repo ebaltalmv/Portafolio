@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionDetailView from '../../components/bento/SectionDetailView.astro';
+import { getEntry } from '../../server/db';
+import { getViewerContext } from '../../server/auth';
+
+const slug = Astro.params.slug || '';
+const viewer = getViewerContext(Astro.cookies, Astro.url);
+const entry = await getEntry('hackathons', slug, viewer.isEditorView);
+
+if (!entry) {
+  return Astro.redirect('/hackathons');
+}
+---
+
+<BaseLayout title={entry.title} description={entry.summary} currentSection="hackathons" currentSlug={entry.slug}>
+  <SectionDetailView entry={entry} isEditorView={viewer.isEditorView} />
+</BaseLayout>

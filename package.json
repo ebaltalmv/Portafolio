@@ -1,0 +1,27 @@
+{
+  "name": "portafolio-ebl",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portafolio de Evidencias Académicas y Profesionales — Emmanuel Baltazar López (UMAD Ingeniería de Software)",
+  "scripts": {
+    "dev": "astro dev --port 4321",
+    "start": "node ./dist/server/entry.mjs",
+    "build": "astro build",
+    "build:gh-pages": "astro build && node scripts/export-gh-pages.mjs",
+    "preview": "node ./dist/server/entry.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^8.3.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@tailwindcss/typography": "^0.5.15",
+    "astro": "^4.16.18",
+    "marked": "^15.0.6",
+    "tailwindcss": "^3.4.17",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

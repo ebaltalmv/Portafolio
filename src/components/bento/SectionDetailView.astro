@@ -1,0 +1,529 @@
+---
+import { SECTION_META, type PortfolioEntry } from '../../server/schemas';
+import { renderMarkdown } from '../../server/markdown';
+import TechBadge from '../ui/TechBadge.astro';
+import MetricCard from '../ui/MetricCard.astro';
+import ArchitectureBlock from '../ui/ArchitectureBlock.astro';
+import EvidenceManager from '../evidence/EvidenceManager.astro';
+
+interface Props {
+  entry: PortfolioEntry;
+  isEditorView: boolean;
+}
+
+const { entry, isEditorView } = Astro.props;
+const meta = SECTION_META[entry.section];
+const renderedMarkdown = renderMarkdown(entry.markdownBody);
+const d = entry.details;
+---
+
+<article class="space-y-8">
+  <!-- Breadcrumb & Cabecera Principal -->
+  <header class="rounded-3xl border border-slate-800/90 bg-surface-900/85 p-6 sm:p-8">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <nav class="flex flex-wrap items-center gap-2 font-mono text-xs text-slate-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-cyan-300">Home</a>
+        <span>/</span>
+        <a href={meta.route} class="text-cyan-400 hover:underline">{meta.shortTitle}</a>
+        <span>/</span>
+        <span class="text-slate-500">{entry.slug}</span>
+      </nav>
+
+      <div class="flex flex-wrap items-center gap-2">
+        {entry.draft && (
+          <span class="rounded-md border border-amber-400/50 bg-amber-500/15 px-2.5 py-1 font-mono text-xs font-bold text-amber-300">
+            BORRADOR PRIVADO
+          </span>
+        )}
+        <span class="rounded-md border border-slate-800 bg-slate-950 px-2.5 py-1 font-mono text-xs text-slate-400">
+          Publicado: {entry.publishDate}
+        </span>
+        {isEditorView && (
+          <>
+            <a
+              href="#evidencias"
+              class="rounded-lg border border-amber-500/40 bg-amber-500/15 px-3 py-1 font-mono text-xs font-semibold text-amber-300 hover:bg-amber-500/25"
+            >
+              ↑ Subir Archivos / Evidencias
+            </a>
+            <a
+              href={`/admin/editor/${entry.section}/${entry.slug}`}
+              class="rounded-lg bg-cyan-500 px-3 py-1 font-mono text-xs font-semibold text-slate-950 hover:bg-cyan-400"
+            >
+              ✎ Editar Contenido
+            </a>
+          </>
+        )}
+      </div>
+    </div>
+
+    <h1 class="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-4xl">{entry.title}</h1>
+    {entry.subtitle && <p class="mt-2 font-mono text-sm text-cyan-300">{entry.subtitle}</p>}
+    <p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-300">{entry.summary}</p>
+
+    {/* Enlaces externos y Tags */}
+    <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 pt-5">
+      <div class="flex flex-wrap gap-1.5">
+        {entry.tags.map((tag) => (
+          <span class="rounded-full border border-slate-700/80 bg-slate-900 px-3 py-1 font-mono text-[11px] text-slate-300">
+            #{tag}
+          </span>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        {entry.links?.repositoryUrl && (
+          <a
+            href={entry.links.repositoryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-950 px-4 py-2 font-mono text-xs font-semibold text-white transition hover:border-cyan-400 hover:text-cyan-300"
+          >
+            <span>Repositorio GitHub</span>
+            <span>↗</span>
+          </a>
+        )}
+        {entry.links?.liveDemoUrl && (
+          <a
+            href={entry.links.liveDemoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-4 py-2 font-mono text-xs font-bold text-slate-950 transition hover:bg-emerald-400"
+          >
+            <span>Despliegue en Vivo</span>
+            <span>↗</span>
+          </a>
+        )}
+        {entry.links?.documentationUrl && (
+          <a
+            href={entry.links.documentationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-2 font-mono text-xs font-semibold text-cyan-300"
+          >
+            <span>Documentación Externa ↗</span>
+          </a>
+        )}
+      </div>
+    </div>
+  </header>
+
+  {/* Métricas Cuantificables */}
+  {entry.metrics.length > 0 && (
+    <section>
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-400">
+          INDICADORES Y RESULTADOS MEDIBLES
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {entry.metrics.map((metric) => (
+          <MetricCard metric={metric} />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* =========================================================================
+      FICHA TÉCNICA POR TIPO DE SECCIÓN
+     ========================================================================= */}
+  {entry.section === 'academic-projects' && (
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <section class="space-y-4 rounded-2xl border border-slate-800 bg-surface-900/75 p-6 lg:col-span-1">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">CONTEXTO ACADÉMICO UMAD</span>
+        <dl class="space-y-3 text-xs">
+          {d.course && (
+            <div>
+              <dt class="font-mono text-slate-400">Asignatura</dt>
+              <dd class="mt-0.5 font-semibold text-white">{d.course}</dd>
+            </div>
+          )}
+          <div class="grid grid-cols-2 gap-2">
+            {d.semester && (
+              <div>
+                <dt class="font-mono text-slate-400">Semestre</dt>
+                <dd class="mt-0.5 font-semibold text-slate-200">{d.semester}</dd>
+              </div>
+            )}
+            {d.academicPeriod && (
+              <div>
+                <dt class="font-mono text-slate-400">Periodo</dt>
+                <dd class="mt-0.5 font-semibold text-slate-200">{d.academicPeriod}</dd>
+              </div>
+            )}
+          </div>
+          {d.professor && (
+            <div>
+              <dt class="font-mono text-slate-400">Docente / Asesor</dt>
+              <dd class="mt-0.5 text-slate-200">{d.professor}</dd>
+            </div>
+          )}
+          {d.role && (
+            <div>
+              <dt class="font-mono text-slate-400">Rol en el Equipo</dt>
+              <dd class="mt-0.5 font-medium text-emerald-300">{d.role}</dd>
+            </div>
+          )}
+          {d.teamMembers && d.teamMembers.length > 0 && (
+            <div>
+              <dt class="font-mono text-slate-400">Integrantes ({d.teamSize || d.teamMembers.length})</dt>
+              <dd class="mt-1 space-y-1 text-slate-300">
+                {d.teamMembers.map((m) => (
+                  <div class="rounded border border-slate-800/80 bg-slate-950/60 px-2.5 py-1">{m}</div>
+                ))}
+              </dd>
+            </div>
+          )}
+          {d.methodology && d.methodology.length > 0 && (
+            <div>
+              <dt class="font-mono text-slate-400">Metodología Aplicada</dt>
+              <dd class="mt-1.5 flex flex-wrap gap-1.5">
+                {d.methodology.map((meth) => (
+                  <span class="rounded border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-mono text-[11px] text-amber-300">
+                    {meth}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          )}
+        </dl>
+      </section>
+
+      <section class="flex flex-col justify-between rounded-2xl border border-slate-800 bg-surface-900/75 p-6 lg:col-span-2">
+        <div>
+          <span class="font-mono text-[11px] uppercase tracking-widest text-amber-400">
+            PLANTEAMIENTO DEL PROBLEMA
+          </span>
+          <h2 class="mt-1 text-xl font-bold text-white">Problemática Abordada</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-300">
+            {d.problemStatement || entry.summary}
+          </p>
+        </div>
+
+        {entry.techStack.length > 0 && (
+          <div class="mt-6 border-t border-slate-800 pt-5">
+            <h3 class="font-mono text-xs uppercase tracking-wider text-slate-400">
+              Stack Tecnológico, Herramientas y Marcos
+            </h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              {entry.techStack.map((tech) => (
+                <TechBadge item={tech} />
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+    </div>
+  )}
+
+  {entry.section === 'academic-projects' && (
+    <ArchitectureBlock
+      pattern={d.architecturePattern}
+      summary={d.architectureSummary}
+      views4Plus1={d.views4Plus1}
+    />
+  )}
+
+  {/* HACKATONES */}
+  {entry.section === 'hackathons' && (
+    <section class="grid grid-cols-1 gap-6 rounded-2xl border border-slate-800 bg-surface-900/75 p-6 md:grid-cols-2">
+      <div class="space-y-3 text-xs">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-amber-400">FICHA DEL HACKATÓN</span>
+        <p class="text-sm text-white"><strong>Evento:</strong> {d.eventName || entry.title}</p>
+        {d.organizer && <p class="text-slate-300"><strong>Organizador:</strong> {d.organizer}</p>}
+        <p class="text-slate-300">
+          <strong>Sede / Modalidad:</strong> {d.location || 'México'} ({d.modality || 'Presencial'})
+          {d.durationHours ? ` · ${d.durationHours} hrs` : ''}
+        </p>
+        {d.challengeTrack && <p class="text-cyan-300"><strong>Reto / Track:</strong> {d.challengeTrack}</p>}
+        {d.role && <p class="text-slate-300"><strong>Rol Técnico:</strong> {d.role}</p>}
+        {d.achievement && (
+          <div class="rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 font-mono text-amber-300">
+            🏆 Reconocimiento / Logro: <strong>{d.achievement}</strong>
+          </div>
+        )}
+      </div>
+      <div class="space-y-3">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">SOLUCIÓN EN TIEMPO RÉCORD</span>
+        <p class="text-sm leading-relaxed text-slate-300">{d.problemStatement || entry.summary}</p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          {entry.techStack.map((tech) => (
+            <TechBadge item={tech} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* PROYECTOS NACIONALES E INTERNACIONALES */}
+  {entry.section === 'collaborations' && (
+    <section class="space-y-5 rounded-2xl border border-slate-800 bg-surface-900/75 p-6">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="font-mono text-xs uppercase tracking-widest text-indigo-400">
+          ALCANCE {d.scope?.toUpperCase() || 'INTERINSTITUCIONAL'}
+        </span>
+        {d.period && <span class="font-mono text-xs text-slate-400">{d.period}</span>}
+      </div>
+      {d.role && <p class="text-sm text-emerald-300"><strong>Rol Técnico:</strong> {d.role}</p>}
+      {d.impactGenerated && (
+        <div>
+          <h3 class="text-sm font-bold text-white">Impacto Generado</h3>
+          <p class="mt-1 text-sm leading-relaxed text-slate-300">{d.impactGenerated}</p>
+        </div>
+      )}
+      {d.partnerEntities && d.partnerEntities.length > 0 && (
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {d.partnerEntities.map((ent) => (
+            <div class="rounded-xl border border-slate-800 bg-slate-950 p-3.5 text-xs">
+              <p class="font-semibold text-white">{ent.name}</p>
+              <p class="mt-1 font-mono text-slate-400">{ent.entityType} · {ent.country}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  )}
+
+  {/* EXPO-INGENIERÍAS */}
+  {entry.section === 'expos' && (
+    <section class="grid grid-cols-1 gap-6 rounded-2xl border border-slate-800 bg-surface-900/75 p-6 md:grid-cols-2">
+      <div class="space-y-2.5 text-xs">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-emerald-400">ACREDITACIÓN DE FERIA TÉCNICA</span>
+        <p class="text-sm text-white"><strong>Edición:</strong> {d.edition || entry.title}</p>
+        {d.prototypeName && <p class="text-slate-300"><strong>Prototipo:</strong> {d.prototypeName}</p>}
+        {d.category && <p class="text-slate-300"><strong>Categoría:</strong> {d.category}</p>}
+        {d.standIdentifier && <p class="text-slate-300"><strong>Stand:</strong> {d.standIdentifier}</p>}
+        {d.role && <p class="text-cyan-300"><strong>Rol:</strong> {d.role}</p>}
+        {d.accreditationOrAward && (
+          <div class="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3 font-mono text-emerald-300">
+            ✦ Acreditación: <strong>{d.accreditationOrAward}</strong>
+          </div>
+        )}
+      </div>
+      <div class="space-y-2.5">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">DELIBERACIÓN Y RETROALIMENTACIÓN DEL JURADO</span>
+        <p class="text-sm leading-relaxed text-slate-300">
+          {d.juryFeedbackSummary || entry.summary}
+        </p>
+      </div>
+    </section>
+  )}
+
+  {/* PROYECTOS PERSONALES */}
+  {entry.section === 'personal-projects' && (
+    <div class="space-y-6">
+      <section class="rounded-2xl border border-slate-800 bg-surface-900/75 p-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1 font-mono text-xs text-cyan-300">
+            {d.projectType || 'Software'}
+          </span>
+          <span class="rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 font-mono text-xs text-emerald-300">
+            Estado: {d.status || 'Activo'}
+          </span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-300">{d.problemStatement || entry.summary}</p>
+        {entry.techStack.length > 0 && (
+          <div class="mt-4 flex flex-wrap gap-2">
+            {entry.techStack.map((tech) => (
+              <TechBadge item={tech} />
+            ))}
+          </div>
+        )}
+      </section>
+      <ArchitectureBlock
+        pattern={d.architecturePattern}
+        summary={d.architectureSummary}
+        views4Plus1={d.views4Plus1}
+      />
+    </div>
+  )}
+
+  {/* CERTIFICACIONES SAP & CREDENCIALES */}
+  {entry.section === 'certifications' && (
+    <div class="space-y-6">
+      <section class="rounded-2xl border border-amber-500/30 bg-surface-900/80 p-6">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+          <div class="md:col-span-2">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-amber-400">CREDENCIAL Y ENTIDAD EMISORA</span>
+            <h2 class="mt-1 text-lg font-bold text-white">{d.credentialTitle || entry.title}</h2>
+            <p class="mt-1 font-mono text-xs text-cyan-300">{d.issuer}</p>
+          </div>
+          <div>
+            <span class="font-mono text-[11px] text-slate-400">Emisión / Vigencia</span>
+            <p class="mt-1 font-mono text-sm font-semibold text-white">
+              {d.issueDate || entry.publishDate} · {d.expirationDate || 'Vigente'}
+            </p>
+          </div>
+          <div>
+            <span class="font-mono text-[11px] text-slate-400">Folio / Verificación</span>
+            <p class="mt-1 font-mono text-xs text-slate-300">{d.credentialId || 'Verificable con documento adjunto'}</p>
+            {d.verificationUrl && (
+              <a
+                href={d.verificationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-1 inline-block font-mono text-xs text-emerald-400 hover:underline"
+              >
+                Verificar credencial ↗
+              </a>
+            )}
+          </div>
+        </div>
+
+        {entry.techStack.length > 0 && (
+          <div class="mt-5 flex flex-wrap gap-2 border-t border-slate-800 pt-4">
+            {entry.techStack.map((tech) => (
+              <TechBadge item={tech} />
+            ))}
+          </div>
+        )}
+      </section>
+
+      {d.modulesLearned && d.modulesLearned.length > 0 && (
+        <section class="rounded-2xl border border-slate-800 bg-surface-900/75 p-6">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">
+            DESGLOSE TÉCNICO DE MÓDULOS Y COMPETENCIAS
+          </span>
+          <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {d.modulesLearned.map((mod) => (
+              <div class="rounded-xl border border-slate-800 bg-surface-950/80 p-4">
+                <div class="flex items-center gap-2">
+                  {mod.code && (
+                    <span class="rounded border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 font-mono text-[11px] font-bold text-amber-300">
+                      {mod.code}
+                    </span>
+                  )}
+                  <h3 class="text-sm font-semibold text-white">{mod.name}</h3>
+                </div>
+                <p class="mt-2 text-xs leading-relaxed text-slate-300">{mod.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {d.businessProcessApplications && d.businessProcessApplications.length > 0 && (
+        <section class="rounded-2xl border border-slate-800 bg-surface-900/75 p-6">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-emerald-400">
+            APLICACIÓN EN PROCESOS EMPRESARIALES Y DE INGENIERÍA
+          </span>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            {d.businessProcessApplications.map((app) => (
+              <li class="flex items-start gap-2.5">
+                <span class="mt-1 font-mono text-xs text-emerald-400">▸</span>
+                <span>{app}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
+  )}
+
+  {/* SERVICIO SOCIAL */}
+  {entry.section === 'community-service' && (
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <section class="space-y-3 rounded-2xl border border-slate-800 bg-surface-900/80 p-6">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-emerald-400">DATOS OFICIALES</span>
+        <div>
+          <p class="font-mono text-[11px] text-slate-400">Institución Receptora</p>
+          <p class="mt-0.5 text-sm font-semibold text-white">{d.receivingInstitution}</p>
+        </div>
+        {d.departmentOrArea && (
+          <div>
+            <p class="font-mono text-[11px] text-slate-400">Área / Departamento</p>
+            <p class="mt-0.5 text-xs text-cyan-300">{d.departmentOrArea}</p>
+          </div>
+        )}
+        {d.period && (
+          <div>
+            <p class="font-mono text-[11px] text-slate-400">Periodo Oficial</p>
+            <p class="mt-0.5 font-mono text-xs text-slate-200">{d.period}</p>
+          </div>
+        )}
+        {d.totalHours && (
+          <div>
+            <p class="font-mono text-[11px] text-slate-400">Horas Acreditables</p>
+            <p class="mt-0.5 font-mono text-lg font-bold text-emerald-400">{d.totalHours} horas</p>
+          </div>
+        )}
+      </section>
+
+      <section class="space-y-4 rounded-2xl border border-slate-800 bg-surface-900/80 p-6 lg:col-span-2">
+        {d.socialImpact && (
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">IMPACTO SOCIAL</span>
+            <p class="mt-1 text-sm leading-relaxed text-slate-300">{d.socialImpact}</p>
+          </div>
+        )}
+        {d.technicalImpact && (
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-amber-400">IMPACTO TÉCNICO Y ADMINISTRATIVO</span>
+            <p class="mt-1 text-sm leading-relaxed text-slate-300">{d.technicalImpact}</p>
+          </div>
+        )}
+        {d.keyActivities && d.keyActivities.length > 0 && (
+          <div class="border-t border-slate-800 pt-4">
+            <h3 class="font-mono text-xs uppercase text-slate-400">Actividades Clave Realizadas</h3>
+            <ul class="mt-2.5 space-y-2 text-xs text-slate-300 sm:text-sm">
+              {d.keyActivities.map((act) => (
+                <li class="flex items-start gap-2">
+                  <span class="font-mono text-emerald-400">✓</span>
+                  <span>{act}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
+    </div>
+  )}
+
+  {/* Entregables Técnicos Registrados */}
+  {entry.deliverables.length > 0 && (
+    <section class="rounded-2xl border border-slate-800 bg-surface-900/75 p-6">
+      <span class="font-mono text-[11px] uppercase tracking-widest text-cyan-400">
+        ARTEFACTOS DE INGENIERÍA Y ENTREGABLES
+      </span>
+      <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {entry.deliverables.map((deliv) => (
+          <div class="flex items-start justify-between gap-3 rounded-xl border border-slate-800 bg-surface-950/80 p-4">
+            <div>
+              <span class="rounded border border-slate-700 bg-slate-900 px-2 py-0.5 font-mono text-[10px] text-cyan-300">
+                {deliv.type}
+              </span>
+              <h3 class="mt-2 text-sm font-semibold text-white">{deliv.title}</h3>
+              {deliv.description && <p class="mt-1 text-xs text-slate-400">{deliv.description}</p>}
+            </div>
+            {deliv.url && (
+              <a
+                href={deliv.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="shrink-0 rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-3 py-1.5 font-mono text-xs text-cyan-300 hover:bg-cyan-500/20"
+              >
+                Abrir ↗
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* Documentación Técnica Extendida en Markdown */}
+  {renderedMarkdown && (
+    <section class="rounded-2xl border border-slate-800 bg-surface-900/75 p-6 sm:p-8">
+      <span class="font-mono text-[11px] uppercase tracking-widest text-indigo-400">
+        DOCUMENTACIÓN TÉCNICA DETALLADA
+      </span>
+      <div
+        class="prose prose-invert prose-sm sm:prose-base mt-4 max-w-none prose-headings:font-bold prose-headings:text-white prose-a:text-cyan-400 prose-code:rounded prose-code:bg-slate-950 prose-code:px-1.5 prose-code:py-0.5 prose-code:font-mono prose-code:text-cyan-300"
+        set:html={renderedMarkdown}
+      />
+    </section>
+  )}
+
+  {/* Gestor y Galería de Evidencias (Modo Visitante + Modo Editor/Subida) */}
+  <EvidenceManager entry={entry} isEditorView={isEditorView} />
+</article>

@@ -1,0 +1,3957 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-11-10T18:05:24.781Z",
+  "profile": {
+    "fullName": "Emmanuel Baltazar López",
+    "shortCode": "EBL // ING-SW",
+    "headline": "Ingeniería de Software · Arquitectura de Sistemas, Backend & Cloud Junior",
+    "degree": "Licenciatura en Ingeniería de Software",
+    "university": "Universidad Madero (UMAD) — Puebla, México",
+    "studentId": "20124558",
+    "currentSemester": "7mo Semestre (Otoño 2026)",
+    "gpa": "9.6 / 10.0",
+    "honorAward": "Premio de Excelencia Académica \"John Wesley\"",
+    "location": "Puebla, México",
+    "email": "emma.balta09@gmail.com",
+    "phone": "+52 797 146 88 27",
+    "bio": "Estudiante de 7mo semestre de Ingeniería de Software en la Universidad Madero (promedio acumulado 9.6, distinción John Wesley) con experiencia práctica en desarrollo Backend financiero en FastBank, diseño de arquitecturas cliente-servidor e IoT, bases de datos transaccionales SQL Server, integración de IA generativa y modelado de procesos empresariales bajo estándares BPMN 2.0, SAP ERP y marcos ágiles/disciplinados (Scrum, RAD, PSP/TSP).",
+    "githubUrl": "https://github.com/ebaltalmv",
+    "linkedinUrl": "https://www.linkedin.com/in/emmanuel-baltazar-lópez-431110398",
+    "cvDocument": {
+      "fileName": "CV_Emmanuel-Baltazar-Lopez_V1.pdf",
+      "storedPath": "profile/CV_Emmanuel-Baltazar-Lopez_V1.pdf",
+      "url": "/api/uploads/profile/CV_Emmanuel-Baltazar-Lopez_V1.pdf",
+      "fileSize": 210983,
+      "uploadedAt": "2026-11-10T09:50:00.000Z"
+    },
+    "avatarImage": null,
+    "domainAreas": [
+      {
+        "code": "DOM-01",
+        "title": "Arquitectura Backend & APIs",
+        "description": "Diseño de servicios RESTful, lógica de negocio financiera, sesiones aisladas e integración de modelos LLM.",
+        "highlights": [
+          "C# / .NET",
+          "Node.js & Express 5",
+          "Python & Flask",
+          "Google Gemini API"
+        ]
+      },
+      {
+        "code": "DOM-02",
+        "title": "Ingeniería y Calidad de Software",
+        "description": "Modelado arquitectónico 4+1 vistas, UML, BPMN 2.0, trazabilidad de requerimientos y control de calidad.",
+        "highlights": [
+          "UML & 4+1 Kruchten",
+          "RAD / PSP / TSP",
+          "Scrum & Kanban",
+          "Azure DevOps & Git"
+        ]
+      },
+      {
+        "code": "DOM-03",
+        "title": "Datos, Cloud & Procesos ERP",
+        "description": "Modelado relacional normalizado, programación T-SQL, fundamentos AWS Cloud y procesos empresariales SAP.",
+        "highlights": [
+          "SQL Server (T-SQL) & SQLite",
+          "SAP S/4HANA (MM/SD) & ABAP",
+          "SAP Signavio & Crystal Reports",
+          "AWS Cloud Foundations"
+        ]
+      },
+      {
+        "code": "DOM-04",
+        "title": "Móviles Multiplataforma & IoT",
+        "description": "Aplicaciones nativas multiplataforma bajo MVVM y telemetría física extremo a extremo con microcontroladores.",
+        "highlights": [
+          ".NET MAUI & XAML (MVVM)",
+          "ESP32 & Arduino",
+          "Sensores Industriales",
+          "Web Speech API Multimodal"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "FastBank",
+        "role": "Desarrollador Backend Junior / Prácticas Profesionales",
+        "period": "2026",
+        "modality": "Puebla / Remoto, México",
+        "highlights": [
+          "Implementación de lógica de negocio backend para el cálculo y gestión de cotizaciones financieras dinámicas.",
+          "Integración y consumo seguro de APIs internas siguiendo lineamientos de calidad y validación.",
+          "Trabajo colaborativo bajo marco ágil Scrum gestionado en Microsoft Azure DevOps.",
+          "Control de versiones, Pull Requests e integración continua mediante Visual Studio y Azure Repos.",
+          "Elaboración de documentación técnica y ejecución de pruebas de validación funcional."
+        ],
+        "stack": [
+          "C#",
+          ".NET",
+          "REST APIs",
+          "Azure DevOps",
+          "Azure Repos",
+          "Visual Studio",
+          "Scrum"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Universidad Madero (UMAD)",
+        "program": "Licenciatura en Ingeniería de Software",
+        "period": "Agosto 2023 – En curso (7mo Semestre)",
+        "achievement": "Promedio acumulado 9.6 — Premio de Excelencia Académica \"John Wesley\""
+      },
+      {
+        "institution": "CECyTE Puebla",
+        "program": "Carrera Técnica en Programación",
+        "period": "2020 – 2023",
+        "achievement": "Formación técnica en lógica algorítmica, programación estructurada/POO y bases de datos"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "slug": "tutor-virtual-umad",
+      "section": "academic-projects",
+      "title": "Tutor Virtual UMAD — Plataforma Web Multimodal con IA Generativa",
+      "subtitle": "Tesina de Ingeniería de Software · Arquitectura Cliente-Servidor + Google Gemini 2.5 + Avatar 2D con TTS",
+      "summary": "Aplicación web académica que brinda orientación curricular personalizada a estudiantes UMAD mediante sesiones aisladas con Google Gemini 2.5, síntesis de voz Web Speech API y persistencia SQLite.",
+      "publishDate": "2026-05-15",
+      "featured": true,
+      "bentoSpan": "col-span-2",
+      "draft": false,
+      "tags": [
+        "IA Generativa",
+        "Arquitectura 4 Capas",
+        "Node.js",
+        "Multimodal TTS",
+        "Tesina UMAD"
+      ],
+      "techStack": [
+        {
+          "name": "Node.js",
+          "category": "framework",
+          "version": ""
+        },
+        {
+          "name": "Express",
+          "category": "framework",
+          "version": "5.2.1"
+        },
+        {
+          "name": "Google Gemini 2.5 API",
+          "category": "cloud-devops",
+          "version": ""
+        },
+        {
+          "name": "SQLite3",
+          "category": "database",
+          "version": ""
+        },
+        {
+          "name": "JavaScript (ES6+)",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "Web Speech API",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "RAD / PSP / TSP",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "Git & SemVer",
+          "category": "tool",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Cumplimiento Requerimientos",
+          "value": "100%",
+          "unit": "",
+          "description": "12/12 Requerimientos Funcionales y 5/5 No Funcionales validados."
+        },
+        {
+          "label": "Aprobación Estudiantil",
+          "value": "95.5%",
+          "unit": "",
+          "description": "Evaluación con 15 estudiantes de Ing. de Software en 120 consultas académicas."
+        },
+        {
+          "label": "Latencia Login / Historial",
+          "value": "120 / 85 ms",
+          "unit": "",
+          "description": "99.8% y 99.9% de tasa de éxito transaccional en SQLite3."
+        },
+        {
+          "label": "Deuda Técnica al Cierre",
+          "value": "0 Bugs",
+          "unit": "",
+          "description": "31/31 defectos resueltos a lo largo de 5 iteraciones disciplinadas."
+        },
+        {
+          "label": "Aporte Individual (Líder)",
+          "value": "85 hrs · 45 commits",
+          "unit": "",
+          "description": "22/22 tareas completadas (39% del esfuerzo total del equipo)."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Código Fuente y Control de Configuración (SCM)",
+          "type": "Source-Code",
+          "description": "Repositorio oficial con historial SemVer y Conventional Commits.",
+          "url": "https://github.com/ebaltalmv/TutorVirtualUMAD"
+        },
+        {
+          "title": "Documento de Tesina de Ingeniería de Software",
+          "type": "Technical-Report",
+          "description": "Memoria técnica completa con marco metodológico RAD/PSP/TSP, diagramas UML y pruebas.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "https://github.com/ebaltalmv/TutorVirtualUMAD",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Investigación de Proyecto (Tesina de Ingeniería de Software)",
+        "semester": "6to Semestre",
+        "academicPeriod": "Primavera 2026 (Febrero – Mayo 2026)",
+        "professor": "Mtro. Carlos Zapata Bretón",
+        "problemStatement": "Los estudiantes de Ingeniería de Software de la Universidad Madero enfrentan dificultades para resolver dudas académicas y de seriación curricular fuera del horario de asesoría presencial, utilizando herramientas genéricas no alineadas al plan de estudios institucional, lo que incrementa el riesgo de rezago y reprobación.",
+        "architecturePattern": "Cliente-Servidor RESTful en 4 Capas con Orquestación Cognitiva LLM",
+        "architectureSummary": "Separación estricta en 4 capas: (1) Presentación Web con Avatar 2D reactivo sincronizado a eventos onstart/onend de Web Speech API; (2) Capa de Aplicación REST en Express 5.2.1 con aislamiento de sesiones en memoria (Map) e inyección dinámica de System Prompts por licenciatura; (3) Capa Cognitiva conectada a Google Gemini 2.5 mediante @google/generative-ai; y (4) Capa de Persistencia embebida en SQLite3 validando correos institucionales (@umad.edu.mx).",
+        "views4Plus1": {
+          "logical": "Entidades principales Usuarios y Chats relacionadas 1:N, controlador de sesiones conversacionales aisladas por usuario y adaptador de servicio Gemini con contexto curricular parametrizado.",
+          "process": "Flujo asíncrono no bloqueante: autenticación institucional -> recuperación de historial (85 ms prom.) -> inferencia contextual Gemini (1850 ms prom.) -> renderizado simultáneo de texto y síntesis vocal TTS (45 ms).",
+          "development": "Estructura modular Node.js/Express bajo control de configuración Git (SemVer + Conventional Commits), gestionando dependencias ligeras sin sobrecarga de frameworks pesados en cliente.",
+          "physical": "Servidor de aplicación Node.js con motor embebido SQLite3 transaccional y conexión HTTPS saliente hacia el endpoint oficial de Google Generative AI.",
+          "scenarios": "12 requerimientos funcionales verificados: registro con dominio @umad.edu.mx, inicio de sesión, selección contextual por carrera, consulta multimodal hablada, persistencia y recuperación de historial."
+        },
+        "role": "Líder de Desarrollo — Arquitectura Backend, Integración API Gemini 2.5 y Base de Datos",
+        "teamSize": 3,
+        "teamMembers": [
+          "Emmanuel Baltazar López (Líder Backend & Arquitectura)",
+          "Oscar Juárez Ortiz",
+          "Pedro Emiliano Romero Osorio"
+        ],
+        "methodology": [
+          "RAD (Rapid Application Development)",
+          "PSP",
+          "TSP",
+          "SCM con Git",
+          "SemVer",
+          "Conventional Commits"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Rigor de Ingeniería y Aseguramiento de Calidad\n\nEl proyecto se ejecutó combinando la velocidad iterativa de **RAD** con la disciplina métrica de **Personal Software Process (PSP)** y **Team Software Process (TSP)**:\n\n- **Gestión de Sesiones y Prompt Engineering Curricular:** Se diseñó un gestor en `Express 5.2.1` que aísla el contexto conversacional de cada alumno mediante estructuras `Map` indexadas y construye *System Prompts* específicos para restringir alucinaciones fuera del ámbito académico UMAD.\n- **Experiencia Multimodal Accesible:** Sincronización de estados visuales de un Avatar 2D en el cliente escuchando los callbacks nativos `onstart` y `onend` de `window.speechSynthesis`, logrando una latencia de arranque de voz promedio de **45 ms** con **100%** de disponibilidad en navegadores compatibles.\n- **Control de Defectos en 5 Fases:** Durante las 5 iteraciones de construcción y pruebas se detectaron, documentaron y corrigieron **31 defectos**, cerrando la entrega con **0 deuda técnica** y **95.5% de aceptación** en pruebas con usuarios reales de Ingeniería de Software.",
+      "evidenceSlots": [
+        {
+          "slotId": "arq-tutor-virtual",
+          "label": "Diagrama de Arquitectura de 4 Capas (ArqTutorVirtual)",
+          "expectedType": "image",
+          "category": "architecture",
+          "suggestedAlt": "Diagrama de arquitectura Cliente-Servidor en 4 capas del Tutor Virtual UMAD integrando Express 5.2.1, SQLite3, Web Speech API y Google Gemini 2.5",
+          "suggestedCaption": "Arquitectura general del sistema mostrando el flujo entre interfaz multimodal, API REST en Node.js/Express, base de datos SQLite3 y servicio cognitivo Gemini 2.5.",
+          "required": true
+        },
+        {
+          "slotId": "uml-tutor-virtual",
+          "label": "Diagramas UML (Clases, Estados y Navegación)",
+          "expectedType": "image",
+          "category": "uml-diagram",
+          "suggestedAlt": "Diagrama UML de clases y estados del sistema Tutor Virtual UMAD con tablas Usuarios, Chats y ciclo de vida de sesión conversacional",
+          "suggestedCaption": "Modelado estructural y comportamental UML diseñado para garantizar aislamiento de sesiones e integridad de mensajes.",
+          "required": false
+        },
+        {
+          "slotId": "ui-chat-avatar",
+          "label": "Captura de Interfaz: Login Institucional y Chat con Avatar 2D",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de pantalla de la interfaz web del Tutor Virtual UMAD mostrando validación @umad.edu.mx, historial lateral y Avatar 2D sincronizado por voz",
+          "suggestedCaption": "Vista de la plataforma en ejecución respondiendo consultas curriculares con retroalimentación visual y auditiva.",
+          "required": true
+        },
+        {
+          "slotId": "metricas-latencia-tutor",
+          "label": "Gráfica de Métricas de Latencia y Evaluación de Calidad",
+          "expectedType": "image",
+          "category": "metrics-chart",
+          "suggestedAlt": "Tabla y gráfica de tiempos de respuesta en milisegundos para Login (120ms), Historial (85ms), Gemini API (1850ms) y Web Speech API (45ms)",
+          "suggestedCaption": "Resultados cuantitativos de las pruebas de rendimiento y validación con 15 estudiantes de Ingeniería de Software (120 consultas).",
+          "required": false
+        },
+        {
+          "slotId": "pdf-tesina-tutor",
+          "label": "Documento PDF Completo — Tesina Tutor Virtual UMAD",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Documento técnico PDF de la Tesina Desarrollo de una App Web de un Tutor Virtual UMAD de 6to semestre",
+          "suggestedCaption": "Memoria completa de investigación e ingeniería de software asesorada por el Mtro. Carlos Zapata Bretón.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-tutor-arquitectura",
+          "slotId": "arq-tutor-virtual",
+          "title": "Arquitectura Cliente-Servidor en 3 Capas — Tutor Virtual UMAD",
+          "fileName": "ArqTutorVirtual.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-arquitectura.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-arquitectura.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 303403,
+          "alt": "Diagrama de arquitectura cliente-servidor en 3 capas del sistema Tutor Virtual UMAD (React SPA, API Flask/Node y PostgreSQL)",
+          "caption": "Separación física y lógica entre la SPA en React, el servidor de negocio con RBAC y el motor relacional PostgreSQL.",
+          "category": "architecture",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-estados-uml",
+          "slotId": "uml-tutor-virtual",
+          "title": "Diagrama UML de Máquina de Estados del Tutor Virtual",
+          "fileName": "DiagramaEstados.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-estados-uml.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-estados-uml.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 726657,
+          "alt": "Diagrama UML de transición de estados de las sesiones de tutoría y consultas académicas en Tutor Virtual UMAD",
+          "caption": "Modelado formal del ciclo de vida de interacciones del estudiante y el asesor.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-metricas-latencia",
+          "slotId": "metricas-latencia-tutor",
+          "title": "Gráfica de Benchmark: Tiempos de Respuesta de API (Promedio 1.8 s)",
+          "fileName": "03_columnas_tiempos_respuesta.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-metricas-latencia.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-metricas-latencia.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 58555,
+          "alt": "Gráfica de columnas comparando los tiempos de respuesta del backend de Tutor Virtual UMAD con promedio de 1.8 segundos",
+          "caption": "Cumplimiento del atributo de calidad de rendimiento (< 2.0 s) bajo carga concurrente.",
+          "category": "metrics-chart",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-tesina-pdf",
+          "slotId": "pdf-tesina-tutor",
+          "title": "Tesina Completa: Diseño e Implementación de un Tutor Virtual Web para la UMAD (PDF)",
+          "fileName": "Tesina_Tutor-Virtual.pdf",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-tesina-pdf.pdf",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-tesina-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 2132139,
+          "alt": "Documento oficial PDF de la Tesina de Investigación de Proyecto del Tutor Virtual UMAD",
+          "caption": "Protocolo de investigación completo con marco teórico, arquitectura 4+1, metodología XP y análisis de resultados.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-navegacion",
+          "title": "Diagrama de Navegación por Rol (Estudiante, Docente y Administrador)",
+          "fileName": "DiagramaNavegaciónTVUMAD.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-navegacion.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-navegacion.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 544328,
+          "alt": "Mapa de navegación de las vistas web del sistema Tutor Virtual UMAD segmentado por rol RBAC",
+          "caption": "Flujo de pantallas y rutas protegidas mediante autenticación JWT.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-listado-objetos",
+          "title": "Catálogo y Modelo de Objetos del Dominio Académico",
+          "fileName": "ListadoObjetos.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-listado-objetos.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-listado-objetos.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 205818,
+          "alt": "Listado y estructura de objetos del sistema Tutor Virtual UMAD",
+          "caption": "Definición de entidades principales para materias, asesorías, usuarios y métricas.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-marco-teorico",
+          "title": "Arquitectura Conceptual del Marco Teórico",
+          "fileName": "Diagrama_MarcoTeorico.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-marco-teorico.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-marco-teorico.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 230038,
+          "alt": "Diagrama estructurado del marco teórico de la investigación Tutor Virtual UMAD",
+          "caption": "Fundamentación pedagógica, tecnológica y de ingeniería de software.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-gantt",
+          "title": "Cronograma de Ejecución de Iteraciones XP (Gantt V1.1)",
+          "fileName": "Gantt V1.1.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-gantt.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-gantt.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 169836,
+          "alt": "Diagrama de Gantt versión 1.1 del desarrollo del proyecto Tutor Virtual UMAD",
+          "caption": "Planificación de entregas incrementales a lo largo de las 16 semanas del semestre.",
+          "category": "metrics-chart",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-commits",
+          "title": "Métrica de Ingeniería: Horas de Desarrollo y Commits por Iteración",
+          "fileName": "01_barras_horas_commits.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-commits.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-commits.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 42760,
+          "alt": "Gráfica de barras de horas invertidas y commits en Git durante el desarrollo del Tutor Virtual UMAD",
+          "caption": "Trazabilidad del esfuerzo de programación y ritmo de integración continua.",
+          "category": "metrics-chart",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-tasa-exito",
+          "title": "Curva de Evolución de Tasa de Éxito en Pruebas Funcionales (92%)",
+          "fileName": "04_linea_tasa_exito.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-tasa-exito.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-tasa-exito.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 57601,
+          "alt": "Gráfica de línea mostrando el incremento en la tasa de éxito de pruebas hasta alcanzar el 92%",
+          "caption": "Convergencia de calidad funcional a través de refactorización continua en XP.",
+          "category": "metrics-chart",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-bugs",
+          "title": "Curva de Detección y Resolución de Defectos (Bugs)",
+          "fileName": "05_areas_bugs.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-bugs.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-bugs.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 54937,
+          "alt": "Gráfica de áreas comparando defectos detectados contra defectos corregidos por iteración",
+          "caption": "Reducción sistemática de deuda técnica previo al despliegue piloto.",
+          "category": "metrics-chart",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-tutor-aprobacion",
+          "title": "Evaluación de Aceptación de Usuarios Piloto (88% Satisfacción)",
+          "fileName": "07_barras_aprobacion.png",
+          "storedPath": "academic-projects/tutor-virtual-umad/ev-tutor-aprobacion.png",
+          "url": "/api/uploads/academic-projects/tutor-virtual-umad/ev-tutor-aprobacion.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 49888,
+          "alt": "Gráfica de barras con los resultados de aprobación y usabilidad del sistema por estudiantes y docentes",
+          "caption": "Validación empírica con 25 usuarios reales de la comunidad universitaria.",
+          "category": "metrics-chart",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "mi-coleccion-moviles-ii",
+      "section": "academic-projects",
+      "title": "Mi Colección — App Multiplataforma en .NET MAUI bajo MVVM",
+      "subtitle": "Desarrollo para Plataformas Móviles II · Gestión Reactiva de Tarjetas Coleccionables",
+      "summary": "Aplicación móvil y de escritorio desarrollada con .NET MAUI, C# y XAML aplicando arquitectura MVVM y Data Binding para catalogar coleccionables, rarezas, valuación y favoritos.",
+      "publishDate": "2026-09-05",
+      "featured": true,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        ".NET MAUI",
+        "MVVM",
+        "C#",
+        "XAML",
+        "Multiplataforma"
+      ],
+      "techStack": [
+        {
+          "name": "C#",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": ".NET MAUI",
+          "category": "framework",
+          "version": ""
+        },
+        {
+          "name": "XAML",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "Patrón MVVM",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "Visual Studio",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "Git",
+          "category": "tool",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Módulos UI Reactivos",
+          "value": "4 Vistas",
+          "unit": "",
+          "description": "My Collection, My Favorites, Add Card y Card Details sincronizadas por Data Binding."
+        },
+        {
+          "label": "Operaciones de Catálogo",
+          "value": "CRUD Completo",
+          "unit": "",
+          "description": "Alta, consulta detallada, edición de atributos/valuación, borrado y marcado de favoritos."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Repositorio Oficial ParcialUno_MovilesII",
+          "type": "Source-Code",
+          "description": "Solución completa en C# y XAML para .NET MAUI.",
+          "url": "https://github.com/ebaltalmv/ParcialUno_MovilesII"
+        }
+      ],
+      "links": {
+        "repositoryUrl": "https://github.com/ebaltalmv/ParcialUno_MovilesII",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Desarrollo para Plataformas Móviles II",
+        "semester": "7mo Semestre",
+        "academicPeriod": "Otoño 2026",
+        "professor": "Mtro. Alejandro Barrueta Martínez",
+        "problemStatement": "Necesidad de contar con una aplicación nativa multiplataforma desacoplada y mantenible para inventariar artículos coleccionables detallando su categoría, rareza, estado de conservación y valor estimado con filtrado inmediato de favoritos.",
+        "architecturePattern": "Model-View-ViewModel (MVVM) con ObservableCollection y Data Binding",
+        "architectureSummary": "Separación limpia entre Modelos de dominio (atributos de carta, condición, rareza, valor e imagen), ViewModels reactivos con notificación de cambios de propiedad (INotifyPropertyChanged) y Vistas declarativas XAML adaptables a distintos tamaños de pantalla.",
+        "views4Plus1": {
+          "logical": "Entidad CollectibleCard vinculada a colecciones observables para catálogo general y subconjunto filtrado de favoritos.",
+          "process": "Actualización reactiva instantánea en interfaz al mutar estado de favorito o editar metadatos sin recargar vistas manualmente.",
+          "development": "Proyecto .NET MAUI organizado en capas Views, ViewModels y Models en Visual Studio.",
+          "physical": "Compilación nativa multiplataforma sobre runtime .NET para Android y Windows.",
+          "scenarios": "Registro de nueva carta con imagen -> inspección en Card Details -> conmutación a My Favorites -> edición y eliminación."
+        },
+        "role": "Desarrollador Móvil .NET MAUI (Lógica MVVM, Vistas XAML e Integración)",
+        "teamSize": 3,
+        "teamMembers": [
+          "Emmanuel Baltazar López",
+          "Oscar Juárez Ortiz",
+          "Luis Gael Bonilla Paleta"
+        ],
+        "methodology": [
+          "Arquitectura MVVM",
+          "Control de Versiones Colaborativo Git"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Características Técnicas Implementadas\n\n- **Gestión Integral de Atributos:** Cada elemento almacena nombre, tipo/categoría, nivel de rareza, estado físico (condición), valor estimado, URL de ilustración y descripción técnica.\n- **Sincronización de Estado Reactiva:** Gracias al enlace de datos (*Data Binding*) en XAML, marcar o desmarcar una tarjeta actualiza automáticamente la pestaña `My Favorites` y la vista de detalle `Card Details`.",
+      "evidenceSlots": [
+        {
+          "slotId": "maui-grid-principal",
+          "label": "Captura UI: Vista Principal \"My Collection\" y \"My Favorites\"",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de pantalla de la aplicación .NET MAUI Mi Colección mostrando el grid de tarjetas coleccionables y sección de favoritos",
+          "suggestedCaption": "Interfaz XAML multiplataforma renderizando tarjetas con rareza, condición y acceso rápido a favoritos.",
+          "required": true
+        },
+        {
+          "slotId": "maui-form-detalle",
+          "label": "Captura UI: Formulario \"Add Card\" y Vista \"Card Details\"",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de las pantallas Add Card y Card Details en .NET MAUI con validaciones y enlace de datos MVVM",
+          "suggestedCaption": "Flujo de captura y consulta detallada de atributos y valuación de cada coleccionable.",
+          "required": false
+        },
+        {
+          "slotId": "maui-video-demo",
+          "label": "Video Demostrativo de Ejecución (.mp4)",
+          "expectedType": "video",
+          "category": "video-demo",
+          "suggestedAlt": "Video demostrativo del funcionamiento CRUD y actualización reactiva de favoritos en la app Mi Colección .NET MAUI",
+          "suggestedCaption": "Demostración funcional en tiempo real de las operaciones CRUD sobre el emulador/entorno .NET MAUI.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-micoleccion-video-mp4",
+          "title": "Video Demostrativo Funcional: App Móvil \"Mi Colección\" (React Native + Supabase)",
+          "fileName": "MIColeccion_EBL-OJO-LGBP.mp4",
+          "storedPath": "academic-projects/mi-coleccion-moviles-ii/ev-micoleccion-video-mp4.mp4",
+          "url": "/api/uploads/academic-projects/mi-coleccion-moviles-ii/ev-micoleccion-video-mp4.mp4",
+          "mimeType": "video/mp4",
+          "mediaKind": "video",
+          "fileSize": 15947327,
+          "alt": "Video MP4 mostrando la ejecución completa de la aplicación móvil Mi Colección con login mágico, captura de cámara y geolocalización",
+          "caption": "Demostración en tiempo real del flujo de autenticación OTP, alta de coleccionables con cámara/GPS y persistencia cloud en Supabase.",
+          "category": "video-demo",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-micoleccion-doc-pdf",
+          "title": "Reporte Técnico de Arquitectura Móvil — Mi Colección (PDF)",
+          "fileName": "MIColeccion_EBL-OJO-LGBP.pdf",
+          "storedPath": "academic-projects/mi-coleccion-moviles-ii/ev-micoleccion-doc-pdf.pdf",
+          "url": "/api/uploads/academic-projects/mi-coleccion-moviles-ii/ev-micoleccion-doc-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 309579,
+          "alt": "Documento técnico PDF del proyecto Mi Colección elaborado por Emmanuel Baltazar López, Oscar Juárez Ortiz y Luis Gael Bonilla Paleta",
+          "caption": "Especificación de arquitectura React Native/Expo, modelo de tabla items y políticas RLS en PostgreSQL.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "arquitectura-procesos-signavio-crystal",
+      "section": "academic-projects",
+      "title": "Modelado BPMN 2.0 en SAP Signavio & Reportería con Crystal Reports",
+      "subtitle": "Arquitectura y Calidad de Sistemas de Cómputo · Estándar SCOR-DS y Sistema ReportesRanking en .NET",
+      "summary": "Optimización de 5 procesos empresariales y logísticos con BPMN 2.0 en SAP Signavio (reducción de tiempos de entrega de 43.8 a 25 min) e implementación de reportes ejecutivos con SAP Crystal Reports y C#.",
+      "publishDate": "2026-09-08",
+      "featured": true,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "BPMN 2.0",
+        "SAP Signavio",
+        "SAP Crystal Reports",
+        "SCOR-DS",
+        "Calidad de Sistemas"
+      ],
+      "techStack": [
+        {
+          "name": "SAP Signavio",
+          "category": "erp-enterprise",
+          "version": ""
+        },
+        {
+          "name": "BPMN 2.0",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "SCOR-DS",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "SAP Crystal Reports",
+          "category": "erp-enterprise",
+          "version": ""
+        },
+        {
+          "name": "C# / .NET",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "Visual Studio",
+          "category": "tool",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Optimización Caso Cupcakes Inc",
+          "value": "43.8 → 25 min",
+          "unit": "",
+          "description": "Reducción proyectada del ciclo de entrega mediante rediseño de proceso en BPMN 2.0."
+        },
+        {
+          "label": "Procesos Estandarizados",
+          "value": "5 Modelos BPMN",
+          "unit": "",
+          "description": "Logística, envíos, evaluación de calidad de personal, producción y recepción de insumos."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Portafolio de 5 Modelos BPMN 2.0 en SAP Signavio",
+          "type": "SAD-Architecture-Doc",
+          "description": "Diagramas de carriles (Pools/Lanes), compuertas exclusivas/paralelas y eventos de temporización.",
+          "url": ""
+        },
+        {
+          "title": "Solución ReportesRanking (.NET + SAP Crystal Reports)",
+          "type": "Source-Code",
+          "description": "Aplicación Visual Studio con bitácora y generación de reportes empresariales parametrizados.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Arquitectura y Calidad de Sistemas de Cómputo",
+        "semester": "7mo Semestre",
+        "academicPeriod": "Otoño 2026",
+        "professor": "Mtra. Martha Patricia Hernández Zamora",
+        "problemStatement": "Cuellos de botella operativos, falta de trazabilidad entre áreas funcionales y carencia de reportería estructurada para la toma de decisiones gerenciales en cadenas de suministro y control de calidad.",
+        "architecturePattern": "Arquitectura Orientada a Procesos de Negocio (BPM) + Capa de Inteligencia de Reportes (.NET / Crystal Reports)",
+        "architectureSummary": "Alineación entre el modelo de referencia de cadena de suministro SCOR-DS y notación estándar BPMN 2.0 en SAP Signavio para eliminar actividades sin valor agregado, complementado con una arquitectura de escritorio en C# conectada al motor de renderizado documental SAP Crystal Reports (ReportesRanking y RankingBitacora).",
+        "views4Plus1": {
+          "logical": "Separación de responsabilidades organizacionales mediante Pools y Swimlanes y estructuras de datos para bitácoras de ranking.",
+          "process": "Orquestación de flujos asíncronos, manejo de excepciones logísticas y compuertas de validación de calidad.",
+          "development": "Modelos colaborativos en SAP Signavio Process Manager y proyecto C# (.sln) con plantillas .rpt integradas.",
+          "physical": "Entorno cloud SAP Signavio y ejecución cliente Windows .NET con runtime Crystal Reports.",
+          "scenarios": "Caso Cupcakes Inc Puebla (meta de reducción de entrega de 43.8 a 25 minutos), envío de mercancías, evaluación de personal y recepción de materia prima."
+        },
+        "role": "Analista de Arquitectura de Procesos y Desarrollador .NET / Crystal Reports",
+        "teamSize": 1,
+        "teamMembers": [
+          "Emmanuel Baltazar López"
+        ],
+        "methodology": [
+          "BPMN 2.0",
+          "SCOR-DS (Supply Chain Operations Reference)",
+          "Calidad de Sistemas"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Alcance de Ingeniería de Procesos y Reportería\n\n1. **Rediseño Operativo en SAP Signavio:** Modelado riguroso de eventos de inicio/fin, compuertas de decisión basadas en datos y flujos de mensaje entre clientes, almacén, producción y reparto, identificando tiempos muertos para reducir el ciclo operativo de **43.8 minutos a 25 minutos** en el caso de estudio *Cupcakes Inc*.\n2. **Integración de SAP Crystal Reports en C#:** Construcción de los módulos `ReportesRanking` y `RankingBitacora` en Visual Studio para transformar registros transaccionales en reportes ejecutivos listos para auditoría e impresión.",
+      "evidenceSlots": [
+        {
+          "slotId": "signavio-bpmn-cupcakes",
+          "label": "Diagrama BPMN 2.0 en SAP Signavio (Caso Cupcakes Inc / Ejercicios 1-5)",
+          "expectedType": "image",
+          "category": "uml-diagram",
+          "suggestedAlt": "Diagrama de proceso BPMN 2.0 modelado en SAP Signavio mostrando carriles operativos, compuertas y optimización de entrega a 25 minutos",
+          "suggestedCaption": "Modelado formal bajo estándar BPMN 2.0 y referencia SCOR-DS en SAP Signavio.",
+          "required": true
+        },
+        {
+          "slotId": "crystal-reports-ui",
+          "label": "Captura de Ejecución: Sistema ReportesRanking con SAP Crystal Reports",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de pantalla del visor SAP Crystal Reports integrado en aplicación C# Visual Studio mostrando reporte generado",
+          "suggestedCaption": "Generación de reportería estructurada desde C#/.NET mediante plantillas SAP Crystal Reports.",
+          "required": true
+        },
+        {
+          "slotId": "doc-procesos-pdf",
+          "label": "Documento PDF de Análisis de Procesos y Arquitectura",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Documento técnico PDF con el análisis de los 5 procesos BPMN 2.0 y arquitectura de software",
+          "suggestedCaption": "Entregable académico completo de la asignatura Arquitectura y Calidad de Sistemas de Cómputo.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-signavio-arch-overview",
+          "title": "Mapa de Arquitectura de Software yAtributos de Calidad",
+          "fileName": "Software Architecture-2026-09-29-190459.png",
+          "storedPath": "academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-arch-overview.png",
+          "url": "/api/uploads/academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-arch-overview.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 1212625,
+          "alt": "Diagrama de arquitectura de software elaborado en la asignatura Arquitectura y Calidad de Sistemas de Cómputo",
+          "caption": "Estructuración de estilos arquitectónicos, componentes y criterios de calidad.",
+          "category": "architecture",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-signavio-ej1-cupcakes",
+          "slotId": "signavio-bpmn-cupcakes",
+          "title": "Modelo BPMN 2.0 en SAP Signavio — Caso Cupcakes Inc (Optimización 43.8 a 25 min)",
+          "fileName": "EJ1-EBL - Cupcakes Inc.png",
+          "storedPath": "academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej1-cupcakes.png",
+          "url": "/api/uploads/academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej1-cupcakes.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 155027,
+          "alt": "Diagrama BPMN 2.0 en SAP Signavio del proceso operativo de Cupcakes Inc Puebla elaborado por Emmanuel Baltazar López",
+          "caption": "Ejercicio 1: Rediseño de proceso orientado a reducir el tiempo de ciclo de entrega de 43.8 a 25 minutos.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-signavio-ej2-envio",
+          "title": "Modelo BPMN 2.0 — Ejercicio 2: Envío de Pedidos de Cupcakes",
+          "fileName": "EJ2_EBL - Envío de pedidos de Cupcakes.png",
+          "storedPath": "academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej2-envio.png",
+          "url": "/api/uploads/academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej2-envio.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 128172,
+          "alt": "Diagrama BPMN 2.0 en SAP Signavio del proceso de envío y logística de pedidos",
+          "caption": "Coordinación entre carriles de preparación, empaque y despacho.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-signavio-ej3-repostero",
+          "title": "Modelo BPMN 2.0 — Ejercicio 3: Evaluación y Revisión de Repostero en Sucursal",
+          "fileName": "Ej3.EBL - Revisión de un repostero en sucursal.png",
+          "storedPath": "academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej3-repostero.png",
+          "url": "/api/uploads/academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej3-repostero.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 192607,
+          "alt": "Diagrama BPMN 2.0 en SAP Signavio para el proceso de auditoría de calidad de un repostero en sucursal",
+          "caption": "Compuertas de decisión y eventos para evaluación de desempeño operativo.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-signavio-ej4-produccion",
+          "title": "Modelo BPMN 2.0 — Ejercicio 4: Línea de Producción de Cupcakes",
+          "fileName": "Ej4.EBL - Producción de Cupcakes.png",
+          "storedPath": "academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej4-produccion.png",
+          "url": "/api/uploads/academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej4-produccion.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 259146,
+          "alt": "Diagrama BPMN 2.0 en SAP Signavio modelando el flujo de horneado, decorado y control de calidad",
+          "caption": "Sincronización de actividades paralelas y control de lote en planta.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-signavio-ej5-ingredientes",
+          "title": "Modelo BPMN 2.0 — Ejercicio 5: Recepción de Ingredientes en Centro de Producción",
+          "fileName": "EJ5_EBL - Recepción de Ingredientes en el Centro de Producción.png",
+          "storedPath": "academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej5-ingredientes.png",
+          "url": "/api/uploads/academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-ej5-ingredientes.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 263660,
+          "alt": "Diagrama BPMN 2.0 en SAP Signavio del proceso de recepción e inspección de materias primas",
+          "caption": "Alineación con el proceso Source (sS1) del modelo SCOR-DS.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-signavio-pdf",
+          "slotId": "doc-procesos-pdf",
+          "title": "Compendio Documental de Procesos en SAP Signavio (PDF)",
+          "fileName": "EjerciciosSAPSignavio-EBL.pdf",
+          "storedPath": "academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-pdf.pdf",
+          "url": "/api/uploads/academic-projects/arquitectura-procesos-signavio-crystal/ev-signavio-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 473126,
+          "alt": "Documento PDF con los 5 modelos BPMN 2.0 desarrollados en SAP Signavio por Emmanuel Baltazar López",
+          "caption": "Memoria técnica de modelado de procesos empresariales.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "iot-monitoreo-esp32-flask",
+      "section": "academic-projects",
+      "title": "Ecosistema IoT de Monitoreo Industrial y Ambiental (ESP32 + Flask)",
+      "subtitle": "Tópicos Avanzados de Ingeniería · Telemetría Física a Base de Datos y Dashboard Web en Python",
+      "summary": "Arquitectura IoT extremo a extremo que integra nodos ESP32 y Arduino con sensores ultrasónicos, de humedad y nivel de agua hacia una API REST en Python/Flask con monitoreo web en tiempo real.",
+      "publishDate": "2026-07-18",
+      "featured": true,
+      "bentoSpan": "col-span-2",
+      "draft": false,
+      "tags": [
+        "IoT",
+        "ESP32",
+        "Python Flask",
+        "Telemetría REST",
+        "Industria 4.0"
+      ],
+      "techStack": [
+        {
+          "name": "Python",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "Flask",
+          "category": "framework",
+          "version": ""
+        },
+        {
+          "name": "C / C++ (Arduino/ESP32)",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "ESP32 & Ethernet Shield",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "SQL / Persistencia IoT",
+          "category": "database",
+          "version": ""
+        },
+        {
+          "name": "REST HTTP Telemetry",
+          "category": "architecture",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Soluciones Integradas",
+          "value": "3 Escenarios IoT",
+          "unit": "",
+          "description": "Contador de Producción Industrial, Alerta de Invernadero y Alarma Temprana de Inundación."
+        },
+        {
+          "label": "Arquitectura End-to-End",
+          "value": "Sensor → API → UI",
+          "unit": "",
+          "description": "Adquisición física, transmisión HTTP/Ethernet/Wi-Fi, persistencia y visualización web."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Firmware Microcontroladores (ESP32 / Arduino) + Servidor Flask",
+          "type": "Source-Code",
+          "description": "Código de adquisición de sensores, endpoints de ingesta y panel Contador_Produccion_IoT.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Tópicos Avanzados de Ingeniería",
+        "semester": "Verano 2026",
+        "academicPeriod": "Junio – Julio 2026",
+        "professor": "",
+        "problemStatement": "Ausencia de visibilidad en tiempo real sobre conteo de líneas de producción y variables críticas ambientales (humedad en invernaderos y niveles de riesgo de inundación), requiriendo captura automatizada y alertamiento oportuno.",
+        "architecturePattern": "Arquitectura IoT en 3 Niveles (Borde Físico / API de Ingesta Flask / Dashboard Analítico)",
+        "architectureSummary": "Nodos sensores basados en ESP32 y Arduino (con conectividad Wi-Fi y Ethernet Shield) digitalizan señales físicas y envían payloads HTTP hacia un backend Python/Flask encargado de validar umbrales, registrar series de eventos en base de datos y actualizar el tablero web.",
+        "views4Plus1": {
+          "logical": "Módulos de lectura de transductores, cliente HTTP embebido, controlador de rutas Flask y repositorio de lecturas/alertas.",
+          "process": "Muestreo periódico en microcontrolador -> petición POST al servidor Flask -> evaluación de umbrales de alarma -> refresco de métricas en panel.",
+          "development": "Sketches C++ para ESP32/Arduino y aplicación modular Python en entorno virtual con plantillas web.",
+          "physical": "Microcontroladores ESP32/Arduino, sensores ultrasónicos/humedad/nivel, red local TCP/IP y host ejecutando servidor Flask.",
+          "scenarios": "Detección de piezas en Contador_Produccion_IoT, activación de alerta por humedad fuera de rango en invernadero y alarma crítica por nivel de agua."
+        },
+        "role": "Desarrollador Fullstack IoT (Integración de Sensores, API Flask y Dashboard)",
+        "teamSize": 1,
+        "teamMembers": [
+          "Emmanuel Baltazar López"
+        ],
+        "methodology": [
+          "Prototipado Incremental Hardware-Software",
+          "Pruebas de Integración en Laboratorio"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Componentes del Ecosistema Desarrollado\n\n- **Contador de Producción IoT (`Contador_Produccion_IoT`):** Registro automatizado de unidades detectadas por sensor físico con persistencia inmediata y visualización de avance productivo en navegador.\n- **Monitoreo Ambiental de Invernadero y Alerta de Inundación:** Evaluación continua de humedad y nivel hidrométrico con disparo de alertas preventivas ante condiciones críticas.",
+      "evidenceSlots": [
+        {
+          "slotId": "iot-prototipo-hardware",
+          "label": "Fotografía / Diagrama del Prototipo Físico (ESP32, Arduino y Sensores)",
+          "expectedType": "image",
+          "category": "stand-photo",
+          "suggestedAlt": "Fotografía del circuito IoT con microcontrolador ESP32, Arduino, Ethernet Shield y sensores conectados en pruebas",
+          "suggestedCaption": "Implementación física de los nodos de captura sensorial y comunicación en red.",
+          "required": true
+        },
+        {
+          "slotId": "iot-dashboard-flask",
+          "label": "Captura Web: Dashboard Flask de Monitoreo y Contador de Producción",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de pantalla del panel web desarrollado en Python Flask mostrando lecturas de sensores y conteo de producción IoT",
+          "suggestedCaption": "Interfaz web conectada al backend Flask visualizando telemetría recibida desde el nodo físico.",
+          "required": true
+        },
+        {
+          "slotId": "iot-video-funcionamiento",
+          "label": "Video Demostrativo de Sensores y Dashboard en Tiempo Real",
+          "expectedType": "video",
+          "category": "video-demo",
+          "suggestedAlt": "Video de prueba funcional mostrando detección física en el sensor y actualización simultánea en el servidor Flask",
+          "suggestedCaption": "Evidencia en video de la comunicación extremo a extremo entre hardware y aplicación web.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-iot-dfcu1",
+          "slotId": "iot-prototipo-hardware",
+          "title": "Diagrama Funcional y de Arquitectura IoT (DFCU1)",
+          "fileName": "DFCU1.png",
+          "storedPath": "academic-projects/iot-monitoreo-esp32-flask/ev-iot-dfcu1.png",
+          "url": "/api/uploads/academic-projects/iot-monitoreo-esp32-flask/ev-iot-dfcu1.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 817505,
+          "alt": "Diagrama de arquitectura funcional del sistema IoT con nodos sensores y backend",
+          "caption": "Diseño de flujo de señales e interacción entre sensores físicos, microcontrolador y servidor.",
+          "category": "architecture",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-iot-dfcm",
+          "title": "Diagrama de Flujo y Control de Monitoreo IoT (DFCM)",
+          "fileName": "DFCM.png",
+          "storedPath": "academic-projects/iot-monitoreo-esp32-flask/ev-iot-dfcm.png",
+          "url": "/api/uploads/academic-projects/iot-monitoreo-esp32-flask/ev-iot-dfcm.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 534901,
+          "alt": "Diagrama de control modular para el procesamiento de lecturas de sensores IoT",
+          "caption": "Lógica de adquisición, validación de umbrales y disparo de actuadores/alertas.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-iot-video-invernadero",
+          "slotId": "iot-video-funcionamiento",
+          "title": "Video Demostrativo: Sistema de Alerta para un Invernadero en Tiempo Real",
+          "fileName": "SISTEMA-DE-ALERTA-PARA-UN-INVERNADERO.mp4",
+          "storedPath": "academic-projects/iot-monitoreo-esp32-flask/ev-iot-video-invernadero.mp4",
+          "url": "/api/uploads/academic-projects/iot-monitoreo-esp32-flask/ev-iot-video-invernadero.mp4",
+          "mimeType": "video/mp4",
+          "mediaKind": "video",
+          "fileSize": 4652034,
+          "alt": "Video MP4 demostrando el funcionamiento físico del sistema IoT de alerta para invernadero",
+          "caption": "Prueba experimental de lectura de humedad/temperatura y activación de alertas.",
+          "category": "video-demo",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-iot-video-inundacion",
+          "title": "Video Demostrativo: Sistema de Alarma Temprana por Inundación",
+          "fileName": "SISTEMA-DE-ALARMA-POR-INUNDACIÓN.mp4",
+          "storedPath": "academic-projects/iot-monitoreo-esp32-flask/ev-iot-video-inundacion.mp4",
+          "url": "/api/uploads/academic-projects/iot-monitoreo-esp32-flask/ev-iot-video-inundacion.mp4",
+          "mimeType": "video/mp4",
+          "mediaKind": "video",
+          "fileSize": 3508175,
+          "alt": "Video MP4 mostrando la detección de nivel de agua y activación de alarma por inundación",
+          "caption": "Validación física del transductor de nivel hidrométrico y respuesta inmediata del sistema.",
+          "category": "video-demo",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-iot-video-esp32-web",
+          "title": "Video Demostrativo: Telemetría ESP32 hacia Interfaz Web de Sensores",
+          "fileName": "ESP32_WEB_SENSORES.mp4",
+          "storedPath": "academic-projects/iot-monitoreo-esp32-flask/ev-iot-video-esp32-web.mp4",
+          "url": "/api/uploads/academic-projects/iot-monitoreo-esp32-flask/ev-iot-video-esp32-web.mp4",
+          "mimeType": "video/mp4",
+          "mediaKind": "video",
+          "fileSize": 3453061,
+          "alt": "Video MP4 mostrando el microcontrolador ESP32 transmitiendo datos de sensores en vivo hacia el dashboard web",
+          "caption": "Integración Wi-Fi/HTTP entre el nodo ESP32 y la visualización web.",
+          "category": "video-demo",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "arena-videojuegos-plus-ultra",
+      "section": "academic-projects",
+      "title": "Arena Plus Ultra & Traje Háptico — Ingeniería de Requerimientos y Diseño UML",
+      "subtitle": "Proceso de Diseño de Sistemas & Sistemas de Información Gerencial · PEMMA Industries",
+      "summary": "Especificación formal, estudio cuádruple de factibilidad, 123 reglas de negocio, 10 casos de uso extendidos, 20 reportes, 23 formatos y arquitectura UML completa para una arena gamer inmersiva.",
+      "publishDate": "2025-11-10",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "Ingeniería de Requerimientos",
+        "UML",
+        "Factibilidad",
+        "SCM & QA Plan",
+        "Diseño de Sistemas"
+      ],
+      "techStack": [
+        {
+          "name": "UML 2.x",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "Rational Rose / Draw.io",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "Plan SCM & QA",
+          "category": "testing-qa",
+          "version": ""
+        },
+        {
+          "name": "Ingeniería de Requerimientos",
+          "category": "methodology",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Reglas de Negocio",
+          "value": "123 Reglas",
+          "unit": "",
+          "description": "Documentadas y trazadas hacia casos de uso, formatos y validaciones."
+        },
+        {
+          "label": "Artefactos de E/S",
+          "value": "23 Formatos · 20 Reportes",
+          "unit": "",
+          "description": "Catálogo completo FO_01–FO_23 y RE_01–RE_20 para operación y gerencia."
+        },
+        {
+          "label": "Estudio Financiero",
+          "value": "$34,422.31 MXN",
+          "unit": "",
+          "description": "Presupuesto calculado sobre 137 horas humanware y análisis de factibilidad."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Documento Maestro de Modelado de Sistemas y Plan de Calidad",
+          "type": "SAD-Architecture-Doc",
+          "description": "Factibilidad técnica, operativa, económica y legal + modelo UML integral.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Proceso de Diseño de Sistemas (3er Sem.) & Sistemas de Información Gerencial (5to Sem.)",
+        "semester": "3er y 5to Semestre",
+        "academicPeriod": "Otoño 2024 – Otoño 2025",
+        "professor": "Mtra. Martha Patricia Hernández Zamora",
+        "problemStatement": "Complejidad operativa en la administración integral de reservaciones de estaciones, torneos, membresías, inventario de periféricos/trajes hápticos e indicadores gerenciales en un centro de entretenimiento competitivo.",
+        "architecturePattern": "Diseño Modular Basado en Roles con Trazabilidad Completa de Requerimientos",
+        "architectureSummary": "Modelado estructurado desde la concepción organizacional (PEMMA Industries) hasta diagramas UML de casos de uso (CU_01 a CU_10 y extensión gerencial), clases, estados, actividades y mapas de navegación diferenciados por perfil de usuario.",
+        "views4Plus1": {
+          "logical": "Modelo de dominio orientado a objetos cubriendo clientes, reservaciones, torneos, estaciones, equipamiento inteligente y facturación.",
+          "process": "Diagramas de actividades y máquinas de estado para el ciclo de vida de reservas, préstamos de hardware y partidas.",
+          "development": "Plan de Gestión de Configuración de Software (SCM) y Aseguramiento de Calidad (SQA) con nomenclatura controlada.",
+          "physical": "Proyección de infraestructura local de estaciones, red de baja latencia y servidor central de administración.",
+          "scenarios": "10 casos de uso transaccionales base + módulos de información ejecutiva validados con prototipos de interfaz."
+        },
+        "role": "Co-autor de Arquitectura de Requerimientos, Modelado UML y Estudio de Factibilidad",
+        "teamSize": 2,
+        "teamMembers": [
+          "Emmanuel Baltazar López",
+          "José Brian Molina Nochebuena"
+        ],
+        "methodology": [
+          "Ingeniería de Requerimientos",
+          "UML",
+          "Análisis Cuádruple de Factibilidad",
+          "SQA / SCM"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Rigor Documental y Trazabilidad\n\nEl proyecto destaca por su exhaustividad en ingeniería de sistemas antes de escribir una sola línea de código:\n- **Cuádruple Factibilidad:** Evaluación técnica, económica (`$34,422.31 MXN` estimados para `137 horas` de ingeniería), operativa y legal.\n- **Estandarización de Artefactos:** Definición precisa de **123 reglas de negocio**, **23 formatos de captura (`FO_01`–`FO_23`)** y **20 reportes gerenciales (`RE_01`–`RE_20`)**.",
+      "evidenceSlots": [
+        {
+          "slotId": "pds-uml-general",
+          "label": "Diagrama General de Casos de Uso y Diagrama de Clases UML",
+          "expectedType": "image",
+          "category": "uml-diagram",
+          "suggestedAlt": "Diagrama UML general de casos de uso y clases del sistema Arena de Videojuegos Plus Ultra",
+          "suggestedCaption": "Arquitectura funcional y estructural modelada bajo estándar UML.",
+          "required": true
+        },
+        {
+          "slotId": "pds-prototipo-ui",
+          "label": "Capturas del Prototipo de Pantallas y Mapas de Navegación",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Prototipo de pantallas para administración de reservas, torneos y reportes gerenciales en Arena Plus Ultra",
+          "suggestedCaption": "Diseño de interfaces alineado a los formatos FO_01–FO_23 y reportes RE_01–RE_20.",
+          "required": false
+        },
+        {
+          "slotId": "pds-documento-pdf",
+          "label": "Documento PDF de Ingeniería de Diseño de Sistemas",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Documento completo PDF de Proceso de Diseño de Sistemas para Arena Plus Ultra elaborado por PEMMA Industries",
+          "suggestedCaption": "Especificación completa de factibilidad, reglas de negocio, casos de uso y planes SCM/QA.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-pds-objetos-atributos",
+          "slotId": "pds-uml-general",
+          "title": "Diagrama UML de Clases y Objetos con Atributos Tipados",
+          "fileName": "ModeladoDeObjetos01.drawio.png",
+          "storedPath": "academic-projects/arena-videojuegos-plus-ultra/ev-pds-objetos-atributos.png",
+          "url": "/api/uploads/academic-projects/arena-videojuegos-plus-ultra/ev-pds-objetos-atributos.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 475264,
+          "alt": "Diagrama UML de clases y objetos con atributos y cardinalidades para Arena Plus Ultra",
+          "caption": "Modelo estructural del sistema utilizado en Proceso de Diseño de Sistemas.",
+          "category": "uml-diagram",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-pds-flujo-actividades",
+          "title": "Diagrama de Actividades y Flujo Alterno (FA_04_03)",
+          "fileName": "FA_04_03.drawio.png",
+          "storedPath": "academic-projects/arena-videojuegos-plus-ultra/ev-pds-flujo-actividades.png",
+          "url": "/api/uploads/academic-projects/arena-videojuegos-plus-ultra/ev-pds-flujo-actividades.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 243300,
+          "alt": "Diagrama UML de actividades con carriles detallando el flujo alterno FA_04_03 de gestión de torneos",
+          "caption": "Especificación algorítmica de flujos alternos y validaciones de reglas de negocio.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-pds-casos-uso-extendido-pdf",
+          "title": "Diagrama Extendido de Casos de Uso (CU_01 a CU_10)",
+          "fileName": "Diagrama de CU_240829_092432.pdf",
+          "storedPath": "academic-projects/arena-videojuegos-plus-ultra/ev-pds-casos-uso-extendido-pdf.pdf",
+          "url": "/api/uploads/academic-projects/arena-videojuegos-plus-ultra/ev-pds-casos-uso-extendido-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 946666,
+          "alt": "Diagrama PDF de casos de uso extendidos de Proceso de Diseño de Sistemas",
+          "caption": "Ampliación del alcance funcional a 10 casos de uso, 23 formatos y 20 reportes.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-pds-documento-maestro-pdf",
+          "slotId": "pds-documento-pdf",
+          "title": "Documento Maestro de Diseño de Sistemas y Estudio de Factibilidad ($34,422.31 MXN)",
+          "fileName": "Modelado_de_sistemas_Emanmuel-BL_JoseB-MN.docx.pdf",
+          "storedPath": "academic-projects/arena-videojuegos-plus-ultra/ev-pds-documento-maestro-pdf.pdf",
+          "url": "/api/uploads/academic-projects/arena-videojuegos-plus-ultra/ev-pds-documento-maestro-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 6061519,
+          "alt": "Documento técnico PDF de Proceso de Diseño de Sistemas elaborado por Emmanuel Baltazar López y José Brian Molina Nochebuena",
+          "caption": "Estudio cuádruple de factibilidad (técnica, económica, operativa y legal), 123 reglas de negocio y prototipos.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-pds-navegacion-pptx",
+          "title": "Mapa de Navegación Interactiva del Sistema (.pptx)",
+          "fileName": "Diagrama de Navegación del Sistema.pptx",
+          "storedPath": "academic-projects/arena-videojuegos-plus-ultra/ev-pds-navegacion-pptx.pptx",
+          "url": "/api/uploads/academic-projects/arena-videojuegos-plus-ultra/ev-pds-navegacion-pptx.pptx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          "mediaKind": "document",
+          "fileSize": 273514,
+          "alt": "Archivo de presentación con el diagrama de navegación completa de pantallas del sistema Arena Plus Ultra",
+          "caption": "Entregable descargable con la arquitectura de navegación entre menús, formatos FO y reportes RE.",
+          "category": "deliverable-file",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "sistema-mantenimiento-scrum",
+      "section": "academic-projects",
+      "title": "Sistema Web de Gestión de Mantenimiento — Ejecución Scrum & Kanban",
+      "subtitle": "Metodologías Ágiles · De Sprint Cero al Producto Funcional con Base de Datos Relacional",
+      "summary": "Desarrollo iterativo de una aplicación web para control de órdenes de mantenimiento aplicando Scrum, tableros Lean Kanban, estimación por Story Points, modelado UML/ER y SQL.",
+      "publishDate": "2025-07-20",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "Scrum",
+        "Lean Kanban",
+        "SQL",
+        "UML & ER",
+        "Gestión Ágil"
+      ],
+      "techStack": [
+        {
+          "name": "Scrum",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "Lean Kanban",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "SQL (mantenimientobd)",
+          "category": "database",
+          "version": ""
+        },
+        {
+          "name": "UML & Modelo ER",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "Desarrollo Web",
+          "category": "framework",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Ciclo Ágil Completo",
+          "value": "Sprint 0 → Entrega",
+          "unit": "",
+          "description": "Acuerdos de equipo, Product Backlog, Planning, Seguimiento Kanban y Retrospectiva."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Base de Datos Relacional (mantenimientobd.sql) y Modelos D-CU / D-ER",
+          "type": "Database-Model",
+          "description": "Script DDL/DML junto con diagrama de casos de uso y diagrama entidad-relación.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Metodologías Ágiles",
+        "semester": "Verano 2025",
+        "academicPeriod": "Verano 2025 (Equipo 1)",
+        "professor": "",
+        "problemStatement": "Descontrol en el registro, asignación y seguimiento de incidencias de mantenimiento preventivo y correctivo por falta de una plataforma centralizada y un flujo ágil de entrega de valor.",
+        "architecturePattern": "Aplicación Web Transaccional respaldada por Modelo Relacional SQL",
+        "architectureSummary": "Diseño guiado por historias de usuario priorizadas en el Product Backlog, materializado en un esquema relacional normalizado (mantenimientobd.sql) y vistas web para solicitud, seguimiento de estado y cierre de órdenes.",
+        "views4Plus1": {
+          "logical": "Diagrama de Casos de Uso (D-CU) y Modelo Entidad-Relación (D-ER) alineados a las épicas del backlog.",
+          "process": "Flujo de estados de órdenes de mantenimiento reflejado tanto en el sistema como en el tablero Kanban del equipo.",
+          "development": "Entregas incrementales por Sprint con criterios de aceptación (Definition of Done) verificables.",
+          "physical": "Servidor web conectado a motor relacional SQL.",
+          "scenarios": "Apertura de ticket de mantenimiento, asignación técnica, bitácora de atención y cierre validado."
+        },
+        "role": "Miembro del Equipo de Desarrollo Scrum & Modelado de Datos (Equipo 1)",
+        "teamSize": 4,
+        "teamMembers": [
+          "Equipo 1 — Metodologías Ágiles UMAD (Emmanuel Baltazar López)"
+        ],
+        "methodology": [
+          "Scrum",
+          "Lean Kanban",
+          "Shu-Ha-Ri",
+          "Story Points",
+          "Retrospectivas Ágiles"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Prácticas Ágiles Aplicadas\n\n- **Sprint Cero y Cultura de Equipo:** Establecimiento de acuerdos de trabajo, adopción progresiva bajo enfoque *Shu-Ha-Ri*, definición de *Definition of Ready* y *Definition of Done*.\n- **Ingeniería acoplada a Agilidad:** Refinamiento de historias de usuario traducidas directamente en artefactos ligeros pero rigurosos (`D-CU.png`, `D-ER.png` y `mantenimientobd.sql`).",
+      "evidenceSlots": [
+        {
+          "slotId": "scrum-diagramas-cu-er",
+          "label": "Diagrama de Casos de Uso (D-CU) y Entidad-Relación (D-ER)",
+          "expectedType": "image",
+          "category": "er-diagram",
+          "suggestedAlt": "Diagrama entidad-relación y diagrama de casos de uso del Sistema de Gestión de Mantenimiento",
+          "suggestedCaption": "Modelado funcional y de datos construido durante los sprints del proyecto.",
+          "required": true
+        },
+        {
+          "slotId": "scrum-captura-web",
+          "label": "Capturas de la Aplicación Web y Tablero Scrum/Kanban",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de pantalla del sistema web de mantenimiento y gestión del backlog en tablero Kanban",
+          "suggestedCaption": "Incremento funcional entregado por el Equipo 1 al cierre de iteraciones.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-scrum-dcu",
+          "slotId": "scrum-diagramas-cu-er",
+          "title": "Diagrama UML de Casos de Uso — Sistema de Mantenimiento (D-CU)",
+          "fileName": "D-CU.png",
+          "storedPath": "academic-projects/sistema-mantenimiento-scrum/ev-scrum-dcu.png",
+          "url": "/api/uploads/academic-projects/sistema-mantenimiento-scrum/ev-scrum-dcu.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 50561,
+          "alt": "Diagrama de casos de uso del Sistema Web de Gestión de Mantenimiento elaborado por el Equipo 1",
+          "caption": "Alcance funcional priorizado en el Product Backlog.",
+          "category": "uml-diagram",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-scrum-der",
+          "title": "Diagrama Entidad-Relación de la Base de Datos (D-ER)",
+          "fileName": "D-ER.png",
+          "storedPath": "academic-projects/sistema-mantenimiento-scrum/ev-scrum-der.png",
+          "url": "/api/uploads/academic-projects/sistema-mantenimiento-scrum/ev-scrum-der.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 41803,
+          "alt": "Diagrama entidad-relación para el esquema mantenimientobd.sql",
+          "caption": "Modelo de datos relacional que soporta el registro y seguimiento de órdenes de mantenimiento.",
+          "category": "er-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-scrum-mapa-talentos",
+          "title": "Mapa Visual de Talentos Ágiles del Equipo Scrum",
+          "fileName": "MapaVisualTalentosAgiles.png",
+          "storedPath": "academic-projects/sistema-mantenimiento-scrum/ev-scrum-mapa-talentos.png",
+          "url": "/api/uploads/academic-projects/sistema-mantenimiento-scrum/ev-scrum-mapa-talentos.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 191536,
+          "alt": "Mapa visual de habilidades y talentos ágiles de los integrantes del equipo",
+          "caption": "Artefacto de Sprint Cero para autoorganización multidisciplinaria.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-scrum-sql",
+          "title": "Script de Base de Datos Relacional (mantenimientobd.sql)",
+          "fileName": "mantenimientobd.sql",
+          "storedPath": "academic-projects/sistema-mantenimiento-scrum/ev-scrum-sql.sql",
+          "url": "/api/uploads/academic-projects/sistema-mantenimiento-scrum/ev-scrum-sql.sql",
+          "mimeType": "text/plain; charset=utf-8",
+          "mediaKind": "document",
+          "fileSize": 8309,
+          "alt": "Archivo SQL con la definición de tablas y relaciones de la base de datos de mantenimiento",
+          "caption": "Entregable técnico descargable con el esquema SQL del proyecto.",
+          "category": "deliverable-file",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-scrum-retrospectiva-pdf",
+          "title": "Evidencia de Ceremonia: Retrospectiva de Sprint (Verano 2025)",
+          "fileName": "12 Retrospectiva Verano 2025.pdf",
+          "storedPath": "academic-projects/sistema-mantenimiento-scrum/ev-scrum-retrospectiva-pdf.pdf",
+          "url": "/api/uploads/academic-projects/sistema-mantenimiento-scrum/ev-scrum-retrospectiva-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 3935159,
+          "alt": "Documento PDF con los acuerdos y hallazgos de la Retrospectiva de Sprint del Equipo 1",
+          "caption": "Inspección y adaptación continua del proceso ágil del equipo.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-scrum-refinamiento-pdf",
+          "title": "Refinamiento del Product Backlog y Estimación (Equipo 1)",
+          "fileName": "Refinamiento-Backlog_Equipo1.pdf",
+          "storedPath": "academic-projects/sistema-mantenimiento-scrum/ev-scrum-refinamiento-pdf.pdf",
+          "url": "/api/uploads/academic-projects/sistema-mantenimiento-scrum/ev-scrum-refinamiento-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 567687,
+          "alt": "Documento PDF del refinamiento de historias de usuario y criterios de aceptación del Equipo 1",
+          "caption": "Desglose de épicas, historias de usuario y estimación en Story Points.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "rescate-animal-puebla-sql",
+      "section": "academic-projects",
+      "title": "Rescate Animal Puebla — Arquitectura Transaccional en SQL Server",
+      "subtitle": "Programación para Bases de Datos · 21 Tablas Normalizadas, Vistas, Stored Procedures, Triggers y RBAC",
+      "summary": "Diseño e implementación en T-SQL (SQL Server) para la gestión integral de una ONG veterinaria: rescates, historial clínico, stock automático de vacunas, adopciones, donaciones y auditoría financiera.",
+      "publishDate": "2025-05-10",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "SQL Server",
+        "T-SQL",
+        "Triggers & SPs",
+        "Seguridad RBAC",
+        "Modelado Relacional"
+      ],
+      "techStack": [
+        {
+          "name": "SQL Server",
+          "category": "database",
+          "version": ""
+        },
+        {
+          "name": "T-SQL",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "SSMS",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "RBAC Database Security",
+          "category": "architecture",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Modelo Normalizado",
+          "value": "21 Tablas",
+          "unit": "",
+          "description": "Integridad referencial estricta y restricciones CHECK de dominio."
+        },
+        {
+          "label": "Objetos Programables",
+          "value": "8 Vistas · 6 SPs · 3 Triggers",
+          "unit": "",
+          "description": "Automatización de inventario médico, alertas presupuestales y reportes clínicos."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Script Maestro T-SQL y Documentación Técnica de Base de Datos",
+          "type": "Database-Model",
+          "description": "DDL, carga de datos, vistas analíticas, procedimientos almacenados, triggers y roles.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Programación para Bases de Datos",
+        "semester": "4to Semestre",
+        "academicPeriod": "Primavera 2025",
+        "professor": "Ing. Verónica Moreno Jiménez",
+        "problemStatement": "Las organizaciones de rescate animal manejan expedientes médicos, inventarios de insumos veterinarios, procesos de adopción y presupuestos de eventos de recaudación de forma fragmentada, provocando desabasto de vacunas y poca trazabilidad financiera.",
+        "architecturePattern": "Arquitectura de Datos Relacional Centralizada con Lógica Transaccional en Motor SQL Server",
+        "architectureSummary": "Esquema normalizado de 21 entidades protegido por llaves foráneas, validaciones CHECK, 8 vistas multifuente, 6 procedimientos almacenados transaccionales, 3 triggers AFTER INSERT para efectos colaterales auditados y control de acceso basado en roles (uLectura y uEscritura).",
+        "views4Plus1": {
+          "logical": "21 tablas cubriendo animales rescatados, expedientes clínicos, vacunas, inventario, adoptantes, seguimientos, voluntarios, donantes y eventos.",
+          "process": "Triggers AFTER INSERT descuentan automáticamente existencias de vacunas y auditan desviaciones presupuestales en tiempo real.",
+          "development": "Scripts modulares T-SQL probados y verificados en SQL Server Management Studio (SSMS).",
+          "physical": "Instancia Microsoft SQL Server con segregación de permisos a nivel de servidor y esquema.",
+          "scenarios": "Registro de aplicación de vacuna con descuento automático de lote, consulta consolidada de adopciones y restricción de escritura a usuarios de consulta."
+        },
+        "role": "Co-diseñador del Modelo Relacional y Programador T-SQL (SPs, Triggers y Seguridad)",
+        "teamSize": 3,
+        "teamMembers": [
+          "Emmanuel Baltazar López",
+          "Oscar Juárez Ortiz",
+          "Pedro Emiliano Romero Osorio"
+        ],
+        "methodology": [
+          "Normalización Relacional (3FN)",
+          "Programación Defensiva T-SQL",
+          "Principio de Mínimo Privilegio (RBAC)"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Automatización en el Motor Transaccional\n\n- **Integridad y Automatización Clínica:** Los *Triggers* `AFTER INSERT` garantizan atomicidad entre el registro médico y el inventario físico de biológicos sin depender de código externo.\n- **Seguridad por Mínimo Privilegio:** Configuración explícita de credenciales y permisos diferenciados (`uLectura` vs `uEscritura`) validada mediante pruebas de denegación controlada en SSMS.",
+      "evidenceSlots": [
+        {
+          "slotId": "sql-diagrama-21-tablas",
+          "label": "Diagrama Relacional de las 21 Tablas en SQL Server",
+          "expectedType": "image",
+          "category": "er-diagram",
+          "suggestedAlt": "Diagrama relacional de 21 tablas en SQL Server para el sistema Rescate Animal Puebla con llaves primarias y foráneas",
+          "suggestedCaption": "Arquitectura de datos normalizada cubriendo operación clínica, adopciones y finanzas.",
+          "required": true
+        },
+        {
+          "slotId": "sql-ejecucion-ssms",
+          "label": "Capturas de Ejecución en SSMS (Vistas, SPs, Triggers y Permisos)",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de SQL Server Management Studio ejecutando procedimientos almacenados, triggers y pruebas de roles uLectura/uEscritura",
+          "suggestedCaption": "Verificación experimental de transacciones y políticas RBAC en el motor SQL Server.",
+          "required": false
+        },
+        {
+          "slotId": "sql-reporte-pdf",
+          "label": "Documentación Técnica PDF / Script SQL",
+          "expectedType": "any",
+          "category": "official-document",
+          "suggestedAlt": "Reporte técnico PDF del proyecto Rescate Animal Puebla de Programación para Bases de Datos",
+          "suggestedCaption": "Memoria técnica con diccionario de datos, código T-SQL y casos de prueba.",
+          "required": false
+        }
+      ],
+      "evidences": []
+    },
+    {
+      "slug": "patrones-diseno-gof-csharp",
+      "section": "academic-projects",
+      "title": "Arquitectura Orientada a Objetos con Patrones GoF en C#",
+      "subtitle": "Patrones Orientados a Objetos · Juego Espacial y Parque de Atracciones desacoplados",
+      "summary": "Implementación práctica en C#/.NET de 17 patrones de diseño Gang of Four (Creacionales, Estructurales y de Comportamiento) integrados en simulaciones interactivas.",
+      "publishDate": "2025-11-25",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "Patrones GoF",
+        "C#",
+        "POO Avanzada",
+        "SOLID",
+        "Arquitectura Limpia"
+      ],
+      "techStack": [
+        {
+          "name": "C#",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": ".NET",
+          "category": "framework",
+          "version": ""
+        },
+        {
+          "name": "Gang of Four (GoF)",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "Principios SOLID",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "UML de Clases",
+          "category": "architecture",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Catálogo Implementado",
+          "value": "17 Patrones GoF",
+          "unit": "",
+          "description": "4 Creacionales, 7 Estructurales y 6 de Comportamiento codificados en C#."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Soluciones C#: PFJuegoEspacialPatrones y ParqueDeAtracciones_EBL",
+          "type": "Source-Code",
+          "description": "Proyectos integradores combinando múltiples patrones sin acoplamiento rígido.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Patrones Orientados a Objetos",
+        "semester": "5to Semestre",
+        "academicPeriod": "Otoño 2025",
+        "professor": "",
+        "problemStatement": "Mitigar la rigidez, duplicación de código y alto acoplamiento al escalar comportamientos complejos, familias de objetos y estados dinámicos en sistemas orientados a objetos.",
+        "architecturePattern": "Composición de Patrones Creacionales, Estructurales y de Comportamiento (GoF)",
+        "architectureSummary": "Aplicación sistemática de Singleton, Factory Method, Abstract Factory, Builder, Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy, Chain of Responsibility, Iterator, Mediator, State, Strategy y Template Method en soluciones C# cohesivas.",
+        "views4Plus1": {
+          "logical": "Jerarquías polimórficas basadas en interfaces y clases abstractas respetando Open/Closed y Dependency Inversion.",
+          "process": "Intercambio dinámico de algoritmos (Strategy), transiciones limpias de estado (State) y mediación desacoplada (Mediator).",
+          "development": "Soluciones .NET modulares organizadas por familia de patrón y proyecto integrador.",
+          "physical": "Ejecución sobre plataforma .NET.",
+          "scenarios": "Simulación de entidades espaciales con mejoras dinámicas (Decorator/Flyweight) y gestión operativa de parque de atracciones."
+        },
+        "role": "Diseñador y Desarrollador de Software Orientado a Objetos (C#)",
+        "teamSize": 1,
+        "teamMembers": [
+          "Emmanuel Baltazar López"
+        ],
+        "methodology": [
+          "Principios SOLID",
+          "Catálogo Gang of Four (GoF)",
+          "Modelado UML de Clases"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Familias de Patrones Aplicadas\n\n- **Creacionales:** `Singleton`, `Factory Method`, `Abstract Factory`, `Builder`.\n- **Estructurales:** `Adapter`, `Bridge`, `Composite`, `Decorator`, `Facade`, `Flyweight`, `Proxy`.\n- **Comportamiento:** `Chain of Responsibility`, `Iterator`, `Mediator`, `State`, `Strategy`, `Template Method`.",
+      "evidenceSlots": [
+        {
+          "slotId": "gof-uml-clases",
+          "label": "Diagrama UML de Clases de los Patrones Integrados",
+          "expectedType": "image",
+          "category": "uml-diagram",
+          "suggestedAlt": "Diagrama UML de clases del proyecto Juego Espacial en C# mostrando la interacción de patrones GoF",
+          "suggestedCaption": "Diseño polimórfico desacoplado aplicando patrones creacionales, estructurales y de comportamiento.",
+          "required": true
+        },
+        {
+          "slotId": "gof-ejecucion-csharp",
+          "label": "Captura de Ejecución: PFJuegoEspacialPatrones / ParqueDeAtracciones",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de pantalla de la ejecución en C# del proyecto integrador de patrones de diseño GoF",
+          "suggestedCaption": "Demostración en tiempo de ejecución de cambios de estrategia, decoración y estados.",
+          "required": false
+        }
+      ],
+      "evidences": []
+    },
+    {
+      "slug": "administracion-procesos-tecnologicos-itil4",
+      "section": "academic-projects",
+      "title": "Gobierno de Servicios TI, Flujos de Valor y Gestión de Riesgos bajo ITIL 4",
+      "subtitle": "Administración de Procesos Tecnológicos · Sistema de Valor del Servicio (SVS), Casos DevShop & FoodFast e ISO 31000",
+      "summary": "Arquitectura de gestión de servicios TI aplicando ITIL 4: Sistema de Valor del Servicio (SVS), 4 Dimensiones, Cadena de Valor (SVC), optimización de Lead Time en Caso DevShop (de 16 a 8–10 días) y Gestión de Riesgos con KRIs.",
+      "publishDate": "2026-10-23",
+      "featured": true,
+      "bentoSpan": "col-span-2",
+      "draft": false,
+      "tags": [
+        "ITIL 4",
+        "Value Stream Mapping",
+        "Gestión de Riesgos TI",
+        "SVS & 4 Dimensiones",
+        "Mejora Continua"
+      ],
+      "techStack": [
+        {
+          "name": "ITIL 4 Framework",
+          "category": "methodology",
+          "version": "SVS / SVC"
+        },
+        {
+          "name": "Value Stream Mapping",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "ISO 31000:2018 & KRIs",
+          "category": "testing-qa",
+          "version": ""
+        },
+        {
+          "name": "Teoría de Restricciones (TOC)",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "CI/CD & DevOps Governance",
+          "category": "cloud-devops",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Reducción de Lead Time (DevShop)",
+          "value": "16 → 8–10 días",
+          "unit": "",
+          "description": "Optimización proyectada del flujo de valor eliminando cuellos de botella en QA y Aprobación."
+        },
+        {
+          "label": "Cuellos de Botella Detectados",
+          "value": "56% del Tiempo",
+          "unit": "",
+          "description": "Pruebas (5 días / 31%) y Aprobación (4 días / 25%) frente a solo 3 días (19%) de Desarrollo."
+        },
+        {
+          "label": "Cobertura Arquitectónica",
+          "value": "SVS + 4D + 34 Prácticas",
+          "unit": "",
+          "description": "Mapas conceptuales del Sistema de Valor, 4 Dimensiones, Flujos de Valor y Gestión de Riesgos."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Caso DevShop: Flujo de Valor y Mejora Continua con ITIL 4",
+          "type": "SAD-Architecture-Doc",
+          "description": "Diagnóstico de Lead Time (16 días), identificación de restricciones y plan de mejora en 7 pasos.",
+          "url": ""
+        },
+        {
+          "title": "Práctica General de Gestión de Riesgos en ITIL 4 y Caso FoodFast",
+          "type": "Technical-Report",
+          "description": "Alineación con ISO 31000:2018, matriz de riesgos, KRIs y gobierno de plataformas.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Administración de Procesos Tecnológicos",
+        "semester": "7mo Semestre",
+        "academicPeriod": "Otoño 2026",
+        "professor": "",
+        "problemStatement": "En organizaciones de software como DevShop y plataformas digitales como FoodFast, la desconexión entre desarrollo, pruebas manuales y comités de aprobación burocráticos eleva el tiempo de entrega (Lead Time) a 16 días y multiplica el riesgo de incidentes en producción.",
+        "architecturePattern": "Sistema de Valor del Servicio (SVS) + Cadena de Valor del Servicio (SVC) ITIL 4",
+        "architectureSummary": "Articulación de los Principios Guía de ITIL 4, las 4 Dimensiones de Gestión de Servicios (Organizaciones y Personas, Información y Tecnología, Socios y Proveedores, Procesos y Flujos de Valor) y las prácticas de Habilitación del Cambio, Validación y Pruebas, Gestión de Despliegue y Gestión de Riesgos.",
+        "views4Plus1": {
+          "logical": "Arquitectura conceptual del Sistema de Valor del Servicio (Oportunidad/Demanda → Valor) y las 4 Dimensiones de ITIL 4.",
+          "process": "Mapeo del Value Stream de 6 etapas (Solicitud 2d → Diseño 1d → Desarrollo 3d → Pruebas 5d → Aprobación 4d → Despliegue 1d = 16d).",
+          "development": "Automatización de pruebas en pipeline CI/CD y pre-autorización de cambios estándar de bajo riesgo.",
+          "physical": "Entornos segregados de integración continua, staging automatizado y despliegue controlado en producción.",
+          "scenarios": "Reducción de ciclo de liberación en DevShop a 8–10 días, continuidad operativa en FoodFast y monitoreo proactivo mediante KRIs."
+        },
+        "role": "Analista de Gobierno de TI, Flujos de Valor y Gestión de Riesgos ITIL 4",
+        "teamSize": 4,
+        "teamMembers": [
+          "Emmanuel Baltazar López",
+          "Oscar Juárez Ortiz",
+          "Pedro Emiliano Romero Osorio",
+          "Luis Gael Bonilla Paleta"
+        ],
+        "methodology": [
+          "ITIL 4 Service Value System (SVS)",
+          "Modelo de Mejora Continua (7 Pasos)",
+          "Teoría de las Restricciones (TOC)",
+          "ISO 31000:2018 Risk Management"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Diagnóstico e Ingeniería de Procesos TI con ITIL 4\n\n1. **Análisis Cuantitativo del Flujo de Valor (Caso DevShop):** Se demostró que el equipo de ingeniería solo invierte **3 días (19%)** codificando, mientras que **Pruebas (5 días / 31%)** y **Aprobación (4 días / 25%)** absorben el **56% del Lead Time total (16 días)**.\n2. **Intervención Arquitectónica:** Aplicación combinada de *Service Validation and Testing* (pruebas automatizadas integradas al pipeline), *Change Enablement* (cambios estándar pre-autorizados) y *Release/Deployment Management*, reduciendo el ciclo a **8–10 días**.\n3. **Gobierno y Gestión de Riesgos:** Diseño de mapas arquitectónicos para las **4 Dimensiones**, **Sistema de Valor del Servicio (Unidad 5)**, **Flujos de Valor (Unidad 6)**, **Prácticas ITIL (Unidad 7)** y **Gestión de Riesgos con KRIs**.",
+      "evidenceSlots": [
+        {
+          "slotId": "itil4-svs-mapa",
+          "label": "Arquitectura Visual del Sistema de Valor del Servicio (SVS) ITIL 4",
+          "expectedType": "image",
+          "category": "architecture",
+          "suggestedAlt": "Diagrama arquitectónico del Sistema de Valor del Servicio (SVS) de ITIL 4 elaborado por Emmanuel Baltazar López",
+          "suggestedCaption": "Unidad 5: Componentes del Sistema de Valor del Servicio (Principios Guía, Gobernanza, Cadena de Valor, Prácticas y Mejora Continua).",
+          "required": true
+        },
+        {
+          "slotId": "itil4-cuatro-dimensiones",
+          "label": "Mapa Conceptual de las 4 Dimensiones de Gestión de Servicios",
+          "expectedType": "image",
+          "category": "architecture",
+          "suggestedAlt": "Mapa conceptual de las Cuatro Dimensiones de la Gestión de Servicios en ITIL 4",
+          "suggestedCaption": "Equilibrio holístico entre Organizaciones y Personas, Información y Tecnología, Socios y Proveedores, y Procesos y Flujos de Valor.",
+          "required": true
+        },
+        {
+          "slotId": "itil4-devshop-pdf",
+          "label": "Documento PDF: Caso DevShop Flujo de Valor y Mejora Continua con ITIL 4",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Documento técnico PDF del Caso DevShop sobre flujo de valor y mejora continua con ITIL 4",
+          "suggestedCaption": "Análisis del flujo de valor de 16 días, cuellos de botella y aplicación del modelo de mejora continua.",
+          "required": true
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-itil4-svs-mapa",
+          "slotId": "itil4-svs-mapa",
+          "title": "Arquitectura del Sistema de Valor del Servicio (SVS) en ITIL 4",
+          "fileName": "UnidadCincoSVITIL.png",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-svs-mapa.png",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-svs-mapa.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 2092696,
+          "alt": "Infografía arquitectónica de la Unidad 5 sobre el Sistema de Valor del Servicio (SVS) de ITIL 4",
+          "caption": "Integración de Oportunidad/Demanda, Principios Guía, Gobernanza, Cadena de Valor del Servicio, Prácticas y Mejora Continua.",
+          "category": "architecture",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-itil4-cuatro-dimensiones",
+          "slotId": "itil4-cuatro-dimensiones",
+          "title": "Mapa Conceptual: Las 4 Dimensiones de la Gestión de Servicios ITIL 4",
+          "fileName": "MapaConceptual_CuatroDimensiones.png",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-cuatro-dimensiones.png",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-cuatro-dimensiones.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 1727293,
+          "alt": "Mapa conceptual de las 4 Dimensiones de ITIL 4 (Organizaciones y Personas, Información y Tecnología, Socios y Proveedores, Procesos y Flujos de Valor)",
+          "caption": "Análisis de las cuatro perspectivas críticas y los factores externos PESTLE.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-itil4-flujos-valor-u6",
+          "title": "Cadena de Valor del Servicio (SVC) y Mapeo de Flujos de Valor (Unidad 6)",
+          "fileName": "UnidadSeisFV.png",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-flujos-valor-u6.png",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-flujos-valor-u6.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 1252536,
+          "alt": "Diagrama visual de la Unidad 6 sobre las 6 actividades de la Cadena de Valor del Servicio en ITIL 4",
+          "caption": "Actividades Planear, Mejorar, Involucrar, Diseño y Transición, Obtener/Construir y Entregar/Soportar.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-itil4-practicas-u7",
+          "title": "Arquitectura de Prácticas de Gestión de ITIL 4 (Unidad 7)",
+          "fileName": "UnidadSiete.png",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-practicas-u7.png",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-practicas-u7.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 1111545,
+          "alt": "Esquema visual de la Unidad 7 clasificando las prácticas generales, de gestión de servicios y de gestión técnica en ITIL 4",
+          "caption": "Desglose de prácticas clave para la operación, transición y aseguramiento de servicios TI.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-itil4-linea-tiempo",
+          "title": "Evolución Histórica del Marco ITIL (v1 a ITIL 4)",
+          "fileName": "ITIL-LineaTiempo.png",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-linea-tiempo.png",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-linea-tiempo.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 254182,
+          "alt": "Línea del tiempo ilustrada de la evolución de ITIL desde su origen en CCTA hasta ITIL 4",
+          "caption": "Transición desde procesos aislados hacia la co-creación ágil de valor (SVS) e integración con DevOps/Lean.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-itil4-devshop-pdf",
+          "slotId": "itil4-devshop-pdf",
+          "title": "Caso DevShop: Flujo de Valor y Mejora Continua con ITIL 4 (Reducción de 16 a 8–10 días)",
+          "fileName": "Caso DevShop flujo de valor y mejora continua con ITIL 4.docx.pdf",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-devshop-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-devshop-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 321199,
+          "alt": "Documento PDF del Caso DevShop elaborado por Emmanuel Baltazar López, Oscar Juárez Ortiz, Pedro Emiliano Romero Osorio y Luis Gael Bonilla Paleta",
+          "caption": "Diagnóstico cuantitativo de cuellos de botella (56% del tiempo en Pruebas y Aprobación) y plan de mejora en 7 etapas.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-itil4-riesgos-pdf",
+          "title": "Práctica General de Gestión de Riesgos en ITIL 4 (ISO 31000 & KRIs)",
+          "fileName": "Gestion-de-Riesgos-en-ITIL-4-EBL.pdf",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-riesgos-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-riesgos-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 2055742,
+          "alt": "Presentación y documento técnico PDF sobre Gestión de Riesgos en ITIL 4 elaborado por Emmanuel Baltazar López",
+          "caption": "Factores críticos de éxito (CSF), indicadores clave de riesgo (KRI), matriz de calor e integración con seguridad y continuidad.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-itil4-svs-doc-pdf",
+          "title": "Reporte Técnico Unidad 5: El Sistema de Valor del Servicio (SVS)",
+          "fileName": "UnidadCinco_SistemaValorITIL-EBL.pdf",
+          "storedPath": "academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-svs-doc-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-procesos-tecnologicos-itil4/ev-itil4-svs-doc-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 256341,
+          "alt": "Documento PDF de análisis del Sistema de Valor del Servicio en ITIL 4 por Emmanuel Baltazar López",
+          "caption": "Fundamentación documental de los componentes del SVS y su aplicación contra silos organizacionales.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "administracion-proyectos-ecoumad",
+      "section": "academic-projects",
+      "title": "ECOUMAD (Campus Verde Digital) — Dirección, Cronograma Gantt y Presupuesto de Sistemas",
+      "subtitle": "Administración de Proyectos de Sistemas · Planificación PMI, Matriz Funcional RACI, Costos y Modelos Predictivos",
+      "summary": "Ingeniería de gestión y arquitectura del proyecto ECOUMAD (15/09/2025 – 04/12/2025): cronograma maestro de 5 fases (106 días/unidades), presupuesto financiero de $47,000 MXN, matrices de responsabilidad E/P/C/R/A y modelos de regresión en Python.",
+      "publishDate": "2025-12-04",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "Dirección de Proyectos TI",
+        "Diagrama de Gantt",
+        "Presupuesto $47,000 MXN",
+        "Matriz RACI",
+        "Python Regresión"
+      ],
+      "techStack": [
+        {
+          "name": "PMBOK / Gestión de Proyectos TI",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "Gantt & Ruta Crítica",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "Matriz Funcional (E/P/C/R/A)",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "Python (Predicción / Regresión Lineal)",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "Arquitectura Web & BD (Módulo 1)",
+          "category": "database",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Presupuesto Total General",
+          "value": "$47,000 MXN",
+          "unit": "",
+          "description": "$38,100 MXN en las 5 fases operativas + $9,000 MXN en gastos fijos e indirectos (Sep–Dic 2025)."
+        },
+        {
+          "label": "Horizonte de Ejecución",
+          "value": "5 Fases · 106 Días",
+          "unit": "",
+          "description": "Inicio (8d), Planeación (24d), Ejecución (48d), Control (36d) y Cierre (24d) del 15/09 al 04/12/2025."
+        },
+        {
+          "label": "Gobernanza de Equipo",
+          "value": "5 Roles + 2 Matrices",
+          "unit": "",
+          "description": "Matriz Funcional de Responsabilidades (E, P, C, R, A) y Matriz Oficial de Comunicación."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Cronograma Maestro de Gantt y Estructura de Desglose de Trabajo (EDT)",
+          "type": "Technical-Report",
+          "description": "Secuenciación completa de tareas, dependencias, entregables y responsables del 15/09/2025 al 04/12/2025.",
+          "url": ""
+        },
+        {
+          "title": "Presupuesto Maestro por Fase y Mes + Matrices Funcional y de Comunicación",
+          "type": "Technical-Report",
+          "description": "Costeo detallado por recurso humano/licencias y protocolos formales de escalamiento.",
+          "url": ""
+        },
+        {
+          "title": "Scripts de Predicción y Regresión Lineal en Python",
+          "type": "Source-Code",
+          "description": "Modelos cuantitativos para estimación y análisis predictivo aplicados a la asignatura.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Administración de Proyectos de Sistemas",
+        "semester": "5to Semestre",
+        "academicPeriod": "Septiembre – Diciembre 2025",
+        "professor": "",
+        "problemStatement": "Los proyectos tecnológicos universitarios suelen fracasar o desfasarse cuando carecen de una línea base integrada de alcance (EDT), cronograma con dependencias reales, presupuesto costeado por hora-rol y canales formales de comunicación y responsabilidad.",
+        "architecturePattern": "Gobernanza Integrada de Proyecto (Alcance + Cronograma Gantt + Costos + Matrices RACI/Comunicación)",
+        "architectureSummary": "Planificación integral de la plataforma ECOUMAD (Campus Verde Digital) estructurada en 5 fases formales (Inicio, Planeación, Ejecución, Control y Cierre), asignando a Emmanuel Baltazar López la responsabilidad de programación backend y base de datos del Módulo 1, definición de dependencias del cronograma y diseño de la Matriz de Comunicación.",
+        "views4Plus1": {
+          "logical": "División modular del sistema (Módulo 1 Backend/BD y Módulo 2 Frontend/Integración) cruzada contra la Matriz Funcional E/P/C/R/A.",
+          "process": "Flujo de 5 fases del ciclo de vida del proyecto con revisiones quincenales, control de cambios y auditoría de calidad.",
+          "development": "Asignación técnica de desarrollo del Módulo 1 (código y base de datos) y scripts analíticos en Python (Regresión Lineal).",
+          "physical": "Infraestructura cloud/hosting universitario y herramientas colaborativas (Git, Drive, Slack/Teams).",
+          "scenarios": "Control presupuestal mensual (Septiembre $8,100, Octubre $19,700, Noviembre $14,700, Diciembre $4,500 MXN) y seguimiento de hitos."
+        },
+        "role": "Programador Backend/BD (Módulo 1) y Especialista en Cronograma de Dependencias y Matriz de Comunicación",
+        "teamSize": 5,
+        "teamMembers": [
+          "Emmanuel Baltazar López (Programador 1 - Backend y BD)",
+          "Oscar Juárez Ortiz (Gerente de Proyecto)",
+          "Pedro Emiliano Romero Osorio (Líder Técnico / Arquitecto)",
+          "Luis Gael Bonilla Paleta (Programador 2)",
+          "David Alejandro (QA / Documentación)"
+        ],
+        "methodology": [
+          "PMBOK Lifecycle",
+          "Diagrama de Gantt & Ruta Crítica",
+          "Matriz RACI (E/P/C/R/A)",
+          "Estimación Financiera por Fase"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Ingeniería de Planificación y Control del Proyecto ECOUMAD\n\n- **Desglose Presupuestal Exacto (`$47,000 MXN`):**\n  - *Fase 1 Inicio:* `$4,100 MXN` · *Fase 2 Planeación:* `$7,800 MXN` · *Fase 3 Ejecución:* `$12,300 MXN` · *Fase 4 Control:* `$10,800 MXN` · *Fase 5 Cierre:* `$3,000 MXN` (Subtotal Fases: `$38,100 MXN`).\n  - *Gastos Fijos, Administrativos e Indirectos (Sep–Dic):* `$9,000 MXN`.\n- **Responsabilidad Técnica Directa:** Ejecución del **Módulo 1 (Código y Base de Datos)**, modelado de dependencias del **Diagrama de Gantt** y autoría de la **Matriz Oficial de Comunicación**.",
+      "evidenceSlots": [
+        {
+          "slotId": "ecoumad-gantt-pdf",
+          "label": "Cronograma Maestro de Gantt (PDF Oficial)",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Diagrama de Gantt completo del proyecto ECOUMAD con las 5 fases del 15/09/2025 al 04/12/2025",
+          "suggestedCaption": "Planificación temporal de las 5 fases (Inicio, Planeación, Ejecución, Control y Cierre).",
+          "required": true
+        },
+        {
+          "slotId": "ecoumad-presupuesto-pdf",
+          "label": "Presupuesto Maestro Detallado ($47,000 MXN)",
+          "expectedType": "pdf",
+          "category": "metrics-chart",
+          "suggestedAlt": "Documento de presupuesto maestro del proyecto ECOUMAD desglosado por fase y por mes de septiembre a diciembre de 2025",
+          "suggestedCaption": "Costeo financiero de recursos humanos, licencias y gastos indirectos por $47,000 MXN.",
+          "required": true
+        },
+        {
+          "slotId": "ecoumad-matrices-pdf",
+          "label": "Matriz Funcional de Responsabilidades (E/P/C/R/A) y Matriz de Comunicación",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Matriz funcional de asignación de responsabilidades y matriz oficial de comunicación del proyecto ECOUMAD",
+          "suggestedCaption": "Gobernanza operativa y canales formales de reporte entre los 5 integrantes del equipo.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-ecoumad-gantt-pdf",
+          "slotId": "ecoumad-gantt-pdf",
+          "title": "Cronograma Maestro de Gantt — Proyecto ECOUMAD (15/09/2025 – 04/12/2025)",
+          "fileName": "Gantt.pdf",
+          "storedPath": "academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-gantt-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-gantt-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 659639,
+          "alt": "Diagrama de Gantt completo del proyecto ECOUMAD con las 5 fases y dependencias de tareas",
+          "caption": "Planificación de 106 días/unidades distribuida en Inicio (8), Planeación (24), Ejecución (48), Control (36) y Cierre (24).",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-ecoumad-presupuesto-pdf",
+          "slotId": "ecoumad-presupuesto-pdf",
+          "title": "Presupuesto Maestro por Fase y Mes ($47,000 MXN Total General)",
+          "fileName": "Presupuesto.pdf",
+          "storedPath": "academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-presupuesto-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-presupuesto-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 365752,
+          "alt": "Documento PDF con el desglose presupuestal del proyecto ECOUMAD por fases y flujo mensual",
+          "caption": "$38,100 MXN en fases operativas + $9,000 MXN en costos fijos, administrativos e indirectos.",
+          "category": "metrics-chart",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-ecoumad-matriz-func-pdf",
+          "slotId": "ecoumad-matrices-pdf",
+          "title": "Matriz Funcional de Asignación de Responsabilidades (E / P / C / R / A)",
+          "fileName": "MatrizFunc.pdf",
+          "storedPath": "academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-matriz-func-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-matriz-func-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 218380,
+          "alt": "Matriz funcional PDF del proyecto ECOUMAD asignando roles Ejecuta, Participa, Coordina, Revisa y Autoriza",
+          "caption": "Gobernanza de entregables entre Gerente de Proyecto, Líder Técnico, Programador 1 (Emmanuel Baltazar), Programador 2 y QA.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-ecoumad-matriz-comu-pdf",
+          "title": "Matriz Oficial de Comunicación del Proyecto ECOUMAD",
+          "fileName": "MatrizComuOF.pdf",
+          "storedPath": "academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-matriz-comu-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-matriz-comu-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 136958,
+          "alt": "Documento PDF con la Matriz Oficial de Comunicación diseñada para el proyecto ECOUMAD",
+          "caption": "Protocolos de reporte quincenal, alertas técnicas en menos de 24h, canales y niveles de escalamiento.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-ecoumad-mapa-mental-pdf",
+          "title": "Mapa Mental de Fundamentos de Dirección de Proyectos TI",
+          "fileName": "Mapa mental.pdf",
+          "storedPath": "academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-mapa-mental-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-mapa-mental-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 77550,
+          "alt": "Mapa mental en PDF sobre los procesos y áreas de conocimiento de la administración de proyectos",
+          "caption": "Síntesis conceptual del ciclo de vida y restricciones triples de alcance, tiempo y costo.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-ecoumad-habilidades-pm-pdf",
+          "title": "Análisis de Habilidades del Gerente de Proyectos de Sistemas (EBL)",
+          "fileName": "HabilidadesDelGerenteDeProyectos_EBL.pdf",
+          "storedPath": "academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-habilidades-pm-pdf.pdf",
+          "url": "/api/uploads/academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-habilidades-pm-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 91031,
+          "alt": "Ensayo y análisis técnico en PDF sobre las competencias directivas de un Project Manager por Emmanuel Baltazar López",
+          "caption": "Liderazgo técnico, negociación, gestión de riesgos y comunicación efectiva en equipos de ingeniería.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-ecoumad-prediccion-py",
+          "title": "Script Python: Modelos de Predicción y Regresión Lineal (Ejercicios de prediccion - ebl.py)",
+          "fileName": "Ejercicios de prediccion - ebl.py",
+          "storedPath": "academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-prediccion-py.py",
+          "url": "/api/uploads/academic-projects/administracion-proyectos-ecoumad/ev-ecoumad-prediccion-py.py",
+          "mimeType": "text/plain; charset=utf-8",
+          "mediaKind": "document",
+          "fileSize": 5282,
+          "alt": "Código fuente en Python con ejercicios de predicción cuantitativa y regresión lineal por Emmanuel Baltazar López",
+          "caption": "Implementación programática de modelos predictivos aplicados a estimación en ingeniería.",
+          "category": "deliverable-file",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "marcos-desarrollo-erp-sap-aspel",
+      "section": "academic-projects",
+      "title": "Sistematización Empresarial ERP: SAP S/4HANA (FI/MM/SD), Aspel SAE 7.0 y Caso Glassme",
+      "subtitle": "Marcos de Desarrollo de Sistemas · Configuración Firebird/SAE, Contabilidad G/L & AP en SAP y Modelado de Cadena de Suministro",
+      "summary": "Implementación comparativa de marcos empresariales ERP: modelado de datos y estados para la cadena de suministro Glassme, despliegue técnico de Aspel SAE 7.0 sobre motor Firebird y ejecución de 12 escenarios financieros/logísticos en SAP S/4HANA.",
+      "publishDate": "2025-04-20",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "SAP S/4HANA FI/MM/SD",
+        "Aspel SAE 7.0",
+        "Firebird DB",
+        "Supply Chain Glassme",
+        "ERP Architecture"
+      ],
+      "techStack": [
+        {
+          "name": "SAP S/4HANA (FI, G/L, AP, MM, SD)",
+          "category": "erp-enterprise",
+          "version": "Global Bike US00"
+        },
+        {
+          "name": "Aspel SAE 7.0",
+          "category": "erp-enterprise",
+          "version": ""
+        },
+        {
+          "name": "Firebird SQL",
+          "category": "database",
+          "version": "SAE67001.FDB"
+        },
+        {
+          "name": "UML & Diseño Relacional",
+          "category": "architecture",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Escenarios SAP FI / G/L / AP",
+          "value": "12 Prácticas + MM/SD",
+          "unit": "",
+          "description": "Cuentas de mayor, acreedores, facturas de gastos/impuestos, cheques y conciliación de $3,500 USD."
+        },
+        {
+          "label": "Infraestructura ERP Local",
+          "value": "Aspel SAE 7.0 + Firebird",
+          "unit": "",
+          "description": "Configuración de servidor de datos, parámetros fiscales CFDI 3.3, perfiles y control de inventario."
+        },
+        {
+          "label": "Modelado Caso Glassme",
+          "value": "SCM + 2 BDs + Estados",
+          "unit": "",
+          "description": "Arquitectura de cadena de suministro, BD de Compras, BD de Ventas y Diagrama de Estados."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Trabajo Final SAP S/4HANA Finanzas (TF3erP_EBL) + Manuales MM y SD",
+          "type": "Technical-Report",
+          "description": "Evidencia paso a paso con números de documento y asientos contables verificados en SAP.",
+          "url": ""
+        },
+        {
+          "title": "Manual Técnico de Instalación y Configuración de Aspel SAE 7.0",
+          "type": "SAD-Architecture-Doc",
+          "description": "Puesta en marcha de base de datos Firebird, alta de empresa, folios y seguridad por roles.",
+          "url": ""
+        },
+        {
+          "title": "Modelos Arquitectónicos Caso Glassme (SCM, BD Compras, BD Ventas y Estados)",
+          "type": "Database-Model",
+          "description": "Diagramas relacionales y de transición de estados del ciclo comercial.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Marcos de Desarrollo de Sistemas",
+        "semester": "4to Semestre",
+        "academicPeriod": "Primavera 2025",
+        "professor": "Mtra. Martha Patricia Hernández Zamora",
+        "problemStatement": "Las organizaciones manufactureras y comercializadoras requieren integrar sus procesos de abastecimiento, inventarios, ventas y contabilidad financiera bajo motores ERP confiables, evitando islas de información entre almacén y finanzas.",
+        "architecturePattern": "Arquitectura ERP Integrada (Módulos Comerciales MM/SD/SAE ↔ Motor Contable Financiero FI/G/L)",
+        "architectureSummary": "Estudio práctico en tres capas: 1) Diseño conceptual de cadena de suministro y bases de datos transaccionales (Compras y Ventas) para el caso Glassme; 2) Despliegue on-premise del ERP mexicano Aspel SAE 7.0 conectado a Firebird SQL; y 3) Operación corporativa en SAP S/4HANA (sociedad US00, plan de cuentas GL00).",
+        "views4Plus1": {
+          "logical": "Esquemas relacionales normalizados para Compras (Proveedores, Órdenes, Materias Primas) y Ventas (Clientes, Pedidos, Facturación) en Glassme.",
+          "process": "Máquina de estados del pedido y flujos Procure-to-Pay (MM/AP) y Order-to-Cash (SD/AR) con contabilización automática en el Libro Mayor (G/L).",
+          "development": "Parametrización de tablas de control en Aspel SAE 7.0 y transacciones Fiori/GUI en SAP S/4HANA.",
+          "physical": "Motor relacional Firebird local (`C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE7.00\\Empresa01\\Datos\\SAE67001.FDB`) y tenant cloud SAP S/4HANA.",
+          "scenarios": "Creación de cuentas bancarias y de costos (`7403245`, `1013245`), maestro de acreedor (`1003693` Cardinal Properties), contabilización de facturas (`$3,500 USD`) y emisión/anulación de pagos."
+        },
+        "role": "Analista de Sistemas ERP, Modelador de Datos y Consultor Funcional Jr. SAP / Aspel",
+        "teamSize": 2,
+        "teamMembers": [
+          "Emmanuel Baltazar López",
+          "José Brian Molina Nochebuena"
+        ],
+        "methodology": [
+          "Integración de Procesos ERP",
+          "Modelado Entidad-Relación",
+          "Contabilidad Financiera SAP FI"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Evidencia Técnica en Ecosistemas ERP\n\n1. **Caso Glassme (Cadena de Suministro y Bases de Datos):** Modelado de la arquitectura logística extremo a extremo respaldada por los esquemas relacionales de **Compras (`DB_Compras`)**, **Ventas (`DBVentas`)** y su **Diagrama de Estados (`DEstados`)**.\n2. **Despliegue de Aspel SAE 7.0:** Instalación de motor **Firebird**, configuración de parámetros del sistema, folios fiscales y administración de usuarios/roles.\n3. **SAP S/4HANA (FI, MM y SD):** Ejecución documentada de **12 ejercicios financieros en Global Bike (`US00`)** con folios reales de contabilización (`1803245`, `3303245`, `6313245`, `100000200`, `5105600401`, `1500000155`), complementado con los manuales prácticos de **SAP MM** y **SAP SD**.",
+      "evidenceSlots": [
+        {
+          "slotId": "marcos-glassme-scm",
+          "label": "Arquitectura de Cadena de Suministros — Caso Glassme",
+          "expectedType": "image",
+          "category": "architecture",
+          "suggestedAlt": "Diagrama de arquitectura de la cadena de suministros para el caso Glassme",
+          "suggestedCaption": "Flujo integral desde abastecimiento de materia prima hasta distribución y entrega al cliente.",
+          "required": true
+        },
+        {
+          "slotId": "marcos-db-ventas",
+          "label": "Modelo Relacional de Base de Datos de Ventas y Compras",
+          "expectedType": "image",
+          "category": "er-diagram",
+          "suggestedAlt": "Diagrama relacional de la base de datos de ventas elaborado por Emmanuel Baltazar López y José Brian Molina Nochebuena",
+          "suggestedCaption": "Estructura de tablas transaccionales para el control de pedidos, clientes, productos y entregas.",
+          "required": true
+        },
+        {
+          "slotId": "marcos-sap-fi-pdf",
+          "label": "Trabajo Final SAP S/4HANA Finanzas (TF3erP_EBL.pdf)",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Documento PDF del Trabajo Final de Tercer Parcial con 12 ejercicios resueltos en SAP S/4HANA FI",
+          "suggestedCaption": "Evidencia completa de transacciones G/L y Cuentas por Pagar ejecutadas por Emmanuel Baltazar López.",
+          "required": true
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-marcos-glassme-scm",
+          "slotId": "marcos-glassme-scm",
+          "title": "Arquitectura de Cadena de Suministros — Caso Glassme",
+          "fileName": "Cadena de suministros - Glassme.png",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-glassme-scm.png",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-glassme-scm.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 223531,
+          "alt": "Diagrama de la cadena de suministros del caso Glassme desde proveedores hasta cliente final",
+          "caption": "Modelado de eslabones de aprovisionamiento, transformación, almacén y distribución comercial.",
+          "category": "architecture",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-marcos-db-ventas",
+          "slotId": "marcos-db-ventas",
+          "title": "Modelo Relacional: Base de Datos de Ventas (Glassme)",
+          "fileName": "DBVentas_EBL-JBMN.jpg",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-db-ventas.jpg",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-db-ventas.jpg",
+          "mimeType": "image/jpeg",
+          "mediaKind": "image",
+          "fileSize": 193112,
+          "alt": "Diagrama entidad-relación de la base de datos de ventas elaborado por Emmanuel Baltazar López y José Brian Molina Nochebuena",
+          "caption": "Diseño de entidades transaccionales para clientes, pedidos, detalle de venta, envíos y facturación.",
+          "category": "er-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-marcos-db-compras-pdf",
+          "title": "Modelo Relacional: Base de Datos de Compras y Proveedores (PDF)",
+          "fileName": "DB_Compras_EBL-JBMN.drawio.pdf",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-db-compras-pdf.pdf",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-db-compras-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 78945,
+          "alt": "Diagrama PDF de la base de datos de compras y abastecimiento para Glassme",
+          "caption": "Esquema relacional para control de requisiciones, órdenes de compra, proveedores y recepción de insumos.",
+          "category": "er-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-marcos-destados-pdf",
+          "title": "Diagrama UML de Estados del Ciclo de Pedido (Glassme)",
+          "fileName": "DEstados_EBL-JBMN.pdf",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-destados-pdf.pdf",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-destados-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 119759,
+          "alt": "Diagrama de estados en PDF mostrando las transiciones de una orden comercial en el caso Glassme",
+          "caption": "Trazabilidad de estados desde solicitud y validación de stock hasta entrega y cierre contable.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-marcos-aspel-sae-pdf",
+          "title": "Manual Técnico de Instalación y Configuración de Aspel SAE 7.0 + Firebird",
+          "fileName": "Instalacion y configuracion AspeL_EBL-JBMN.pdf",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-aspel-sae-pdf.pdf",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-aspel-sae-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 12862958,
+          "alt": "Documento PDF con capturas paso a paso de la instalación y parametrización de Aspel SAE 7.0 sobre motor Firebird",
+          "caption": "Configuración de conexión SAE67001.FDB, datos de empresa, folios fiscales CFDI 3.3 y alta de perfiles.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-marcos-sap-fi-pdf",
+          "slotId": "marcos-sap-fi-pdf",
+          "title": "Trabajo Final SAP S/4HANA Finanzas (12 Ejercicios G/L y AP — Global Bike US00)",
+          "fileName": "TF3erP_EBL.pdf",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-sap-fi-pdf.pdf",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-sap-fi-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 6128262,
+          "alt": "Documento PDF del Trabajo Final de Tercer Parcial de SAP S/4HANA Finanzas por Emmanuel Baltazar López",
+          "caption": "Evidencia con capturas y folios SAP reales (1803245, 3303245, 6313245, 1003693, 100000200, 5105600401, 1500000155).",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-marcos-sap-mm-pdf",
+          "title": "Prácticas Completas SAP S/4HANA Materials Management (MM_EBL.pdf)",
+          "fileName": "MM_EBL.pdf",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-sap-mm-pdf.pdf",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-sap-mm-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 3044523,
+          "alt": "Documento PDF de prácticas del módulo SAP Materials Management por Emmanuel Baltazar López",
+          "caption": "Ciclo de aprovisionamiento Procure-to-Pay ejecutado en SAP S/4HANA.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-marcos-sap-sd-pdf",
+          "title": "Prácticas Completas SAP S/4HANA Sales and Distribution (SD_EBL.pdf)",
+          "fileName": "SD_EBL.pdf",
+          "storedPath": "academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-sap-sd-pdf.pdf",
+          "url": "/api/uploads/academic-projects/marcos-desarrollo-erp-sap-aspel/ev-marcos-sap-sd-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 1964159,
+          "alt": "Documento PDF de prácticas del módulo SAP Sales and Distribution por Emmanuel Baltazar López",
+          "caption": "Ciclo comercial Order-to-Cash ejecutado en SAP S/4HANA.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "modelado-negocios-arena-traje-mnr",
+      "section": "academic-projects",
+      "title": "Modelado de Negocios y Requerimientos: Arena Plus Ultra & Traje Inteligente \"La Flaca Hiperflex\"",
+      "subtitle": "Modelado de Negocios y Requerimientos (2do Sem.) · 7 Minutas de Cliente, Design Thinking, UML y Prototipo Wearable",
+      "summary": "Ingeniería de requerimientos desde cero con cliente real/simulado: 7 minutas de entrevista, encuesta de mercado, Design Thinking (Point of View), Plan SCM/QA en Rational Rose 7.0, 123 reglas de negocio, diagramas UML y diseño del traje háptico \"La Flaca Hiperflex\".",
+      "publishDate": "2024-05-05",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "Modelado de Negocios",
+        "Design Thinking",
+        "UML (Casos de Uso/Objetos/Estados)",
+        "Rational Rose 7.0",
+        "Wearable Tech"
+      ],
+      "techStack": [
+        {
+          "name": "UML 2.x (CU, Objetos, Estados, Actividades)",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "IBM Rational Rose 7.0 & Draw.io",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "Design Thinking (PoV)",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "Plan de Configuración y Calidad (SCM/QA)",
+          "category": "testing-qa",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Levantamiento con Cliente",
+          "value": "7 Minutas + Encuesta",
+          "unit": "",
+          "description": "Sesiones formales de entrevista (febrero–abril 2024) y estudio cuantitativo de mercado gamer."
+        },
+        {
+          "label": "Catálogo Normativo",
+          "value": "123 Reglas de Negocio",
+          "unit": "",
+          "description": "Trazadas hacia 6 Casos de Uso principales, 11 Formatos (FO_01–11) y 14 Reportes (RE_01–14)."
+        },
+        {
+          "label": "Innovación Hardware/Negocio",
+          "value": "Traje \"La Flaca Hiperflex\"",
+          "unit": "",
+          "description": "Propuesta de traje inteligente con sensores de movimiento y retroalimentación háptica."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Memoria Técnica de Modelado de Negocios (103 Páginas)",
+          "type": "SAD-Architecture-Doc",
+          "description": "Antecedentes, estructura organizacional, minutas, Design Thinking, Plan SCM/QA y especificación UML.",
+          "url": ""
+        },
+        {
+          "title": "Suite de Diagramas UML (Casos de Uso, Objetos, Generalización, Estados y Arquitectura SW)",
+          "type": "SAD-Architecture-Doc",
+          "description": "Artefactos visuales del dominio de negocio, software de cliente y software de empleados.",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "Modelado de Negocios y Requerimientos",
+        "semester": "2do Semestre",
+        "academicPeriod": "Primavera 2024 (05/05/2024)",
+        "professor": "Mtra. Martha Patricia Hernández Zamora",
+        "problemStatement": "Necesidad de transformar la visión emprendedora de una arena de videojuegos inmersiva en un modelo de negocio formal, validado con usuarios reales y respaldado por una especificación de software libre de ambigüedades.",
+        "architecturePattern": "Arquitectura de Negocio Orientada a Dominio + Especificación Formal UML con Control de Configuración",
+        "architectureSummary": "Cimentación del proyecto Arena de Videojuegos Plus Ultra por PEMMA Industries: definición de misión/visión, organigrama, levantamiento de requerimientos mediante 7 minutas y Design Thinking, establecimiento de estándares de nomenclatura (CU, DCU, DA, FA, CP, DE, RN, MSJ, PA, FO, RE), separación de arquitecturas de software para Clientes y Empleados, y conceptualización del traje háptico \"La Flaca Hiperflex\".",
+        "views4Plus1": {
+          "logical": "Modelado de Objetos con y sin atributos, Diagrama de Generalización de actores/entidades y catálogo de 123 Reglas de Negocio.",
+          "process": "Diagramas de Actividades, flujos alternos (FA) y 11 Diagramas de Estados (DE_01 a DE_11).",
+          "development": "Plan de Configuración y Calidad sobre Rational Rose Enterprise Edition 7.0 con control estricto de identificadores.",
+          "physical": "Separación de interfaces y subsistemas: Arquitectura de Software para Clientes y Arquitectura de Software para Empleados + Traje Inteligente.",
+          "scenarios": "6 Casos de Uso troncales (CU_01 Usuarios, CU_02 Membresías, CU_03 Reservaciones, CU_04 Torneos, CU_05 Paquetes, CU_06 Ventas)."
+        },
+        "role": "Co-fundador de PEMMA Industries, Analista de Negocio y Modelador UML",
+        "teamSize": 2,
+        "teamMembers": [
+          "Emmanuel Baltazar López",
+          "Pedro Emiliano Romero Osorio"
+        ],
+        "methodology": [
+          "Design Thinking (Point of View)",
+          "Ingeniería de Requerimientos",
+          "UML",
+          "Gestión de Configuración (SCM)"
+        ],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Cimientos de Ingeniería de Requerimientos y Modelado de Negocio\n\n- **Descubrimiento Empático y Validación:** Realización de **7 minutas de levantamiento** con el cliente, aplicación de encuesta de mercado y síntesis mediante matriz **Design Thinking (Usuario + Necesidad + Insight)** que dio origen al diferenciador del **Traje Inteligente *\"La Flaca Hiperflex\"*** con sensores hápticos.\n- **Rigor en Modelado Visual:** Construcción de los diagramas de **Casos de Uso**, **Modelado de Objetos**, **Generalización**, **Estados**, **Modelo de Arena** y separación arquitectónica entre **SW Cliente** y **SW Empleados**.",
+      "evidenceSlots": [
+        {
+          "slotId": "mnr-casos-uso",
+          "label": "Diagrama de Casos de Uso y Modelado de Objetos (UML)",
+          "expectedType": "image",
+          "category": "uml-diagram",
+          "suggestedAlt": "Diagrama UML de casos de uso del sistema Arena de Videojuegos Plus Ultra elaborado en Modelado de Negocios y Requerimientos",
+          "suggestedCaption": "Interacción de actores con los casos de uso troncales del negocio.",
+          "required": true
+        },
+        {
+          "slotId": "mnr-traje-prototipo",
+          "label": "Diseño Conceptual del Traje Inteligente \"La Flaca Hiperflex\" y Design Thinking",
+          "expectedType": "image",
+          "category": "stand-photo",
+          "suggestedAlt": "Prototipo visual del traje inteligente La Flaca Hiperflex con sensores hápticos para la Arena Plus Ultra",
+          "suggestedCaption": "Propuesta de innovación tecnológica surgida del proceso de Design Thinking.",
+          "required": true
+        },
+        {
+          "slotId": "mnr-documento-pdf",
+          "label": "Memoria Completa PDF de Modelado de Negocios (103 páginas)",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Documento técnico PDF de 103 páginas de Modelado de Negocios y Requerimientos por Emmanuel Baltazar López y Pedro Emiliano Romero Osorio",
+          "suggestedCaption": "Especificación completa: minutas, encuesta, Design Thinking, Plan SCM/QA, 123 reglas de negocio y diagramas UML.",
+          "required": true
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-mnr-casos-uso",
+          "slotId": "mnr-casos-uso",
+          "title": "Diagrama General de Casos de Uso — Arena de Videojuegos Plus Ultra",
+          "fileName": "DiagramaCasosUso.drawio.png",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-casos-uso.png",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-casos-uso.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 116042,
+          "alt": "Diagrama UML de casos de uso del sistema Arena de Videojuegos Plus Ultra elaborado en Modelado de Negocios y Requerimientos",
+          "caption": "Interacción de actores (Cliente, Empleado, Administrador) con los casos de uso troncales CU_01 a CU_06.",
+          "category": "uml-diagram",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-traje-hiperflex",
+          "slotId": "mnr-traje-prototipo",
+          "title": "Prototipo Conceptual: Traje Inteligente \"La Flaca Hiperflex\"",
+          "fileName": "Traj.png",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-traje-hiperflex.png",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-traje-hiperflex.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 1227637,
+          "alt": "Diseño visual del traje inteligente La Flaca Hiperflex con sensores de movimiento y retroalimentación háptica para la Arena Plus Ultra",
+          "caption": "Innovación de hardware wearable diseñada por PEMMA Industries a partir del proceso de Design Thinking.",
+          "category": "stand-photo",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-modelado-objetos",
+          "title": "Modelado de Objetos del Dominio — Arena Plus Ultra",
+          "fileName": "ModeladoDeObjetos.drawio.png",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-modelado-objetos.png",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-modelado-objetos.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 717989,
+          "alt": "Diagrama UML de modelado de objetos con relaciones y atributos del dominio Arena Plus Ultra",
+          "caption": "Estructura de objetos del negocio trazada bajo estándares del Plan de Configuración y Calidad.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-generalizacion",
+          "title": "Diagrama de Generalización y Jerarquía de Entidades",
+          "fileName": "Diagrama_Generalizacion.drawio.png",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-generalizacion.png",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-generalizacion.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 252408,
+          "alt": "Diagrama UML de generalización y herencia de actores y entidades del sistema Arena Plus Ultra",
+          "caption": "Jerarquía de especialización modelada para usuarios, membresías y servicios.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-sw-cliente",
+          "title": "Arquitectura de Navegación — Software para Clientes",
+          "fileName": "SW cliente.drawio.png",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-sw-cliente.png",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-sw-cliente.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 33040,
+          "alt": "Diagrama de arquitectura de módulos del software orientado al cliente en Arena Plus Ultra",
+          "caption": "Módulos de autoservicio para registro, compra de membresías, reservaciones e inscripción a torneos.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-sw-empleados",
+          "title": "Arquitectura de Navegación — Software para Empleados",
+          "fileName": "SW para empleados.drawio.png",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-sw-empleados.png",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-sw-empleados.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 54457,
+          "alt": "Diagrama de arquitectura de módulos del software interno para empleados y administración de la arena",
+          "caption": "Subsistema administrativo para control operativo de estaciones, paquetes, ventas y reportes.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-design-thinking",
+          "title": "Matriz Design Thinking y Empatía (PEMMA Industries)",
+          "fileName": "DesignThinkingEP.jpg",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-design-thinking.jpg",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-design-thinking.jpg",
+          "mimeType": "image/jpeg",
+          "mediaKind": "image",
+          "fileSize": 185498,
+          "alt": "Evidencia gráfica del proceso de Design Thinking elaborado por Emmanuel Baltazar López y Pedro Emiliano Romero Osorio",
+          "caption": "Síntesis de hallazgos de usuario, necesidades e insights del estudio de mercado.",
+          "category": "ui-screenshot",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-modelo-arena-pdf",
+          "title": "Layout Arquitectónico de la Arena de Videojuegos (PDF)",
+          "fileName": "Modelo de arena de videojuegos.pdf",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-modelo-arena-pdf.pdf",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-modelo-arena-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 89859,
+          "alt": "Plano y distribución espacial del modelo de arena de videojuegos Plus Ultra en formato PDF",
+          "caption": "Distribución física de zonas de juego, estaciones de realidad virtual, snackbar y recepción.",
+          "category": "architecture",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-diagrama-estados-pdf",
+          "title": "Diagramas de Estados UML (DE_01 – DE_11)",
+          "fileName": "Diagrama_Estados.drawio.pdf",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-diagrama-estados-pdf.pdf",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-diagrama-estados-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 85016,
+          "alt": "Documento PDF con los diagramas de transición de estados UML del sistema Arena Plus Ultra",
+          "caption": "Máquinas de estado para cuentas de usuario, reservaciones, préstamos y torneos.",
+          "category": "uml-diagram",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-mnr-memoria-completa-pdf",
+          "slotId": "mnr-documento-pdf",
+          "title": "Memoria Técnica Completa: Modelado de Negocios y Requerimientos (103 Págs.)",
+          "fileName": "Modelado_de_negocios_Emanmuel-BL_PedroE-RO.docx.pdf",
+          "storedPath": "academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-memoria-completa-pdf.pdf",
+          "url": "/api/uploads/academic-projects/modelado-negocios-arena-traje-mnr/ev-mnr-memoria-completa-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 4832059,
+          "alt": "Documento oficial PDF de 103 páginas del proyecto de Modelado de Negocios por Emmanuel Baltazar López y Pedro Emiliano Romero Osorio",
+          "caption": "Incluye las 7 minutas con cliente, encuesta, Design Thinking, Plan SCM/QA, 123 reglas de negocio y especificación completa.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "sap-erp-s4hana-abap-signavio",
+      "section": "certifications",
+      "title": "Formación y Especialización en Ecosistema SAP ERP (S/4HANA, ABAP, Signavio & Crystal Reports)",
+      "subtitle": "SAP University Alliances / Plan Curricular UMAD · Procesos Empresariales End-to-End",
+      "summary": "Dominio práctico de módulos logísticos y comerciales en SAP S/4HANA (MM y SD con Global Bike v4.2), desarrollo ABAP para datos masivos, modelado BPMN 2.0 en SAP Signavio y reportería Crystal Reports.",
+      "publishDate": "2026-09-08",
+      "featured": true,
+      "bentoSpan": "col-span-2",
+      "draft": false,
+      "tags": [
+        "SAP S/4HANA",
+        "SAP MM & SD",
+        "SAP ABAP",
+        "SAP Signavio",
+        "SAP Crystal Reports"
+      ],
+      "techStack": [
+        {
+          "name": "SAP S/4HANA",
+          "category": "erp-enterprise",
+          "version": "Global Bike v4.2"
+        },
+        {
+          "name": "SAP MM (Materials Management)",
+          "category": "erp-enterprise",
+          "version": ""
+        },
+        {
+          "name": "SAP SD (Sales & Distribution)",
+          "category": "erp-enterprise",
+          "version": ""
+        },
+        {
+          "name": "SAP ABAP",
+          "category": "language",
+          "version": ""
+        },
+        {
+          "name": "SAP Signavio",
+          "category": "erp-enterprise",
+          "version": ""
+        },
+        {
+          "name": "SAP Crystal Reports",
+          "category": "erp-enterprise",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Pilares SAP Cubiertos",
+          "value": "4 Tecnologías",
+          "unit": "",
+          "description": "ERP S/4HANA (MM/SD), Lenguaje ABAP, BPM Signavio y BI Crystal Reports."
+        },
+        {
+          "label": "Trayectoria Práctica",
+          "value": "4to – 7mo Semestre",
+          "unit": "",
+          "description": "Aplicación progresiva en asignaturas de ingeniería y procesos empresariales UMAD."
+        }
+      ],
+      "deliverables": [],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "",
+        "semester": "",
+        "academicPeriod": "",
+        "professor": "",
+        "problemStatement": "",
+        "architecturePattern": "",
+        "architectureSummary": "",
+        "role": "",
+        "teamSize": 1,
+        "teamMembers": [],
+        "methodology": [],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "Especialización Académica y Credencialización SAP (S/4HANA, ABAP, Signavio, Crystal Reports)",
+        "issuer": "SAP / Universidad Madero (SAP University Alliances)",
+        "credentialId": "Editable desde Admin al cargar constancia/certificado oficial",
+        "verificationUrl": "",
+        "issueDate": "2025 – 2026",
+        "expirationDate": "Vigente",
+        "modulesLearned": [
+          {
+            "code": "SAP MM",
+            "name": "Materials Management (Gestión de Materiales — S/4HANA)",
+            "description": "Ciclo Procure-to-Pay (P2P): requisición de compra, órdenes de compra, recepción de mercancías, verificación de facturas y gestión de maestros de materiales/proveedores en Global Bike v4.2."
+          },
+          {
+            "code": "SAP SD",
+            "name": "Sales and Distribution (Ventas y Distribución — S/4HANA)",
+            "description": "Ciclo Order-to-Cash (O2C): cotizaciones, pedidos de cliente, verificación de disponibilidad, entrega saliente, picking, contabilización de salida de mercancías y facturación."
+          },
+          {
+            "code": "SAP ABAP",
+            "name": "Programación Empresarial ABAP",
+            "description": "Estructuración de programas, tablas internas y procesamiento eficiente de volúmenes masivos de datos empresariales."
+          },
+          {
+            "code": "SIGNAVIO & CR",
+            "name": "SAP Signavio (BPMN 2.0 / SCOR-DS) & SAP Crystal Reports",
+            "description": "Modelado estandarizado de procesos de negocio orientados a calidad y generación de reportes ejecutivos integrados con .NET."
+          }
+        ],
+        "businessProcessApplications": [
+          "Ejecución trazable del flujo Procure-to-Pay (aprovisionamiento e inventario) e integración contable en SAP S/4HANA.",
+          "Gestión integral del flujo Order-to-Cash desde solicitud comercial hasta despacho logístico y facturación.",
+          "Optimización de tiempos de ciclo logístico mediante simulación y rediseño BPMN 2.0 bajo estándar SCOR-DS.",
+          "Explotación de bases de datos operativas en reportes gerenciales auditables con SAP Crystal Reports."
+        ],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Aplicación en Ingeniería de Sistemas Empresariales\n\nEsta entrada consolida la formación verificada en tecnologías **SAP** a lo largo del plan de Ingeniería de Software en UMAD. Desde la **Vista Administrador / Editor** puedes actualizar en cualquier momento el **ID de credencial**, enlace de verificación y subir el **PDF o insignia oficial de certificación SAP** tan pronto desees publicarlo.",
+      "evidenceSlots": [
+        {
+          "slotId": "sap-credencial-oficial",
+          "label": "Credencial / Certificado Oficial SAP (Imagen o PDF)",
+          "expectedType": "any",
+          "category": "credential",
+          "suggestedAlt": "Certificado o constancia oficial de acreditación SAP otorgada a Emmanuel Baltazar López",
+          "suggestedCaption": "Documento acreditativo oficial de competencias en ecosistema empresarial SAP.",
+          "required": true
+        },
+        {
+          "slotId": "sap-evidencia-s4hana-abap",
+          "label": "Capturas de Prácticas en SAP S/4HANA (Global Bike MM/SD) o Código ABAP",
+          "expectedType": "image",
+          "category": "ui-screenshot",
+          "suggestedAlt": "Captura de pantalla de ejecución transaccional en SAP S/4HANA Fiori / GUI para módulos MM y SD",
+          "suggestedCaption": "Evidencia práctica de ejecución de procesos Procure-to-Pay y Order-to-Cash en entorno SAP.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-cert-sap-signavio-cover",
+          "title": "Modelado de Procesos en SAP Signavio (BPMN 2.0 / SCOR-DS)",
+          "fileName": "EJ1-EBL - Cupcakes Inc.png",
+          "storedPath": "certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-signavio-cover.png",
+          "url": "/api/uploads/certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-signavio-cover.png",
+          "mimeType": "image/png",
+          "mediaKind": "image",
+          "fileSize": 155027,
+          "alt": "Diagrama de proceso empresarial modelado en SAP Signavio por Emmanuel Baltazar López",
+          "caption": "Evidencia de modelado formal en la suite SAP Signavio Process Manager.",
+          "category": "uml-diagram",
+          "isCover": true,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-cert-sap-fi-pdf",
+          "slotId": "sap-gui-fiori-evidencia",
+          "title": "Portafolio de Ejecución SAP S/4HANA Financial Accounting (G/L & AP)",
+          "fileName": "TF3erP_EBL.pdf",
+          "storedPath": "certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-fi-pdf.pdf",
+          "url": "/api/uploads/certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-fi-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 6128262,
+          "alt": "Documento PDF con capturas de ejecución en SAP S/4HANA Fiori para Finanzas y Cuentas por Pagar",
+          "caption": "12 casos prácticos completados en Global Bike (US00) con folios de documento verificados.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-cert-sap-mm-pdf",
+          "title": "Manual de Ejecución SAP S/4HANA Materials Management (MM_EBL.pdf)",
+          "fileName": "MM_EBL.pdf",
+          "storedPath": "certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-mm-pdf.pdf",
+          "url": "/api/uploads/certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-mm-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 3044523,
+          "alt": "Documento PDF con evidencias prácticas del módulo SAP MM por Emmanuel Baltazar López",
+          "caption": "Gestión de materiales, órdenes de compra, recepción de mercancías y verificación de facturas.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-cert-sap-sd-pdf",
+          "title": "Manual de Ejecución SAP S/4HANA Sales & Distribution (SD_EBL.pdf)",
+          "fileName": "SD_EBL.pdf",
+          "storedPath": "certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-sd-pdf.pdf",
+          "url": "/api/uploads/certifications/sap-erp-s4hana-abap-signavio/ev-cert-sap-sd-pdf.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 1964159,
+          "alt": "Documento PDF con evidencias prácticas del módulo SAP SD por Emmanuel Baltazar López",
+          "caption": "Gestión de pedidos de venta, entrega saliente, picking y facturación a clientes.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "aws-academy-cloud-foundations",
+      "section": "certifications",
+      "title": "AWS Academy Graduate — AWS Academy Cloud Foundations",
+      "subtitle": "Amazon Web Services (AWS) · Arquitectura en la Nube, Cómputo, Redes, Almacenamiento y Seguridad",
+      "summary": "Credencial oficial emitida en 2025 acreditando fundamentos de arquitectura cloud en AWS: IAM, VPC, EC2, EBS, S3, RDS, Elastic Load Balancing y Auto Scaling.",
+      "publishDate": "2025-11-15",
+      "featured": true,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "AWS Cloud",
+        "IAM & VPC",
+        "EC2 & S3",
+        "RDS",
+        "Alta Disponibilidad"
+      ],
+      "techStack": [
+        {
+          "name": "AWS IAM & VPC",
+          "category": "cloud-devops",
+          "version": ""
+        },
+        {
+          "name": "Amazon EC2 & EBS",
+          "category": "cloud-devops",
+          "version": ""
+        },
+        {
+          "name": "Amazon S3 & RDS",
+          "category": "cloud-devops",
+          "version": ""
+        },
+        {
+          "name": "ELB & Auto Scaling",
+          "category": "architecture",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Año de Emisión",
+          "value": "2025",
+          "unit": "",
+          "description": "Acreditación oficial AWS Academy Cloud Foundations."
+        }
+      ],
+      "deliverables": [],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "",
+        "semester": "",
+        "academicPeriod": "",
+        "professor": "",
+        "problemStatement": "",
+        "architecturePattern": "",
+        "architectureSummary": "",
+        "role": "",
+        "teamSize": 1,
+        "teamMembers": [],
+        "methodology": [],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "AWS Academy Graduate – AWS Academy Cloud Foundations",
+        "issuer": "Amazon Web Services (AWS Academy)",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "2025",
+        "expirationDate": "Sin expiración",
+        "modulesLearned": [
+          {
+            "code": "SEC & NET",
+            "name": "Seguridad IAM y Redes Virtuales (Amazon VPC)",
+            "description": "Políticas de mínimo privilegio, usuarios/roles IAM, subredes públicas/privadas, tablas de ruteo y Security Groups."
+          },
+          {
+            "code": "COMP & STOR",
+            "name": "Cómputo Elástico (EC2) y Almacenamiento (EBS, S3, RDS)",
+            "description": "Aprovisionamiento de instancias, volúmenes persistentes, buckets de objetos y bases de datos relacionales administradas."
+          },
+          {
+            "code": "SCALE",
+            "name": "Elastic Load Balancing & Auto Scaling",
+            "description": "Diseño de arquitecturas tolerantes a fallos con escalamiento horizontal automático."
+          }
+        ],
+        "businessProcessApplications": [
+          "Despliegue de infraestructuras web desacopladas, seguras y elásticas bajo el marco AWS Well-Architected.",
+          "Estimación de costos operativos en la nube y selección óptima entre almacenamiento de bloques, objetos y relacional."
+        ],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Laboratorios Técnicos Acreditados\n\nIncluye prácticas documentadas de configuración de seguridad en **AWS IAM**, diseño de topologías aisladas en **Amazon VPC**, despliegue de servidores en **EC2** con **EBS**, bases de datos **Amazon RDS** y balanceo elástico con **Auto Scaling**.",
+      "evidenceSlots": [
+        {
+          "slotId": "aws-badge-pdf",
+          "label": "Insignia Credly o Certificado PDF — AWS Cloud Foundations",
+          "expectedType": "any",
+          "category": "credential",
+          "suggestedAlt": "Certificado e insignia digital AWS Academy Graduate Cloud Foundations de Emmanuel Baltazar López (2025)",
+          "suggestedCaption": "Acreditación oficial emitida por Amazon Web Services Training and Certification.",
+          "required": true
+        }
+      ],
+      "evidences": []
+    },
+    {
+      "slug": "cisco-introduction-to-iot",
+      "section": "certifications",
+      "title": "Introduction to IoT — Cisco Networking Academy",
+      "subtitle": "Cisco Systems · Digitalización, Sensores, Conectividad IP y Automatización",
+      "summary": "Certificación emitida por Cisco Networking Academy (2025) sobre arquitectura de soluciones del Internet de las Cosas, redes convergentes, seguridad y transformación digital.",
+      "publishDate": "2025-10-10",
+      "featured": false,
+      "bentoSpan": "col-span-1",
+      "draft": false,
+      "tags": [
+        "Cisco NetAcad",
+        "IoT",
+        "Redes IP",
+        "Automatización"
+      ],
+      "techStack": [
+        {
+          "name": "IoT Architecture",
+          "category": "architecture",
+          "version": ""
+        },
+        {
+          "name": "Cisco Networking",
+          "category": "cloud-devops",
+          "version": ""
+        },
+        {
+          "name": "Telemetría & Sensores",
+          "category": "tool",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Año de Emisión",
+          "value": "2025",
+          "unit": "",
+          "description": "Credencial oficial Cisco Networking Academy."
+        }
+      ],
+      "deliverables": [],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "",
+        "semester": "",
+        "academicPeriod": "",
+        "professor": "",
+        "problemStatement": "",
+        "architecturePattern": "",
+        "architectureSummary": "",
+        "role": "",
+        "teamSize": 1,
+        "teamMembers": [],
+        "methodology": [],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "Introduction to IoT",
+        "issuer": "Cisco Networking Academy",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "2025",
+        "expirationDate": "Sin expiración",
+        "modulesLearned": [
+          {
+            "code": "IOT-ARCH",
+            "name": "Ecosistemas Ciberfísicos y Conectividad en Red",
+            "description": "Integración de sensores, actuadores, microcontroladores, pasarelas de red y flujos de datos hacia la nube."
+          }
+        ],
+        "businessProcessApplications": [
+          "Base conceptual y arquitectónica aplicada posteriormente en proyectos físicos con ESP32, Arduino y APIs REST en Python/Flask."
+        ],
+        "receivingInstitution": "",
+        "departmentOrArea": "",
+        "period": "",
+        "socialImpact": "",
+        "technicalImpact": "",
+        "keyActivities": [],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Impacto en Formación Técnica\n\nFundamenta el diseño de redes de sensores, flujos de datos máquina a máquina (M2M) y consideraciones de ciberseguridad en dispositivos conectados.",
+      "evidenceSlots": [
+        {
+          "slotId": "cisco-iot-certificado",
+          "label": "Certificado PDF / Insignia — Cisco Introduction to IoT",
+          "expectedType": "any",
+          "category": "credential",
+          "suggestedAlt": "Certificado oficial Introduction to IoT de Cisco Networking Academy otorgado a Emmanuel Baltazar López (2025)",
+          "suggestedCaption": "Constancia oficial emitida por Cisco Networking Academy en 2025.",
+          "required": true
+        }
+      ],
+      "evidences": []
+    },
+    {
+      "slug": "hospital-comunitario-ixtacamaxtitlan",
+      "section": "community-service",
+      "title": "Servicio Social — Hospital Comunitario Ixtacamaxtitlán (IMSS-BIENESTAR)",
+      "subtitle": "Servicios de Salud del Estado de Puebla · Área de Administración (480 Horas)",
+      "summary": "Prestación de Servicio Social universitario apoyando la gestión documental, control de información administrativa y sistematización operativa en unidad hospitalaria comunitaria.",
+      "publishDate": "2026-06-01",
+      "featured": true,
+      "bentoSpan": "col-span-3",
+      "draft": false,
+      "tags": [
+        "Servicio Social",
+        "Sector Salud Público",
+        "Gestión Administrativa",
+        "480 Horas"
+      ],
+      "techStack": [
+        {
+          "name": "Gestión de Información",
+          "category": "tool",
+          "version": ""
+        },
+        {
+          "name": "Control Documental",
+          "category": "methodology",
+          "version": ""
+        },
+        {
+          "name": "Optimización Administrativa",
+          "category": "methodology",
+          "version": ""
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Duración Oficial",
+          "value": "480 Horas",
+          "unit": "",
+          "description": "Periodo comprendido del 01 de junio de 2026 al 01 de diciembre de 2026."
+        },
+        {
+          "label": "Área Asignada",
+          "value": "Administración",
+          "unit": "",
+          "description": "Hospital Comunitario Ixtacamaxtitlán — Servicios de Salud del Estado de Puebla."
+        }
+      ],
+      "deliverables": [
+        {
+          "title": "Carta Oficial de Aceptación de Servicio Social (26/05/2026)",
+          "type": "Technical-Report",
+          "description": "Emitida por la Dra. Leticia Colín Martínez (Encargada de la Dirección) y L.Arq. Gemalli Edden López Galicia (Administradora).",
+          "url": ""
+        }
+      ],
+      "links": {
+        "repositoryUrl": "",
+        "liveDemoUrl": "",
+        "documentationUrl": "",
+        "videoUrl": ""
+      },
+      "details": {
+        "course": "",
+        "semester": "",
+        "academicPeriod": "",
+        "professor": "",
+        "problemStatement": "",
+        "architecturePattern": "",
+        "architectureSummary": "",
+        "role": "Prestador de Servicio Social — Ingeniería de Software (Matrícula UMAD 20124558)",
+        "teamSize": 1,
+        "teamMembers": [],
+        "methodology": [],
+        "eventName": "",
+        "organizer": "",
+        "location": "",
+        "modality": "Presencial",
+        "eventDate": "",
+        "challengeTrack": "",
+        "teamName": "",
+        "achievement": "",
+        "scope": "Nacional",
+        "partnerEntities": [],
+        "impactGenerated": "",
+        "edition": "",
+        "category": "",
+        "prototypeName": "",
+        "juryFeedbackSummary": "",
+        "accreditationOrAward": "",
+        "standIdentifier": "",
+        "projectType": "Web-Application",
+        "status": "MVP Funcional",
+        "credentialTitle": "",
+        "issuer": "",
+        "credentialId": "",
+        "verificationUrl": "",
+        "issueDate": "",
+        "expirationDate": "",
+        "modulesLearned": [],
+        "businessProcessApplications": [],
+        "receivingInstitution": "Hospital Comunitario Ixtacamaxtitlán (Servicios de Salud del Estado de Puebla / IMSS-BIENESTAR)",
+        "departmentOrArea": "Área de Administración",
+        "period": "01 de junio de 2026 – 01 de diciembre de 2026",
+        "totalHours": 480,
+        "socialImpact": "Fortalecimiento de la capacidad administrativa de una institución pública de salud comunitaria en Ixtacamaxtitlán, Puebla, agilizando el respaldo documental y el seguimiento de procesos internos en beneficio de la atención a la población.",
+        "technicalImpact": "Organización estructurada de expedientes administrativos, estandarización de formatos digitales, seguimiento de reportes periódicos y apoyo técnico-informático al personal del área.",
+        "keyActivities": [
+          "Organización, digitalización y control de documentación oficial en el Área de Administración hospitalaria.",
+          "Apoyo en el registro, validación y seguimiento de reportes operativos e inventarios internos.",
+          "Asistencia técnica en herramientas ofimáticas y sistematización de información administrativa.",
+          "Elaboración de reportes trimestrales de avance conforme a la normatividad de Servicio Social UMAD."
+        ],
+        "articleCategory": "Architecture-Decision-Record",
+        "relatedProjectSlug": ""
+      },
+      "markdownBody": "### Contexto Institucional Verificado\n\n- **Institución Receptora:** Hospital Comunitario Ixtacamaxtitlán (Servicios de Salud del Estado de Puebla).\n- **Autoridades Institucionales:** Dra. Leticia Colín Martínez (*Encargada de la Dirección*) y L.Arq. Gemalli Edden López Galicia (*Administradora*).\n- **Nota de Edición:** Puedes subir a continuación la **Carta de Aceptación**, tus **Reportes Trimestrales**, **Carta de Término** y fotografías autorizadas directamente en los espacios preparados.",
+      "evidenceSlots": [
+        {
+          "slotId": "ss-carta-aceptacion",
+          "label": "Carta Oficial de Aceptación (PDF o Imagen)",
+          "expectedType": "any",
+          "category": "official-document",
+          "suggestedAlt": "Carta oficial de aceptación de Servicio Social en el Hospital Comunitario Ixtacamaxtitlán emitida el 26 de mayo de 2026",
+          "suggestedCaption": "Oficio de aceptación para cubrir 480 horas en el Área de Administración (01/06/2026 – 01/12/2026).",
+          "required": true
+        },
+        {
+          "slotId": "ss-reportes-trimestrales",
+          "label": "Reportes de Actividades / Carta de Liberación (PDF)",
+          "expectedType": "pdf",
+          "category": "official-document",
+          "suggestedAlt": "Reporte oficial de actividades de Servicio Social de Emmanuel Baltazar López para Universidad Madero",
+          "suggestedCaption": "Seguimiento formal de horas y actividades desempeñadas en la institución receptora.",
+          "required": false
+        },
+        {
+          "slotId": "ss-galeria-evidencia",
+          "label": "Evidencia Fotográfica Institucional",
+          "expectedType": "image",
+          "category": "event-photo",
+          "suggestedAlt": "Evidencia fotográfica de prestación de Servicio Social en el Hospital Comunitario Ixtacamaxtitlán",
+          "suggestedCaption": "Registro visual de colaboración en el Área de Administración.",
+          "required": false
+        }
+      ],
+      "evidences": [
+        {
+          "id": "ev-ss-carta-aceptacion",
+          "slotId": "ss-carta-aceptacion",
+          "title": "Carta Oficial de Aceptación — Hospital Comunitario de Ixtacamaxtitlán",
+          "fileName": "CartaAceptacion.pdf",
+          "storedPath": "community-service/hospital-comunitario-ixtacamaxtitlan/ev-ss-carta-aceptacion.pdf",
+          "url": "/api/uploads/community-service/hospital-comunitario-ixtacamaxtitlan/ev-ss-carta-aceptacion.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 3347819,
+          "alt": "Documento oficial PDF de la Carta de Aceptación de Servicio Social de Emmanuel Baltazar López",
+          "caption": "Acreditación institucional emitida para el periodo 19 de mayo al 18 de noviembre de 2026 (480 horas).",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        },
+        {
+          "id": "ev-ss-reporte-trimestral",
+          "slotId": "ss-reportes-trimestrales",
+          "title": "Reporte Trimestral Oficial de Actividades de Servicio Social (PDF)",
+          "fileName": "REPORTE-TRIMESTRAL-DE-ACTIVIDADES.pdf",
+          "storedPath": "community-service/hospital-comunitario-ixtacamaxtitlan/ev-ss-reporte-trimestral.pdf",
+          "url": "/api/uploads/community-service/hospital-comunitario-ixtacamaxtitlan/ev-ss-reporte-trimestral.pdf",
+          "mimeType": "application/pdf",
+          "mediaKind": "pdf",
+          "fileSize": 95293,
+          "alt": "Documento PDF del Reporte Trimestral de Actividades en el área de Estadística y Archivo Clínico",
+          "caption": "Desglose de captura SINBA-SIS-CE, mantenimiento preventivo de cómputo y apoyo administrativo.",
+          "category": "official-document",
+          "isCover": false,
+          "uploadedAt": "2026-11-10T09:50:00.000Z"
+        }
+      ]
+    }
+  ]
+}

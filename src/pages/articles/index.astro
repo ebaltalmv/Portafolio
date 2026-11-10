@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionIndexView from '../../components/bento/SectionIndexView.astro';
+import { SECTION_META } from '../../server/schemas';
+
+const meta = SECTION_META.articles;
+---
+
+<BaseLayout title={meta.title} description={meta.description} currentSection="articles">
+  <SectionIndexView section="articles" />
+</BaseLayout>

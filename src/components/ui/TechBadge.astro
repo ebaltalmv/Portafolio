@@ -1,0 +1,35 @@
+---
+import type { TechItem } from '../../server/schemas';
+
+interface Props {
+  item: TechItem;
+  compact?: boolean;
+}
+
+const { item, compact = false } = Astro.props;
+
+const palette: Record<string, string> = {
+  language: 'border-cyan-500/30 bg-cyan-500/10 text-cyan-300',
+  framework: 'border-indigo-500/30 bg-indigo-500/10 text-indigo-300',
+  database: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300',
+  'cloud-devops': 'border-sky-500/30 bg-sky-500/10 text-sky-300',
+  architecture: 'border-violet-500/30 bg-violet-500/10 text-violet-300',
+  methodology: 'border-amber-500/30 bg-amber-500/10 text-amber-300',
+  'erp-enterprise': 'border-orange-500/30 bg-orange-500/10 text-orange-300',
+  'testing-qa': 'border-teal-500/30 bg-teal-500/10 text-teal-300',
+  tool: 'border-slate-700 bg-slate-800/80 text-slate-300',
+};
+
+const classes = palette[item.category] || palette.tool;
+---
+
+<span
+  class:list={[
+    'inline-flex items-center gap-1 rounded-md border font-mono',
+    classes,
+    compact ? 'px-2 py-0.5 text-[11px]' : 'px-2.5 py-1 text-xs',
+  ]}
+>
+  <span>{item.name}</span>
+  {item.version && <span class="opacity-70">v{item.version}</span>}
+</span>

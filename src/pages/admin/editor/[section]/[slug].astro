@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import EntryEditorForm from '../../../../components/admin/EntryEditorForm.astro';
+import { requireAdminAuth } from '../../../../server/auth';
+import { getEntry } from '../../../../server/db';
+import { SECTION_KEYS, type SectionKey } from '../../../../server/schemas';
+
+if (!requireAdminAuth(Astro.cookies)) {
+  return Astro.redirect('/admin/login');
+}
+
+const section = String(Astro.params.section || '') as SectionKey;
+const slug = String(Astro.params.slug || '');
+
+if (!SECTION_KEYS.includes(section) || !slug) {
+  return Astro.redirect('/admin');
+}
+
+const entry = await getEntry(section, slug, true);
+if (!entry) {
+  return Astro.redirect('/admin');
+}
+---
+
+<BaseLayout title={`Editar: ${entry.title}`} currentSection={entry.section} currentSlug={entry.slug}>
+  <EntryEditorForm mode="edit" entry={entry} />
+</BaseLayout>

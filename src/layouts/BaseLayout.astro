@@ -1,0 +1,100 @@
+---
+import Navbar from '../components/navigation/Navbar.astro';
+import Footer from '../components/navigation/Footer.astro';
+import AdminStudioBar from '../components/navigation/AdminStudioBar.astro';
+import { getProfile } from '../server/db';
+import { getViewerContext } from '../server/auth';
+import type { SectionKey } from '../server/schemas';
+
+interface Props {
+  title: string;
+  description?: string;
+  currentSection?: SectionKey;
+  currentSlug?: string;
+}
+
+const {
+  title,
+  description = 'Portafolio de Evidencias Académicas y Profesionales de Ingeniería de Software — Emmanuel Baltazar López (UMAD).',
+  currentSection,
+  currentSlug,
+} = Astro.props;
+
+const profile = await getProfile();
+const viewer = getViewerContext(Astro.cookies, Astro.url);
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | Emmanuel Baltazar López</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      body {
+        background-color: #060911;
+        color: #f1f5f9;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #060911;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #334155;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-surface-950 font-sans text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+    <!-- Fondo técnico de ingeniería -->
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-tech-grid bg-grid-32 opacity-75"></div>
+    <div class="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[420px] bg-gradient-to-b from-cyan-500/[0.07] via-indigo-500/[0.03] to-transparent"></div>
+
+    <AdminStudioBar viewer={viewer} currentSection={currentSection} currentSlug={currentSlug} />
+    <Navbar viewer={viewer} currentPath={currentPath} />
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <slot />
+    </main>
+
+    <Footer profile={profile} viewer={viewer} />
+
+    <!-- Contenedor global de notificaciones Toast -->
+    <div
+      id="ebl-toast"
+      class="pointer-events-none fixed bottom-6 left-1/2 z-[100] hidden -translate-x-1/2 rounded-xl border border-slate-700 bg-slate-900/95 px-4 py-2.5 font-mono text-xs text-white shadow-2xl backdrop-blur-md"
+    ></div>
+
+    <script is:inline>
+      window.showEblToast = function (message, variant = 'ok') {
+        const el = document.getElementById('ebl-toast');
+        if (!el) return;
+        el.textContent = message;
+        el.classList.remove('hidden', 'border-emerald-500/50', 'text-emerald-200', 'border-rose-500/50', 'text-rose-200');
+        if (variant === 'error') {
+          el.classList.add('border-rose-500/50', 'text-rose-200');
+        } else {
+          el.classList.add('border-emerald-500/50', 'text-emerald-200');
+        }
+        clearTimeout(window.__eblToastTimer);
+        window.__eblToastTimer = setTimeout(() => {
+          el.classList.add('hidden');
+        }, 3500);
+      };
+    </script>
+  </body>
+</html>

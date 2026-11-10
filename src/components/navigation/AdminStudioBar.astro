@@ -1,0 +1,113 @@
+---
+import type { ViewerContext } from '../../server/auth';
+import type { SectionKey } from '../../server/schemas';
+
+interface Props {
+  viewer: ViewerContext;
+  currentSection?: SectionKey;
+  currentSlug?: string;
+}
+
+const { viewer, currentSection, currentSlug } = Astro.props;
+---
+
+{viewer.isAuthenticated && viewer.isEditorView && (
+  <div class="sticky top-0 z-50 border-b border-amber-500/30 bg-slate-950/95 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-xs sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-amber-400/40 bg-amber-500/15 px-2.5 py-1 font-mono font-semibold text-amber-300">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-amber-400"></span>
+          MODO ADMIN & EDITOR ACTIVO
+        </span>
+
+        <div class="inline-flex rounded-lg border border-slate-700/80 bg-slate-900 p-0.5">
+          <button
+            type="button"
+            data-switch-view="editor"
+            class="rounded-md bg-cyan-500/20 px-2.5 py-1 font-mono font-medium text-cyan-300 transition"
+          >
+            ✎ Editor & Carga de Archivos
+          </button>
+          <button
+            type="button"
+            data-switch-view="visitor"
+            class="rounded-md px-2.5 py-1 font-mono text-slate-400 transition hover:bg-slate-800 hover:text-white"
+            title="Ver exactamente como lo verá un reclutador o sinodal (oculta espacios vacíos y controles)"
+          >
+            👁 Vista Solo Visualización
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        {currentSection && currentSlug && (
+          <a
+            href={`/admin/editor/${currentSection}/${currentSlug}`}
+            class="inline-flex items-center gap-1.5 rounded-md border border-cyan-500/40 bg-cyan-500/10 px-2.5 py-1 font-mono text-cyan-300 transition hover:bg-cyan-500/20"
+          >
+            ⚙ Editar Ficha Completa
+          </a>
+        )}
+        <a
+          href={currentSection ? `/admin/new?section=${currentSection}` : '/admin/new'}
+          class="inline-flex items-center gap-1 rounded-md border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-1 font-mono text-emerald-300 transition hover:bg-emerald-500/20"
+        >
+          + Nueva Entrada
+        </a>
+        <a
+          href="/admin"
+          class="inline-flex items-center gap-1 rounded-md border border-slate-700 bg-slate-800/90 px-2.5 py-1 font-mono text-slate-200 transition hover:border-slate-500 hover:bg-slate-700"
+        >
+          Panel Studio (/admin)
+        </a>
+        <button
+          type="button"
+          id="btn-admin-logout"
+          class="rounded-md border border-rose-500/30 bg-rose-500/10 px-2.5 py-1 font-mono text-rose-300 transition hover:bg-rose-500/20"
+        >
+          Salir
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+{viewer.isAuthenticated && !viewer.isEditorView && (
+  <div class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full border border-cyan-500/40 bg-slate-950/95 px-4 py-2.5 text-xs shadow-2xl shadow-cyan-950/60 backdrop-blur-md">
+    <span class="inline-flex items-center gap-1.5 font-mono text-slate-300">
+      <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+      Previsualizando <strong class="text-white">Vista Visitante (Solo Lectura)</strong>
+    </span>
+    <button
+      type="button"
+      data-switch-view="editor"
+      class="rounded-full bg-cyan-500 px-3 py-1 font-mono font-semibold text-slate-950 transition hover:bg-cyan-400"
+    >
+      Volver a Modo Editor ✎
+    </button>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll('[data-switch-view]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const mode = btn.getAttribute('data-switch-view');
+      const res = await fetch('/api/auth/view-mode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode }),
+      });
+      if (res.ok) {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('view');
+        window.location.href = url.toString();
+      }
+    });
+  });
+
+  const logoutBtn = document.getElementById('btn-admin-logout');
+  logoutBtn?.addEventListener('click', async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    window.location.href = '/';
+  });
+</script>

@@ -1,0 +1,89 @@
+---
+import { SECTION_META, type SectionKey } from '../../server/schemas';
+import { getEntriesBySection } from '../../server/db';
+import { getViewerContext } from '../../server/auth';
+import BentoEntryCard from './BentoEntryCard.astro';
+
+interface Props {
+  section: SectionKey;
+}
+
+const { section } = Astro.props;
+const meta = SECTION_META[section];
+const viewer = getViewerContext(Astro.cookies, Astro.url);
+const entries = await getEntriesBySection(section, viewer.isEditorView);
+
+const totalEvidences = entries.reduce((acc, e) => acc + e.evidences.length, 0);
+---
+
+<div class="space-y-8">
+  <!-- Cabecera de Sección -->
+  <section class="relative overflow-hidden rounded-3xl border border-slate-800/90 bg-surface-900/80 p-6 sm:p-8">
+    <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      <div class="max-w-3xl">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <a href="/" class="font-mono text-xs text-slate-400 hover:text-cyan-300">← Visión General</a>
+          <span class="text-slate-700">/</span>
+          <span class="rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-0.5 font-mono text-xs text-cyan-300">
+            {meta.code}
+          </span>
+        </div>
+        <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">{meta.title}</h1>
+        <p class="mt-2 font-mono text-xs text-emerald-400 sm:text-sm">{meta.subtitle}</p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-300">{meta.description}</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="rounded-xl border border-slate-800 bg-surface-950/90 px-4 py-3 text-center">
+          <span class="block font-mono text-xl font-bold text-white">{entries.length}</span>
+          <span class="font-mono text-[10px] uppercase text-slate-400">Registros</span>
+        </div>
+        <div class="rounded-xl border border-slate-800 bg-surface-950/90 px-4 py-3 text-center">
+          <span class="block font-mono text-xl font-bold text-cyan-300">{totalEvidences}</span>
+          <span class="font-mono text-[10px] uppercase text-slate-400">Evidencias</span>
+        </div>
+
+        {viewer.isEditorView && (
+          <a
+            href={`/admin/new?section=${section}`}
+            class="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-4 py-3 font-mono text-xs font-bold text-slate-950 transition hover:bg-emerald-400"
+          >
+            + Nueva Entrada en {meta.shortTitle}
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid o Estado Vacío Honesto -->
+  {entries.length > 0 ? (
+    <section class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {entries.map((entry) => (
+        <BentoEntryCard entry={entry} isEditorView={viewer.isEditorView} />
+      ))}
+    </section>
+  ) : (
+    <section class="rounded-3xl border border-dashed border-slate-800 bg-surface-900/50 p-10 text-center sm:p-14">
+      <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900 font-mono text-sm font-bold text-cyan-400">
+        00
+      </div>
+      <h2 class="mt-4 text-xl font-bold text-white">{meta.emptyVisitorTitle}</h2>
+      <p class="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-slate-400">
+        {meta.emptyVisitorDescription}
+      </p>
+
+      {viewer.isEditorView && (
+        <div class="mx-auto mt-6 max-w-lg rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+          <p class="font-mono text-xs font-semibold text-amber-300">MODO ADMINISTRADOR / EDITOR</p>
+          <p class="mt-1.5 text-xs text-slate-300">{meta.emptyEditorHint}</p>
+          <a
+            href={`/admin/new?section=${section}`}
+            class="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-amber-400 px-4 py-2 font-mono text-xs font-bold text-slate-950 transition hover:bg-amber-300"
+          >
+            + Crear primera entrada en {meta.shortTitle}
+          </a>
+        </div>
+      )}
+    </section>
+  )}
+</div>

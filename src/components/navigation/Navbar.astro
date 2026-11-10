@@ -61,24 +61,26 @@ const primaryNav = SECTION_KEYS.map((key) => SECTION_META[key]);
     </nav>
 
     <div class="flex items-center gap-2">
-      {!viewer.isAuthenticated ? (
-        <a
-          href="/admin/login"
-          class="inline-flex items-center gap-1.5 rounded-lg border border-slate-700/80 bg-slate-900/80 px-3 py-1.5 font-mono text-xs text-slate-300 transition hover:border-cyan-500/50 hover:text-cyan-300"
-          title="Acceder a la Vista Administrador y Editor para subir archivos o editar contenido"
-        >
-          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-          <span>Admin</span>
-        </a>
-      ) : (
-        <a
-          href="/admin"
-          class="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-1.5 font-mono text-xs text-amber-300 transition hover:bg-amber-500/20"
-        >
-          <span>Studio</span>
-        </a>
+      {!viewer.isPublicStatic && (
+        !viewer.isAuthenticated ? (
+          <a
+            href="/admin/login"
+            class="inline-flex items-center gap-1.5 rounded-lg border border-slate-700/80 bg-slate-900/80 px-3 py-1.5 font-mono text-xs text-slate-300 transition hover:border-cyan-500/50 hover:text-cyan-300"
+            title="Acceder a la Vista Administrador y Editor para subir archivos o editar contenido"
+          >
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            <span>Admin</span>
+          </a>
+        ) : (
+          <a
+            href="/admin"
+            class="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-1.5 font-mono text-xs text-amber-300 transition hover:bg-amber-500/20"
+          >
+            <span>Studio</span>
+          </a>
+        )
       )}
 
       <button

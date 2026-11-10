@@ -10,6 +10,11 @@ export interface ViewerContext {
   isAuthenticated: boolean;
   viewMode: ViewMode;
   isEditorView: boolean;
+  isPublicStatic: boolean;
+}
+
+export function isPublicStaticMode(): boolean {
+  return process.env.PUBLIC_READONLY_BUILD === 'true';
 }
 
 function getAdminPassword(): string {
@@ -61,6 +66,16 @@ export function verifySessionToken(token: string | undefined): boolean {
 }
 
 export function getViewerContext(cookies: AstroCookies, url?: URL): ViewerContext {
+  const isPublicStatic = isPublicStaticMode();
+  if (isPublicStatic) {
+    return {
+      isAuthenticated: false,
+      viewMode: 'visitor',
+      isEditorView: false,
+      isPublicStatic: true,
+    };
+  }
+
   const token = cookies.get(SESSION_COOKIE_NAME)?.value;
   const isAuthenticated = verifySessionToken(token);
 
@@ -69,6 +84,7 @@ export function getViewerContext(cookies: AstroCookies, url?: URL): ViewerContex
       isAuthenticated: false,
       viewMode: 'visitor',
       isEditorView: false,
+      isPublicStatic: false,
     };
   }
 
@@ -86,6 +102,7 @@ export function getViewerContext(cookies: AstroCookies, url?: URL): ViewerContex
     isAuthenticated: true,
     viewMode,
     isEditorView: viewMode === 'editor',
+    isPublicStatic: false,
   };
 }
 

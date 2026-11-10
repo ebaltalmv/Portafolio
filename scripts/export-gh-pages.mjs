@@ -86,6 +86,7 @@ async function main() {
       ...process.env,
       HOST: '127.0.0.1',
       PORT: String(PORT),
+      PUBLIC_READONLY_BUILD: 'true',
     },
     stdio: 'pipe',
   });
@@ -100,7 +101,7 @@ async function main() {
     // Asegurar que cualquier archivo recién inicializado por seed también se copie
     await copyDirRecursive(DATA_UPLOADS, path.join(OUT_DIR, 'api', 'uploads'));
 
-    const routes = ['/', '/404', '/admin', '/admin/login'];
+    const routes = ['/', '/404'];
     for (const sec of SECTIONS) {
       routes.push(`/${sec}`);
     }

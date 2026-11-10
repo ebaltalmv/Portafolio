@@ -47,26 +47,30 @@ const { profile, viewer } = Astro.props;
         >
           {profile.email}
         </a>
-        {!viewer.isAuthenticated ? (
-          <a href="/admin/login" class="font-mono text-slate-500 transition hover:text-amber-300">
-            Acceso Administrador
-          </a>
-        ) : (
-          <a href="/admin" class="font-mono text-amber-400 transition hover:text-amber-300">
-            Panel Editor (/admin)
-          </a>
+        {!viewer.isPublicStatic && (
+          !viewer.isAuthenticated ? (
+            <a href="/admin/login" class="font-mono text-slate-500 transition hover:text-amber-300">
+              Acceso Administrador
+            </a>
+          ) : (
+            <a href="/admin" class="font-mono text-amber-400 transition hover:text-amber-300">
+              Panel Editor (/admin)
+            </a>
+          )
         )}
       </div>
     </div>
 
     <div class="mt-6 flex flex-col justify-between gap-2 border-t border-slate-900 pt-6 font-mono text-[11px] text-slate-500 sm:flex-row">
-      <span>Arquitectura Web: Astro SSR · TypeScript · Tailwind CSS · Zod Validation</span>
-      <span>
-        Vista actual:{' '}
-        <strong class={viewer.isEditorView ? 'text-amber-400' : 'text-emerald-400'}>
-          {viewer.isEditorView ? 'ADMINISTRADOR / EDITOR' : 'SOLO VISUALIZACIÓN (VISITANTE)'}
-        </strong>
-      </span>
+      <span>Arquitectura Web: Astro · TypeScript · Tailwind CSS · Zod Validation</span>
+      {!viewer.isPublicStatic && (
+        <span>
+          Vista actual:{' '}
+          <strong class={viewer.isEditorView ? 'text-amber-400' : 'text-emerald-400'}>
+            {viewer.isEditorView ? 'ADMINISTRADOR / EDITOR' : 'SOLO VISUALIZACIÓN (VISITANTE)'}
+          </strong>
+        </span>
+      )}
     </div>
   </div>
 </footer>
